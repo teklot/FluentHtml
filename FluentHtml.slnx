@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Build.props" />
+    <File Path="README.md" />
+    <File Path="LICENSE" />
+  </Folder>
+  <Project Path="FluentHtml.AspNetCore/FluentHtml.AspNetCore.csproj" />
+  <Project Path="FluentHtml.Bootstrap/FluentHtml.Bootstrap.csproj" />
+  <Project Path="FluentHtml.Forms/FluentHtml.Forms.csproj" />
+  <Project Path="FluentHtml.Htmx/FluentHtml.Htmx.csproj" />
+  <Project Path="FluentHtml.Rendering/FluentHtml.Rendering.csproj" />
+  <Project Path="FluentHtml.Samples/FluentHtml.Samples.csproj" />
+  <Project Path="FluentHtml.Tests/FluentHtml.Tests.csproj" />
+  <Project Path="FluentHtml.Validation/FluentHtml.Validation.csproj" />
+  <Project Path="FluentHtml/FluentHtml.csproj" />
+</Solution>
