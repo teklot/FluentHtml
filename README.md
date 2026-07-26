@@ -3,7 +3,7 @@
 [![CI](https://github.com/TekLot/FluentHtml/actions/workflows/ci.yml/badge.svg)](https://github.com/TekLot/FluentHtml/actions/workflows/ci.yml)
 [![NuGet Version](https://img.shields.io/nuget/v/FluentHtml)](https://www.nuget.org/packages/FluentHtml)
 [![.NET](https://img.shields.io/badge/.NET-net10.0-blue)](https://dotnet.microsoft.com/)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue)](https://github.com/anomalyco/FluentHtml/blob/main/LICENSE)
 
 Every ASP.NET team eventually faces the same choice: Razor mixes HTML and C# into a template language that resists refactoring. Blazor introduces a runtime, a component lifecycle, and hydration overhead that most line-of-business apps don't need. React/Vue/Angular require a separate language, a build pipeline, and a deployment story that doubles operational complexity. None of these are bad tools — they're just solving a bigger problem than most internal applications actually have.
 
@@ -367,4 +367,4 @@ Every renderable object derives from `Node`. Elements own a tag name, attributes
 
 ## License
 
-Apache License 2.0 — see [LICENSE](LICENSE) for details.
+Apache License 2.0 — see [LICENSE](https://github.com/anomalyco/FluentHtml/blob/main/LICENSE) for details.

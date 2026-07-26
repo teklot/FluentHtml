@@ -1,0 +1,67 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "FluentHtml/FluentHtml.csproj",
+            "FluentHtml.Rendering/FluentHtml.Rendering.csproj",
+            "FluentHtml.AspNetCore/FluentHtml.AspNetCore.csproj",
+            "FluentHtml.Htmx/FluentHtml.Htmx.csproj",
+            "FluentHtml.Bootstrap/FluentHtml.Bootstrap.csproj",
+            "FluentHtml.Forms/FluentHtml.Forms.csproj",
+            "FluentHtml.Validation/FluentHtml.Validation.csproj"
+          ],
+          "src": ".."
+        }
+      ],
+      "dest": "api",
+      "includePrivateMembers": false,
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false,
+      "noRestore": true,
+      "namespaceLayout": "flattened",
+      "memberLayout": "samePage",
+      "properties": {
+        "TargetFramework": "net10.0"
+      }
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": ["api/**.yml", "api/**.toc.yml", "api/index.md"]
+      },
+      {
+        "files": ["**.md", "**/toc.yml", "toc.yml"]
+      }
+    ],
+    "resource": [
+      {
+        "files": ["images/**", "favicon.ico"]
+      }
+    ],
+    "dest": "_site",
+    "globalMetadataFiles": [],
+    "fileMetadataFiles": [],
+    "template": ["default", "modern"],
+    "globalMetadata": {
+      "_appTitle": "FluentHtml",
+      "_appName": "FluentHtml",
+      "_appFooter": "© 2026 TekLot. Apache 2.0 License.",
+      "_appLogoPath": "images/logo.svg",
+      "_appFaviconPath": "favicon.ico",
+      "_enableSearch": true,
+      "_enableNewTab": true,
+      "_gitContribute": {
+        "repo": "https://github.com/anomalyco/FluentHtml",
+        "branch": "main"
+      }
+    },
+    "fileMetadata": {},
+    "template": ["default", "modern"],
+    "postProcessors": [],
+    "markdownEngineName": "markdig",
+    "noLangKeyword": false
+  }
+}

@@ -1,18 +1,47 @@
-using FluentHtml.Nodes;
+﻿using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
+/// <summary>
+/// Represents an HTML &lt;meta&gt; element.
+/// </summary>
 public sealed class MetaElement : Element
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MetaElement"/> class. The element is self-closing.
+    /// </summary>
     public MetaElement() => SetTag("meta", selfClosing: true);
 
-    public MetaElement Charset(string charset) { Attributes.Set("charset", charset); return this; }
-    public MetaElement Name(string name) { Attributes.Set("name", name); return this; }
-    public MetaElement Content(string content) { Attributes.Set("content", content); return this; }
-    public MetaElement Property(string property) { Attributes.Set("property", property); return this; }
+    /// <summary>
+    /// Sets the name attribute for this element.
+    /// </summary>
+    /// <param name="value">The name value.</param>
+    /// <returns>The current element for method chaining.</returns>
+    public MetaElement Name(string value) { Attributes.Set("name", value); return this; }
+
+    /// <summary>
+    /// Sets the content attribute for this element.
+    /// </summary>
+    /// <param name="value">The content value.</param>
+    /// <returns>The current element for method chaining.</returns>
+    public MetaElement Content(string value) { Attributes.Set("content", value); return this; }
+
+    /// <summary>
+    /// Sets the charset attribute for this element.
+    /// </summary>
+    /// <param name="value">The charset value.</param>
+    /// <returns>The current element for method chaining.</returns>
+    public MetaElement Charset(string value) { Attributes.Set("charset", value); return this; }
 }
 
+/// <summary>
+/// Factory methods for creating <see cref="MetaElement"/> instances.
+/// </summary>
 public static class MetaExtensions
 {
+    /// <summary>
+    /// Creates a new &lt;meta&gt; element.
+    /// </summary>
+    /// <returns>A new <see cref="MetaElement"/>.</returns>
     public static MetaElement Meta() => new();
 }

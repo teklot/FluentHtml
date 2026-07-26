@@ -1,0 +1,28 @@
+- name: Home
+  href: index.md
+- name: API Reference
+  href: api/
+  homepage: api/index.md
+- name: Documentation
+  items:
+    - name: Getting Started
+      href: getting-started.md
+    - name: Architecture
+      href: architecture.md
+    - name: Packages
+      href: packages/index.md
+      items:
+        - name: Core (FluentHtml)
+          href: packages/core.md
+        - name: Rendering
+          href: packages/rendering.md
+        - name: ASP.NET Core
+          href: packages/aspnetcore.md
+        - name: HTMX
+          href: packages/htmx.md
+        - name: Bootstrap
+          href: packages/bootstrap.md
+        - name: Forms
+          href: packages/forms.md
+        - name: Validation
+          href: packages/validation.md

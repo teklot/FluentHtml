@@ -71,3 +71,8 @@ $RECYCLE.BIN/
 ## Publish output
 *.publish.xml
 publish/
+
+## DocFX
+**/_site/
+docs/api/
+!docs/api/index.md
