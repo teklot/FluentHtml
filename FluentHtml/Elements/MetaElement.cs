@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;meta&gt; element.
 /// </summary>
-public sealed class MetaElement : Element
+public sealed class MetaElement : Element<MetaElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="MetaElement"/> class. The element is self-closing.

@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;option&gt; element.
 /// </summary>
-public sealed class OptionElement : Element
+public sealed class OptionElement : Element<OptionElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="OptionElement"/> class with child nodes.

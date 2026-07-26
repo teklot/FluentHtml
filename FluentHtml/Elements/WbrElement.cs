@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;wbr&gt; element.
 /// </summary>
-public sealed class WbrElement : Element
+public sealed class WbrElement : Element<WbrElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="WbrElement"/> class. The element is self-closing.

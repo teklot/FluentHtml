@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;footer&gt; element.
 /// </summary>
-public sealed class FooterElement : Element
+public sealed class FooterElement : Element<FooterElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="FooterElement"/> class with child nodes.

@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;address&gt; element.
 /// </summary>
-public sealed class AddressElement : Element
+public sealed class AddressElement : Element<AddressElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="AddressElement"/> class with child nodes.

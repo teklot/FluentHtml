@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;progress&gt; element.
 /// </summary>
-public sealed class ProgressElement : Element
+public sealed class ProgressElement : Element<ProgressElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ProgressElement"/> class with child nodes.

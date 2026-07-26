@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;aside&gt; element.
 /// </summary>
-public sealed class AsideElement : Element
+public sealed class AsideElement : Element<AsideElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="AsideElement"/> class with child nodes.

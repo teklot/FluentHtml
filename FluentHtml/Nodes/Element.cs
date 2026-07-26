@@ -3,8 +3,9 @@ using FluentHtml.Attributes;
 namespace FluentHtml.Nodes;
 
 /// <summary>
-/// Abstract base class for all HTML elements. Provides fluent methods for configuring
-/// common attributes and managing CSS classes. All HTML element types derive from this class.
+/// Abstract base class for all HTML elements. Provides core infrastructure for
+/// tag name, attributes, and CSS class management. Fluent methods that return
+/// the concrete element type live in <see cref="Element{TSelf}"/>.
 /// </summary>
 public abstract class Element : Node
 {
@@ -57,23 +58,11 @@ public abstract class Element : Node
     public IReadOnlyList<string> Classes => _classes;
 
     /// <summary>
-    /// Sets the id attribute for this element.
-    /// </summary>
-    /// <param name="id">The element id.</param>
-    /// <returns>The current element for method chaining.</returns>
-    public Element Id(string id)
-    {
-        _attributes.Set("id", id);
-        return this;
-    }
-
-    /// <summary>
     /// Adds one or more CSS classes to this element. Multiple classes are separated by spaces.
     /// Duplicate classes are ignored.
     /// </summary>
     /// <param name="className">The CSS class name(s) to add.</param>
-    /// <returns>The current element for method chaining.</returns>
-    public Element Class(string className)
+    protected void AddClasses(string className)
     {
         if (!string.IsNullOrWhiteSpace(className))
         {
@@ -83,149 +72,6 @@ public abstract class Element : Node
                     _classes.Add(cls);
             }
         }
-        return this;
-    }
-
-    /// <summary>
-    /// Sets the style attribute for this element.
-    /// </summary>
-    /// <param name="style">The inline CSS style string.</param>
-    /// <returns>The current element for method chaining.</returns>
-    public Element Style(string style)
-    {
-        _attributes.Set("style", style);
-        return this;
-    }
-
-    /// <summary>
-    /// Sets the title attribute for this element.
-    /// </summary>
-    /// <param name="title">The title text.</param>
-    /// <returns>The current element for method chaining.</returns>
-    public Element Title(string title)
-    {
-        _attributes.Set("title", title);
-        return this;
-    }
-
-    /// <summary>
-    /// Sets a data attribute on this element.
-    /// </summary>
-    /// <param name="key">The data attribute key (without the "data-" prefix).</param>
-    /// <param name="value">The data attribute value.</param>
-    /// <returns>The current element for method chaining.</returns>
-    public Element Data(string key, string value)
-    {
-        _attributes.Set($"data-{key}", value);
-        return this;
-    }
-
-    /// <summary>
-    /// Sets an ARIA attribute on this element.
-    /// </summary>
-    /// <param name="key">The ARIA attribute key (without the "aria-" prefix).</param>
-    /// <param name="value">The ARIA attribute value.</param>
-    /// <returns>The current element for method chaining.</returns>
-    public Element Aria(string key, string value)
-    {
-        _attributes.Set($"aria-{key}", value);
-        return this;
-    }
-
-    /// <summary>
-    /// Sets the role attribute for this element.
-    /// </summary>
-    /// <param name="role">The ARIA role value.</param>
-    /// <returns>The current element for method chaining.</returns>
-    public Element Role(string role)
-    {
-        _attributes.Set("role", role);
-        return this;
-    }
-
-    /// <summary>
-    /// Sets the tabindex attribute for this element.
-    /// </summary>
-    /// <param name="index">The tab order index.</param>
-    /// <returns>The current element for method chaining.</returns>
-    public Element TabIndex(int index)
-    {
-        _attributes.Set("tabindex", index.ToString());
-        return this;
-    }
-
-    /// <summary>
-    /// Sets the hidden attribute on this element.
-    /// </summary>
-    /// <returns>The current element for method chaining.</returns>
-    public Element Hidden()
-    {
-        _attributes.SetBool("hidden");
-        return this;
-    }
-
-    /// <summary>
-    /// Sets the disabled attribute on this element.
-    /// </summary>
-    /// <returns>The current element for method chaining.</returns>
-    public Element Disabled()
-    {
-        _attributes.SetBool("disabled");
-        return this;
-    }
-
-    /// <summary>
-    /// Sets the required attribute on this element.
-    /// </summary>
-    /// <returns>The current element for method chaining.</returns>
-    public Element Required()
-    {
-        _attributes.SetBool("required");
-        return this;
-    }
-
-    /// <summary>
-    /// Sets the readonly attribute on this element.
-    /// </summary>
-    /// <returns>The current element for method chaining.</returns>
-    public Element ReadOnly()
-    {
-        _attributes.SetBool("readonly");
-        return this;
-    }
-
-    /// <summary>
-    /// Sets the checked attribute on this element.
-    /// </summary>
-    /// <returns>The current element for method chaining.</returns>
-    public Element Checked()
-    {
-        _attributes.SetBool("checked");
-        return this;
-    }
-
-    /// <summary>
-    /// Sets a custom attribute on this element.
-    /// </summary>
-    /// <param name="name">The attribute name.</param>
-    /// <param name="value">The attribute value.</param>
-    /// <returns>The current element for method chaining.</returns>
-    public Element Custom(string name, string value)
-    {
-        _attributes.Set(name, value);
-        return this;
-    }
-
-    /// <summary>
-    /// Sets an inline event handler attribute on this element.
-    /// </summary>
-    /// <param name="eventName">The event name (e.g., "click", "submit").</param>
-    /// <param name="handler">The JavaScript event handler.</param>
-    /// <returns>The current element for method chaining.</returns>
-    public Element On(string eventName, string handler)
-    {
-        _attributes.Set($"on{eventName}", handler);
-        return this;
     }
 
     /// <summary>

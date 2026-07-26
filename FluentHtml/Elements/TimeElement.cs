@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;time&gt; element.
 /// </summary>
-public sealed class TimeElement : Element
+public sealed class TimeElement : Element<TimeElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="TimeElement"/> class with child nodes.

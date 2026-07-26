@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;p&gt; element.
 /// </summary>
-public sealed class ParagraphElement : Element
+public sealed class ParagraphElement : Element<ParagraphElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ParagraphElement"/> class with child nodes.

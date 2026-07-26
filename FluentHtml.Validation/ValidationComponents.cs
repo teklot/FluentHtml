@@ -6,7 +6,7 @@ namespace FluentHtml.Validation;
 /// <summary>
 /// A FluentHtml element that renders a field-level validation error message inside a styled span.
 /// </summary>
-public sealed class ValidationMessageComponent : Element
+public sealed class ValidationMessageComponent : Element<ValidationMessageComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ValidationMessageComponent"/> class.
@@ -27,7 +27,7 @@ public sealed class ValidationMessageComponent : Element
 /// <summary>
 /// A FluentHtml element that renders a summary of all validation errors as an unordered list inside a div.
 /// </summary>
-public sealed class ValidationSummaryComponent : Element
+public sealed class ValidationSummaryComponent : Element<ValidationSummaryComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ValidationSummaryComponent"/> class.

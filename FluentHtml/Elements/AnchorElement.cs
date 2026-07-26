@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;a&gt; element. Use the A() factory methods to create instances.
 /// </summary>
-public sealed class AnchorElement : Element
+public sealed class AnchorElement : Element<AnchorElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="AnchorElement"/> class with child nodes.

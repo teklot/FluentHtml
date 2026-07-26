@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;col&gt; element.
 /// </summary>
-public sealed class ColElement : Element
+public sealed class ColElement : Element<ColElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ColElement"/> class. The element is self-closing.

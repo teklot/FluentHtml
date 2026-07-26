@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;input&gt; element. Use the <see cref="InputExtensions.Input"/> factory method to create instances.
 /// </summary>
-public sealed class InputElement : Element
+public sealed class InputElement : Element<InputElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="InputElement"/> class. The element is self-closing.
@@ -39,17 +39,6 @@ public sealed class InputElement : Element
     /// <param name="placeholder">The placeholder text.</param>
     /// <returns>The current input for method chaining.</returns>
     public InputElement Placeholder(string placeholder) { Attributes.Set("placeholder", placeholder); return this; }
-
-    /// <inheritdoc/>
-    public new InputElement Id(string id) { base.Id(id); return this; }
-    /// <inheritdoc/>
-    public new InputElement Class(string className) { base.Class(className); return this; }
-    /// <inheritdoc/>
-    public new InputElement Required() { base.Required(); return this; }
-    /// <inheritdoc/>
-    public new InputElement Disabled() { base.Disabled(); return this; }
-    /// <inheritdoc/>
-    public new InputElement ReadOnly() { base.ReadOnly(); return this; }
 }
 
 /// <summary>

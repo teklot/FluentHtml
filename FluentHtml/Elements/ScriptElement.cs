@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;script&gt; element.
 /// </summary>
-public sealed class ScriptElement : Element
+public sealed class ScriptElement : Element<ScriptElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ScriptElement"/> class with child nodes.

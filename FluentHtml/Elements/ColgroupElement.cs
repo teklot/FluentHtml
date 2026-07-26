@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;colgroup&gt; element.
 /// </summary>
-public sealed class ColgroupElement : Element
+public sealed class ColgroupElement : Element<ColgroupElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ColgroupElement"/> class with child nodes.

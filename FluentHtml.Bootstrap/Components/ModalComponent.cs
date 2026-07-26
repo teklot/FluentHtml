@@ -5,7 +5,7 @@ namespace FluentHtml.Bootstrap.Components;
 /// <summary>
 /// A Bootstrap modal dialog component for overlaying content on top of the current page.
 /// </summary>
-public sealed class ModalComponent : Element
+public sealed class ModalComponent : Element<ModalComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ModalComponent"/> class with child nodes.
@@ -22,91 +22,91 @@ public sealed class ModalComponent : Element
     /// Applies the fade animation transition.
     /// </summary>
     /// <returns>The current <see cref="ModalComponent"/> instance.</returns>
-    public ModalComponent Fade() => (ModalComponent)Class("fade");
+    public ModalComponent Fade() => Class("fade");
 
     /// <summary>
     /// Makes the modal visible by applying the show class.
     /// </summary>
     /// <returns>The current <see cref="ModalComponent"/> instance.</returns>
-    public ModalComponent Show() => (ModalComponent)Class("show");
+    public ModalComponent Show() => Class("show");
 
     /// <summary>
     /// Uses a static backdrop that cannot be dismissed by clicking outside the modal.
     /// </summary>
     /// <returns>The current <see cref="ModalComponent"/> instance.</returns>
-    public ModalComponent StaticBackdrop() => (ModalComponent)Class("modal-static");
+    public ModalComponent StaticBackdrop() => Class("modal-static");
 
     /// <summary>
     /// Makes the modal body scrollable when content overflows.
     /// </summary>
     /// <returns>The current <see cref="ModalComponent"/> instance.</returns>
-    public ModalComponent Scrollable() => (ModalComponent)Class("modal-dialog-scrollable");
+    public ModalComponent Scrollable() => Class("modal-dialog-scrollable");
 
     /// <summary>
     /// Vertically centers the modal dialog.
     /// </summary>
     /// <returns>The current <see cref="ModalComponent"/> instance.</returns>
-    public ModalComponent Centered() => (ModalComponent)Class("modal-dialog-centered");
+    public ModalComponent Centered() => Class("modal-dialog-centered");
 
     /// <summary>
     /// Makes the modal fullscreen on all viewport sizes.
     /// </summary>
     /// <returns>The current <see cref="ModalComponent"/> instance.</returns>
-    public ModalComponent Fullscreen() => (ModalComponent)Class("modal-fullscreen");
+    public ModalComponent Fullscreen() => Class("modal-fullscreen");
 
     /// <summary>
     /// Makes the modal fullscreen below the small breakpoint.
     /// </summary>
     /// <returns>The current <see cref="ModalComponent"/> instance.</returns>
-    public ModalComponent FullscreenSm() => (ModalComponent)Class("modal-fullscreen-sm-down");
+    public ModalComponent FullscreenSm() => Class("modal-fullscreen-sm-down");
 
     /// <summary>
     /// Makes the modal fullscreen below the medium breakpoint.
     /// </summary>
     /// <returns>The current <see cref="ModalComponent"/> instance.</returns>
-    public ModalComponent FullscreenMd() => (ModalComponent)Class("modal-fullscreen-md-down");
+    public ModalComponent FullscreenMd() => Class("modal-fullscreen-md-down");
 
     /// <summary>
     /// Makes the modal fullscreen below the large breakpoint.
     /// </summary>
     /// <returns>The current <see cref="ModalComponent"/> instance.</returns>
-    public ModalComponent FullscreenLg() => (ModalComponent)Class("modal-fullscreen-lg-down");
+    public ModalComponent FullscreenLg() => Class("modal-fullscreen-lg-down");
 
     /// <summary>
     /// Makes the modal fullscreen below the extra-large breakpoint.
     /// </summary>
     /// <returns>The current <see cref="ModalComponent"/> instance.</returns>
-    public ModalComponent FullscreenXl() => (ModalComponent)Class("modal-fullscreen-xl-down");
+    public ModalComponent FullscreenXl() => Class("modal-fullscreen-xl-down");
 
     /// <summary>
     /// Makes the modal fullscreen below the double extra-large breakpoint.
     /// </summary>
     /// <returns>The current <see cref="ModalComponent"/> instance.</returns>
-    public ModalComponent FullscreenXxl() => (ModalComponent)Class("modal-fullscreen-xxl-down");
+    public ModalComponent FullscreenXxl() => Class("modal-fullscreen-xxl-down");
 
     /// <summary>
     /// Applies the small modal size.
     /// </summary>
     /// <returns>The current <see cref="ModalComponent"/> instance.</returns>
-    public ModalComponent SizeSm() => (ModalComponent)Class("modal-sm");
+    public ModalComponent SizeSm() => Class("modal-sm");
 
     /// <summary>
     /// Applies the large modal size.
     /// </summary>
     /// <returns>The current <see cref="ModalComponent"/> instance.</returns>
-    public ModalComponent SizeLg() => (ModalComponent)Class("modal-lg");
+    public ModalComponent SizeLg() => Class("modal-lg");
 
     /// <summary>
     /// Applies the extra-large modal size.
     /// </summary>
     /// <returns>The current <see cref="ModalComponent"/> instance.</returns>
-    public ModalComponent SizeXl() => (ModalComponent)Class("modal-xl");
+    public ModalComponent SizeXl() => Class("modal-xl");
 
     /// <summary>
     /// Applies the double extra-large modal size.
     /// </summary>
     /// <returns>The current <see cref="ModalComponent"/> instance.</returns>
-    public ModalComponent SizeXxl() => (ModalComponent)Class("modal-xxl");
+    public ModalComponent SizeXxl() => Class("modal-xxl");
 
     /// <summary>
     /// Configures the modal to be toggled by a trigger element targeting the specified modal ID.
@@ -119,7 +119,7 @@ public sealed class ModalComponent : Element
 /// <summary>
 /// A Bootstrap modal dialog component that wraps the modal content.
 /// </summary>
-public sealed class ModalDialogComponent : Element
+public sealed class ModalDialogComponent : Element<ModalDialogComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ModalDialogComponent"/> class with child nodes.
@@ -136,7 +136,7 @@ public sealed class ModalDialogComponent : Element
 /// <summary>
 /// A Bootstrap modal content component containing the header, body, and footer.
 /// </summary>
-public sealed class ModalContentComponent : Element
+public sealed class ModalContentComponent : Element<ModalContentComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ModalContentComponent"/> class with child nodes.
@@ -153,7 +153,7 @@ public sealed class ModalContentComponent : Element
 /// <summary>
 /// A Bootstrap modal header component containing the title and close button.
 /// </summary>
-public sealed class ModalHeaderComponent : Element
+public sealed class ModalHeaderComponent : Element<ModalHeaderComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ModalHeaderComponent"/> class with child nodes.
@@ -170,7 +170,7 @@ public sealed class ModalHeaderComponent : Element
 /// <summary>
 /// A Bootstrap modal title component displayed in the modal header.
 /// </summary>
-public sealed class ModalTitleComponent : Element
+public sealed class ModalTitleComponent : Element<ModalTitleComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ModalTitleComponent"/> class with child nodes.
@@ -193,7 +193,7 @@ public sealed class ModalTitleComponent : Element
 /// <summary>
 /// A Bootstrap modal body component containing the primary content of the modal.
 /// </summary>
-public sealed class ModalBodyComponent : Element
+public sealed class ModalBodyComponent : Element<ModalBodyComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ModalBodyComponent"/> class with child nodes.
@@ -216,7 +216,7 @@ public sealed class ModalBodyComponent : Element
 /// <summary>
 /// A Bootstrap modal footer component typically containing action buttons.
 /// </summary>
-public sealed class ModalFooterComponent : Element
+public sealed class ModalFooterComponent : Element<ModalFooterComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ModalFooterComponent"/> class with child nodes.
@@ -233,7 +233,7 @@ public sealed class ModalFooterComponent : Element
 /// <summary>
 /// A Bootstrap modal close button component for dismissing the modal.
 /// </summary>
-public sealed class ModalCloseButtonComponent : Element
+public sealed class ModalCloseButtonComponent : Element<ModalCloseButtonComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ModalCloseButtonComponent"/> class.

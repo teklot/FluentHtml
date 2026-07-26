@@ -5,7 +5,7 @@ namespace FluentHtml.Bootstrap.Components;
 /// <summary>
 /// A Bootstrap badge component for labeling and highlighting counts or statuses.
 /// </summary>
-public sealed class BadgeComponent : Element
+public sealed class BadgeComponent : Element<BadgeComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="BadgeComponent"/> class with child nodes.
@@ -28,61 +28,61 @@ public sealed class BadgeComponent : Element
     /// Applies the primary background color.
     /// </summary>
     /// <returns>The current <see cref="BadgeComponent"/> instance.</returns>
-    public BadgeComponent Primary() => (BadgeComponent)Class("bg-primary");
+    public BadgeComponent Primary() => Class("bg-primary");
 
     /// <summary>
     /// Applies the secondary background color.
     /// </summary>
     /// <returns>The current <see cref="BadgeComponent"/> instance.</returns>
-    public BadgeComponent Secondary() => (BadgeComponent)Class("bg-secondary");
+    public BadgeComponent Secondary() => Class("bg-secondary");
 
     /// <summary>
     /// Applies the success background color.
     /// </summary>
     /// <returns>The current <see cref="BadgeComponent"/> instance.</returns>
-    public BadgeComponent Success() => (BadgeComponent)Class("bg-success");
+    public BadgeComponent Success() => Class("bg-success");
 
     /// <summary>
     /// Applies the danger background color.
     /// </summary>
     /// <returns>The current <see cref="BadgeComponent"/> instance.</returns>
-    public BadgeComponent Danger() => (BadgeComponent)Class("bg-danger");
+    public BadgeComponent Danger() => Class("bg-danger");
 
     /// <summary>
     /// Applies the warning background color with dark text.
     /// </summary>
     /// <returns>The current <see cref="BadgeComponent"/> instance.</returns>
-    public BadgeComponent Warning() => (BadgeComponent)Class("bg-warning text-dark");
+    public BadgeComponent Warning() => Class("bg-warning text-dark");
 
     /// <summary>
     /// Applies the info background color with dark text.
     /// </summary>
     /// <returns>The current <see cref="BadgeComponent"/> instance.</returns>
-    public BadgeComponent Info() => (BadgeComponent)Class("bg-info text-dark");
+    public BadgeComponent Info() => Class("bg-info text-dark");
 
     /// <summary>
     /// Applies the light background color with dark text.
     /// </summary>
     /// <returns>The current <see cref="BadgeComponent"/> instance.</returns>
-    public BadgeComponent Light() => (BadgeComponent)Class("bg-light text-dark");
+    public BadgeComponent Light() => Class("bg-light text-dark");
 
     /// <summary>
     /// Applies the dark background color.
     /// </summary>
     /// <returns>The current <see cref="BadgeComponent"/> instance.</returns>
-    public BadgeComponent Dark() => (BadgeComponent)Class("bg-dark");
+    public BadgeComponent Dark() => Class("bg-dark");
 
     /// <summary>
     /// Makes the badge pill-shaped with rounded corners.
     /// </summary>
     /// <returns>The current <see cref="BadgeComponent"/> instance.</returns>
-    public BadgeComponent Pill() => (BadgeComponent)Class("rounded-pill");
+    public BadgeComponent Pill() => Class("rounded-pill");
 }
 
 /// <summary>
 /// A Bootstrap notification badge positioned as an overlay on another element.
 /// </summary>
-public sealed class NotificationBadgeComponent : Element
+public sealed class NotificationBadgeComponent : Element<NotificationBadgeComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="NotificationBadgeComponent"/> class with text content.

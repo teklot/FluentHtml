@@ -5,7 +5,7 @@ namespace FluentHtml.Bootstrap.Components;
 /// <summary>
 /// A Bootstrap alert component for displaying contextual feedback messages.
 /// </summary>
-public sealed class AlertComponent : Element
+public sealed class AlertComponent : Element<AlertComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="AlertComponent"/> class with child nodes.
@@ -28,67 +28,67 @@ public sealed class AlertComponent : Element
     /// Applies the primary alert style.
     /// </summary>
     /// <returns>The current <see cref="AlertComponent"/> instance.</returns>
-    public AlertComponent Primary() => (AlertComponent)Class("alert-primary");
+    public AlertComponent Primary() => Class("alert-primary");
 
     /// <summary>
     /// Applies the secondary alert style.
     /// </summary>
     /// <returns>The current <see cref="AlertComponent"/> instance.</returns>
-    public AlertComponent Secondary() => (AlertComponent)Class("alert-secondary");
+    public AlertComponent Secondary() => Class("alert-secondary");
 
     /// <summary>
     /// Applies the success alert style.
     /// </summary>
     /// <returns>The current <see cref="AlertComponent"/> instance.</returns>
-    public AlertComponent Success() => (AlertComponent)Class("alert-success");
+    public AlertComponent Success() => Class("alert-success");
 
     /// <summary>
     /// Applies the danger alert style.
     /// </summary>
     /// <returns>The current <see cref="AlertComponent"/> instance.</returns>
-    public AlertComponent Danger() => (AlertComponent)Class("alert-danger");
+    public AlertComponent Danger() => Class("alert-danger");
 
     /// <summary>
     /// Applies the warning alert style.
     /// </summary>
     /// <returns>The current <see cref="AlertComponent"/> instance.</returns>
-    public AlertComponent Warning() => (AlertComponent)Class("alert-warning");
+    public AlertComponent Warning() => Class("alert-warning");
 
     /// <summary>
     /// Applies the info alert style.
     /// </summary>
     /// <returns>The current <see cref="AlertComponent"/> instance.</returns>
-    public AlertComponent Info() => (AlertComponent)Class("alert-info");
+    public AlertComponent Info() => Class("alert-info");
 
     /// <summary>
     /// Applies the light alert style.
     /// </summary>
     /// <returns>The current <see cref="AlertComponent"/> instance.</returns>
-    public AlertComponent Light() => (AlertComponent)Class("alert-light");
+    public AlertComponent Light() => Class("alert-light");
 
     /// <summary>
     /// Applies the dark alert style.
     /// </summary>
     /// <returns>The current <see cref="AlertComponent"/> instance.</returns>
-    public AlertComponent Dark() => (AlertComponent)Class("alert-dark");
+    public AlertComponent Dark() => Class("alert-dark");
 
     /// <summary>
     /// Makes the alert dismissible with a close button.
     /// </summary>
     /// <returns>The current <see cref="AlertComponent"/> instance.</returns>
-    public AlertComponent Dismissible() => (AlertComponent)Class("alert-dismissible");
+    public AlertComponent Dismissible() => Class("alert-dismissible");
 
     /// <summary>
     /// Applies the fade animation transition.
     /// </summary>
     /// <returns>The current <see cref="AlertComponent"/> instance.</returns>
-    public AlertComponent Fade() => (AlertComponent)Class("fade");
+    public AlertComponent Fade() => Class("fade");
 
     /// <summary>
     /// Makes the alert visible by applying the show class.
     /// </summary>
     /// <returns>The current <see cref="AlertComponent"/> instance.</returns>
-    public AlertComponent Show() => (AlertComponent)Class("show");
+    public AlertComponent Show() => Class("show");
 }
 
 /// <summary>

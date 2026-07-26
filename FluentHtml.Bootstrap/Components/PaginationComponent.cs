@@ -5,7 +5,7 @@ namespace FluentHtml.Bootstrap.Components;
 /// <summary>
 /// A Bootstrap pagination container component that wraps the pagination list.
 /// </summary>
-public sealed class PaginationComponent : Element
+public sealed class PaginationComponent : Element<PaginationComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="PaginationComponent"/> class with child nodes.
@@ -29,7 +29,7 @@ public sealed class PaginationComponent : Element
 /// <summary>
 /// A Bootstrap pagination list component rendered as an unordered list.
 /// </summary>
-public sealed class PaginationListComponent : Element
+public sealed class PaginationListComponent : Element<PaginationListComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="PaginationListComponent"/> class with child nodes.
@@ -46,37 +46,37 @@ public sealed class PaginationListComponent : Element
     /// Applies the small pagination style.
     /// </summary>
     /// <returns>The current <see cref="PaginationListComponent"/> instance.</returns>
-    public PaginationListComponent Small() => (PaginationListComponent)Class("pagination-sm");
+    public PaginationListComponent Small() => Class("pagination-sm");
 
     /// <summary>
     /// Applies the large pagination style.
     /// </summary>
     /// <returns>The current <see cref="PaginationListComponent"/> instance.</returns>
-    public PaginationListComponent Large() => (PaginationListComponent)Class("pagination-lg");
+    public PaginationListComponent Large() => Class("pagination-lg");
 
     /// <summary>
     /// Centers the pagination items.
     /// </summary>
     /// <returns>The current <see cref="PaginationListComponent"/> instance.</returns>
-    public PaginationListComponent JustifyCenter() => (PaginationListComponent)Class("justify-content-center");
+    public PaginationListComponent JustifyCenter() => Class("justify-content-center");
 
     /// <summary>
     /// Aligns the pagination items to the end.
     /// </summary>
     /// <returns>The current <see cref="PaginationListComponent"/> instance.</returns>
-    public PaginationListComponent JustifyEnd() => (PaginationListComponent)Class("justify-content-end");
+    public PaginationListComponent JustifyEnd() => Class("justify-content-end");
 
     /// <summary>
     /// Distributes pagination items with space between them.
     /// </summary>
     /// <returns>The current <see cref="PaginationListComponent"/> instance.</returns>
-    public PaginationListComponent JustifyBetween() => (PaginationListComponent)Class("justify-content-between");
+    public PaginationListComponent JustifyBetween() => Class("justify-content-between");
 }
 
 /// <summary>
 /// A Bootstrap page item component representing a single pagination item.
 /// </summary>
-public sealed class PageItemComponent : Element
+public sealed class PageItemComponent : Element<PageItemComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="PageItemComponent"/> class with child nodes.
@@ -93,19 +93,19 @@ public sealed class PageItemComponent : Element
     /// Marks this page item as the active (current) page.
     /// </summary>
     /// <returns>The current <see cref="PageItemComponent"/> instance.</returns>
-    public PageItemComponent Active() => (PageItemComponent)Class("active");
+    public PageItemComponent Active() => Class("active");
 
     /// <summary>
     /// Disables this page item, preventing user interaction.
     /// </summary>
     /// <returns>The current <see cref="PageItemComponent"/> instance.</returns>
-    public new PageItemComponent Disabled() => (PageItemComponent)Class("disabled");
+    public new PageItemComponent Disabled() => Class("disabled");
 }
 
 /// <summary>
 /// A Bootstrap page link component for navigating between pages.
 /// </summary>
-public sealed class PageLinkComponent : Element
+public sealed class PageLinkComponent : Element<PageLinkComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="PageLinkComponent"/> class with child nodes.

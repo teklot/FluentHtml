@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;tfoot&gt; element.
 /// </summary>
-public sealed class TfootElement : Element
+public sealed class TfootElement : Element<TfootElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="TfootElement"/> class with child nodes.

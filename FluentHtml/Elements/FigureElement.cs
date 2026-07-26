@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;figure&gt; element.
 /// </summary>
-public sealed class FigureElement : Element
+public sealed class FigureElement : Element<FigureElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="FigureElement"/> class with child nodes.

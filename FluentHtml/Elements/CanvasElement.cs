@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;canvas&gt; element.
 /// </summary>
-public sealed class CanvasElement : Element
+public sealed class CanvasElement : Element<CanvasElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="CanvasElement"/> class with child nodes.

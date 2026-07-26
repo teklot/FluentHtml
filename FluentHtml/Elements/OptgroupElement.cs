@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;optgroup&gt; element.
 /// </summary>
-public sealed class OptgroupElement : Element
+public sealed class OptgroupElement : Element<OptgroupElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="OptgroupElement"/> class with child nodes.

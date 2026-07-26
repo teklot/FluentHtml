@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;kbd&gt; element.
 /// </summary>
-public sealed class KbdElement : Element
+public sealed class KbdElement : Element<KbdElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="KbdElement"/> class with child nodes.

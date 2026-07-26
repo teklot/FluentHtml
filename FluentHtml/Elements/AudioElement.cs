@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;audio&gt; element.
 /// </summary>
-public sealed class AudioElement : Element
+public sealed class AudioElement : Element<AudioElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="AudioElement"/> class with child nodes.

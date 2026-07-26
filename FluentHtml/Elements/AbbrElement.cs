@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;abbr&gt; element.
 /// </summary>
-public sealed class AbbrElement : Element
+public sealed class AbbrElement : Element<AbbrElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="AbbrElement"/> class with child nodes.

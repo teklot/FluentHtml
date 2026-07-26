@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;ol&gt; element.
 /// </summary>
-public sealed class OlElement : Element
+public sealed class OlElement : Element<OlElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="OlElement"/> class with child nodes.

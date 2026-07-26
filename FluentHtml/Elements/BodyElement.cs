@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;body&gt; element.
 /// </summary>
-public sealed class BodyElement : Element
+public sealed class BodyElement : Element<BodyElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="BodyElement"/> class with child nodes.

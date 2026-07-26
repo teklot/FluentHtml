@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;summary&gt; element.
 /// </summary>
-public sealed class SummaryElement : Element
+public sealed class SummaryElement : Element<SummaryElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="SummaryElement"/> class with child nodes.

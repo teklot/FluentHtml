@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;meter&gt; element.
 /// </summary>
-public sealed class MeterElement : Element
+public sealed class MeterElement : Element<MeterElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="MeterElement"/> class with child nodes.

@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;ins&gt; element.
 /// </summary>
-public sealed class InsElement : Element
+public sealed class InsElement : Element<InsElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="InsElement"/> class with child nodes.

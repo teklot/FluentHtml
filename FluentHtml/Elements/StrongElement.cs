@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;strong&gt; element.
 /// </summary>
-public sealed class StrongElement : Element
+public sealed class StrongElement : Element<StrongElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="StrongElement"/> class with child nodes.

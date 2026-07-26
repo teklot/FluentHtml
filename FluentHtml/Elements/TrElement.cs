@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;tr&gt; element.
 /// </summary>
-public sealed class TrElement : Element
+public sealed class TrElement : Element<TrElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="TrElement"/> class with child nodes.

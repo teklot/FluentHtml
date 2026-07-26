@@ -5,7 +5,7 @@ namespace FluentHtml.Bootstrap.Components;
 /// <summary>
 /// A Bootstrap toast component for displaying lightweight notifications.
 /// </summary>
-public sealed class ToastComponent : Element
+public sealed class ToastComponent : Element<ToastComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ToastComponent"/> class with child nodes.
@@ -22,32 +22,32 @@ public sealed class ToastComponent : Element
     /// Makes the toast visible by applying the show class.
     /// </summary>
     /// <returns>The current <see cref="ToastComponent"/> instance.</returns>
-    public ToastComponent Show() => (ToastComponent)Class("show");
+    public ToastComponent Show() => Class("show");
 
     /// <summary>
     /// Applies the fade animation transition.
     /// </summary>
     /// <returns>The current <see cref="ToastComponent"/> instance.</returns>
-    public ToastComponent Fade() => (ToastComponent)Class("fade");
+    public ToastComponent Fade() => Class("fade");
 
     /// <summary>
     /// Enables the toast to automatically hide after the specified delay.
     /// </summary>
     /// <returns>The current <see cref="ToastComponent"/> instance.</returns>
-    public ToastComponent Autohide() => (ToastComponent)Class("autohide");
+    public ToastComponent Autohide() => Class("autohide");
 
     /// <summary>
     /// Sets the delay in milliseconds before the toast automatically hides.
     /// </summary>
     /// <param name="milliseconds">The delay in milliseconds.</param>
     /// <returns>The current <see cref="ToastComponent"/> instance.</returns>
-    public ToastComponent Delay(int milliseconds) => (ToastComponent)Data("bs-delay", milliseconds.ToString());
+    public ToastComponent Delay(int milliseconds) => Data("bs-delay", milliseconds.ToString());
 }
 
 /// <summary>
 /// A Bootstrap toast header component containing the toast title and close button.
 /// </summary>
-public sealed class ToastHeaderComponent : Element
+public sealed class ToastHeaderComponent : Element<ToastHeaderComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ToastHeaderComponent"/> class with child nodes.
@@ -64,7 +64,7 @@ public sealed class ToastHeaderComponent : Element
 /// <summary>
 /// A Bootstrap toast body component containing the primary content of the toast.
 /// </summary>
-public sealed class ToastBodyComponent : Element
+public sealed class ToastBodyComponent : Element<ToastBodyComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ToastBodyComponent"/> class with child nodes.
@@ -87,7 +87,7 @@ public sealed class ToastBodyComponent : Element
 /// <summary>
 /// A Bootstrap toast close button component for dismissing the toast.
 /// </summary>
-public sealed class ToastCloseButtonComponent : Element
+public sealed class ToastCloseButtonComponent : Element<ToastCloseButtonComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ToastCloseButtonComponent"/> class.
@@ -105,7 +105,7 @@ public sealed class ToastCloseButtonComponent : Element
 /// <summary>
 /// A Bootstrap toast container component for positioning and managing multiple toasts.
 /// </summary>
-public sealed class ToastContainerComponent : Element
+public sealed class ToastContainerComponent : Element<ToastContainerComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ToastContainerComponent"/> class with child nodes.
@@ -122,55 +122,55 @@ public sealed class ToastContainerComponent : Element
     /// Positions the toast container at the top-left corner.
     /// </summary>
     /// <returns>The current <see cref="ToastContainerComponent"/> instance.</returns>
-    public ToastContainerComponent PositionTopStart() => (ToastContainerComponent)Class("toast-top-start");
+    public ToastContainerComponent PositionTopStart() => Class("toast-top-start");
 
     /// <summary>
     /// Positions the toast container at the top-center.
     /// </summary>
     /// <returns>The current <see cref="ToastContainerComponent"/> instance.</returns>
-    public ToastContainerComponent PositionTopCenter() => (ToastContainerComponent)Class("toast-top-center");
+    public ToastContainerComponent PositionTopCenter() => Class("toast-top-center");
 
     /// <summary>
     /// Positions the toast container at the top-right corner.
     /// </summary>
     /// <returns>The current <see cref="ToastContainerComponent"/> instance.</returns>
-    public ToastContainerComponent PositionTopEnd() => (ToastContainerComponent)Class("toast-top-end");
+    public ToastContainerComponent PositionTopEnd() => Class("toast-top-end");
 
     /// <summary>
     /// Positions the toast container at the middle-left.
     /// </summary>
     /// <returns>The current <see cref="ToastContainerComponent"/> instance.</returns>
-    public ToastContainerComponent PositionMiddleStart() => (ToastContainerComponent)Class("toast-middle-start");
+    public ToastContainerComponent PositionMiddleStart() => Class("toast-middle-start");
 
     /// <summary>
     /// Positions the toast container at the middle-center.
     /// </summary>
     /// <returns>The current <see cref="ToastContainerComponent"/> instance.</returns>
-    public ToastContainerComponent PositionMiddleCenter() => (ToastContainerComponent)Class("toast-middle-center");
+    public ToastContainerComponent PositionMiddleCenter() => Class("toast-middle-center");
 
     /// <summary>
     /// Positions the toast container at the middle-right.
     /// </summary>
     /// <returns>The current <see cref="ToastContainerComponent"/> instance.</returns>
-    public ToastContainerComponent PositionMiddleEnd() => (ToastContainerComponent)Class("toast-middle-end");
+    public ToastContainerComponent PositionMiddleEnd() => Class("toast-middle-end");
 
     /// <summary>
     /// Positions the toast container at the bottom-left corner.
     /// </summary>
     /// <returns>The current <see cref="ToastContainerComponent"/> instance.</returns>
-    public ToastContainerComponent PositionBottomStart() => (ToastContainerComponent)Class("toast-bottom-start");
+    public ToastContainerComponent PositionBottomStart() => Class("toast-bottom-start");
 
     /// <summary>
     /// Positions the toast container at the bottom-center.
     /// </summary>
     /// <returns>The current <see cref="ToastContainerComponent"/> instance.</returns>
-    public ToastContainerComponent PositionBottomCenter() => (ToastContainerComponent)Class("toast-bottom-center");
+    public ToastContainerComponent PositionBottomCenter() => Class("toast-bottom-center");
 
     /// <summary>
     /// Positions the toast container at the bottom-right corner.
     /// </summary>
     /// <returns>The current <see cref="ToastContainerComponent"/> instance.</returns>
-    public ToastContainerComponent PositionBottomEnd() => (ToastContainerComponent)Class("toast-bottom-end");
+    public ToastContainerComponent PositionBottomEnd() => Class("toast-bottom-end");
 }
 
 /// <summary>

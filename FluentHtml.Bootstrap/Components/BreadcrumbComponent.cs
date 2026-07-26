@@ -5,7 +5,7 @@ namespace FluentHtml.Bootstrap.Components;
 /// <summary>
 /// A Bootstrap breadcrumb container component that wraps the breadcrumb list.
 /// </summary>
-public sealed class BreadcrumbComponent : Element
+public sealed class BreadcrumbComponent : Element<BreadcrumbComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="BreadcrumbComponent"/> class with child nodes.
@@ -29,7 +29,7 @@ public sealed class BreadcrumbComponent : Element
 /// <summary>
 /// A Bootstrap breadcrumb list component rendered as an ordered list.
 /// </summary>
-public sealed class BreadcrumbListComponent : Element
+public sealed class BreadcrumbListComponent : Element<BreadcrumbListComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="BreadcrumbListComponent"/> class with child nodes.
@@ -46,13 +46,13 @@ public sealed class BreadcrumbListComponent : Element
     /// Applies the small breadcrumb style.
     /// </summary>
     /// <returns>The current <see cref="BreadcrumbListComponent"/> instance.</returns>
-    public BreadcrumbListComponent Small() => (BreadcrumbListComponent)Class("breadcrumb-item");
+    public BreadcrumbListComponent Small() => Class("breadcrumb-item");
 }
 
 /// <summary>
 /// A Bootstrap breadcrumb item component representing a single item in the breadcrumb trail.
 /// </summary>
-public sealed class BreadcrumbItemComponent : Element
+public sealed class BreadcrumbItemComponent : Element<BreadcrumbItemComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="BreadcrumbItemComponent"/> class with child nodes.
@@ -75,7 +75,7 @@ public sealed class BreadcrumbItemComponent : Element
     /// Marks this breadcrumb item as the active (current) page.
     /// </summary>
     /// <returns>The current <see cref="BreadcrumbItemComponent"/> instance.</returns>
-    public BreadcrumbItemComponent Active() => (BreadcrumbItemComponent)Class("active");
+    public BreadcrumbItemComponent Active() => Class("active");
 
     /// <summary>
     /// Sets the aria-current attribute for the active breadcrumb item.
@@ -88,7 +88,7 @@ public sealed class BreadcrumbItemComponent : Element
 /// <summary>
 /// A Bootstrap breadcrumb link component for navigable breadcrumb items.
 /// </summary>
-public sealed class BreadcrumbLinkComponent : Element
+public sealed class BreadcrumbLinkComponent : Element<BreadcrumbLinkComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="BreadcrumbLinkComponent"/> class with child nodes.

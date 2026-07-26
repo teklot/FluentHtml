@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;span&gt; element.
 /// </summary>
-public sealed class SpanElement : Element
+public sealed class SpanElement : Element<SpanElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="SpanElement"/> class with child nodes.

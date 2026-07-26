@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;iframe&gt; element.
 /// </summary>
-public sealed class IframeElement : Element
+public sealed class IframeElement : Element<IframeElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="IframeElement"/> class with child nodes.

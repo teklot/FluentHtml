@@ -5,7 +5,7 @@ namespace FluentHtml.Bootstrap.Components;
 /// <summary>
 /// A Bootstrap spinner component displayed as a rotating border animation for indicating loading state.
 /// </summary>
-public sealed class SpinnerComponent : Element
+public sealed class SpinnerComponent : Element<SpinnerComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="SpinnerComponent"/> class.
@@ -16,55 +16,55 @@ public sealed class SpinnerComponent : Element
     /// Applies the primary text color.
     /// </summary>
     /// <returns>The current <see cref="SpinnerComponent"/> instance.</returns>
-    public SpinnerComponent Primary() => (SpinnerComponent)Class("text-primary");
+    public SpinnerComponent Primary() => Class("text-primary");
 
     /// <summary>
     /// Applies the secondary text color.
     /// </summary>
     /// <returns>The current <see cref="SpinnerComponent"/> instance.</returns>
-    public SpinnerComponent Secondary() => (SpinnerComponent)Class("text-secondary");
+    public SpinnerComponent Secondary() => Class("text-secondary");
 
     /// <summary>
     /// Applies the success text color.
     /// </summary>
     /// <returns>The current <see cref="SpinnerComponent"/> instance.</returns>
-    public SpinnerComponent Success() => (SpinnerComponent)Class("text-success");
+    public SpinnerComponent Success() => Class("text-success");
 
     /// <summary>
     /// Applies the danger text color.
     /// </summary>
     /// <returns>The current <see cref="SpinnerComponent"/> instance.</returns>
-    public SpinnerComponent Danger() => (SpinnerComponent)Class("text-danger");
+    public SpinnerComponent Danger() => Class("text-danger");
 
     /// <summary>
     /// Applies the warning text color.
     /// </summary>
     /// <returns>The current <see cref="SpinnerComponent"/> instance.</returns>
-    public SpinnerComponent Warning() => (SpinnerComponent)Class("text-warning");
+    public SpinnerComponent Warning() => Class("text-warning");
 
     /// <summary>
     /// Applies the info text color.
     /// </summary>
     /// <returns>The current <see cref="SpinnerComponent"/> instance.</returns>
-    public SpinnerComponent Info() => (SpinnerComponent)Class("text-info");
+    public SpinnerComponent Info() => Class("text-info");
 
     /// <summary>
     /// Applies the light text color.
     /// </summary>
     /// <returns>The current <see cref="SpinnerComponent"/> instance.</returns>
-    public SpinnerComponent Light() => (SpinnerComponent)Class("text-light");
+    public SpinnerComponent Light() => Class("text-light");
 
     /// <summary>
     /// Applies the dark text color.
     /// </summary>
     /// <returns>The current <see cref="SpinnerComponent"/> instance.</returns>
-    public SpinnerComponent Dark() => (SpinnerComponent)Class("text-dark");
+    public SpinnerComponent Dark() => Class("text-dark");
 
     /// <summary>
     /// Applies the small spinner size.
     /// </summary>
     /// <returns>The current <see cref="SpinnerComponent"/> instance.</returns>
-    public SpinnerComponent Small() => (SpinnerComponent)Class("spinner-border-sm");
+    public SpinnerComponent Small() => Class("spinner-border-sm");
 
     /// <summary>
     /// Sets the role attribute for accessibility.
@@ -77,7 +77,7 @@ public sealed class SpinnerComponent : Element
 /// <summary>
 /// A Bootstrap spinner grow component displayed as a pulsing animation for indicating loading state.
 /// </summary>
-public sealed class SpinnerGrowComponent : Element
+public sealed class SpinnerGrowComponent : Element<SpinnerGrowComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="SpinnerGrowComponent"/> class.
@@ -88,61 +88,61 @@ public sealed class SpinnerGrowComponent : Element
     /// Applies the primary text color.
     /// </summary>
     /// <returns>The current <see cref="SpinnerGrowComponent"/> instance.</returns>
-    public SpinnerGrowComponent Primary() => (SpinnerGrowComponent)Class("text-primary");
+    public SpinnerGrowComponent Primary() => Class("text-primary");
 
     /// <summary>
     /// Applies the secondary text color.
     /// </summary>
     /// <returns>The current <see cref="SpinnerGrowComponent"/> instance.</returns>
-    public SpinnerGrowComponent Secondary() => (SpinnerGrowComponent)Class("text-secondary");
+    public SpinnerGrowComponent Secondary() => Class("text-secondary");
 
     /// <summary>
     /// Applies the success text color.
     /// </summary>
     /// <returns>The current <see cref="SpinnerGrowComponent"/> instance.</returns>
-    public SpinnerGrowComponent Success() => (SpinnerGrowComponent)Class("text-success");
+    public SpinnerGrowComponent Success() => Class("text-success");
 
     /// <summary>
     /// Applies the danger text color.
     /// </summary>
     /// <returns>The current <see cref="SpinnerGrowComponent"/> instance.</returns>
-    public SpinnerGrowComponent Danger() => (SpinnerGrowComponent)Class("text-danger");
+    public SpinnerGrowComponent Danger() => Class("text-danger");
 
     /// <summary>
     /// Applies the warning text color.
     /// </summary>
     /// <returns>The current <see cref="SpinnerGrowComponent"/> instance.</returns>
-    public SpinnerGrowComponent Warning() => (SpinnerGrowComponent)Class("text-warning");
+    public SpinnerGrowComponent Warning() => Class("text-warning");
 
     /// <summary>
     /// Applies the info text color.
     /// </summary>
     /// <returns>The current <see cref="SpinnerGrowComponent"/> instance.</returns>
-    public SpinnerGrowComponent Info() => (SpinnerGrowComponent)Class("text-info");
+    public SpinnerGrowComponent Info() => Class("text-info");
 
     /// <summary>
     /// Applies the light text color.
     /// </summary>
     /// <returns>The current <see cref="SpinnerGrowComponent"/> instance.</returns>
-    public SpinnerGrowComponent Light() => (SpinnerGrowComponent)Class("text-light");
+    public SpinnerGrowComponent Light() => Class("text-light");
 
     /// <summary>
     /// Applies the dark text color.
     /// </summary>
     /// <returns>The current <see cref="SpinnerGrowComponent"/> instance.</returns>
-    public SpinnerGrowComponent Dark() => (SpinnerGrowComponent)Class("text-dark");
+    public SpinnerGrowComponent Dark() => Class("text-dark");
 
     /// <summary>
     /// Applies the small spinner grow size.
     /// </summary>
     /// <returns>The current <see cref="SpinnerGrowComponent"/> instance.</returns>
-    public SpinnerGrowComponent Small() => (SpinnerGrowComponent)Class("spinner-grow-sm");
+    public SpinnerGrowComponent Small() => Class("spinner-grow-sm");
 }
 
 /// <summary>
 /// A Bootstrap spinner visibility component that wraps content with a small inline spinner for loading indicators.
 /// </summary>
-public sealed class SpinnerVisibilityComponent : Element
+public sealed class SpinnerVisibilityComponent : Element<SpinnerVisibilityComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="SpinnerVisibilityComponent"/> class with child nodes.

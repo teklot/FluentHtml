@@ -6,7 +6,7 @@ namespace FluentHtml.Bootstrap.Components;
 /// Represents a Bootstrap card component. Cards provide a flexible and extensible
 /// content container with multiple variants and options.
 /// </summary>
-public sealed class CardComponent : Element
+public sealed class CardComponent : Element<CardComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="CardComponent"/> class with child nodes.
@@ -62,7 +62,7 @@ public sealed class CardComponent : Element
 /// <summary>
 /// Represents a Bootstrap card header section.
 /// </summary>
-public sealed class CardHeaderComponent : Element
+public sealed class CardHeaderComponent : Element<CardHeaderComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="CardHeaderComponent"/> class with child nodes.
@@ -85,7 +85,7 @@ public sealed class CardHeaderComponent : Element
 /// <summary>
 /// Represents a Bootstrap card body section.
 /// </summary>
-public sealed class CardBodyComponent : Element
+public sealed class CardBodyComponent : Element<CardBodyComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="CardBodyComponent"/> class with child nodes.
@@ -108,7 +108,7 @@ public sealed class CardBodyComponent : Element
 /// <summary>
 /// Represents a Bootstrap card footer section.
 /// </summary>
-public sealed class CardFooterComponent : Element
+public sealed class CardFooterComponent : Element<CardFooterComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="CardFooterComponent"/> class with child nodes.
@@ -131,7 +131,7 @@ public sealed class CardFooterComponent : Element
 /// <summary>
 /// Represents a Bootstrap card title (renders as &lt;h5&gt;).
 /// </summary>
-public sealed class CardTitleComponent : Element
+public sealed class CardTitleComponent : Element<CardTitleComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="CardTitleComponent"/> class with child nodes.
@@ -149,7 +149,7 @@ public sealed class CardTitleComponent : Element
 /// <summary>
 /// Represents a Bootstrap card text (renders as &lt;p&gt;).
 /// </summary>
-public sealed class CardTextComponent : Element
+public sealed class CardTextComponent : Element<CardTextComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="CardTextComponent"/> class with child nodes.
@@ -167,7 +167,7 @@ public sealed class CardTextComponent : Element
 /// <summary>
 /// Represents a Bootstrap card link (renders as &lt;a&gt;).
 /// </summary>
-public sealed class CardLinkComponent : Element
+public sealed class CardLinkComponent : Element<CardLinkComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="CardLinkComponent"/> class with child nodes.

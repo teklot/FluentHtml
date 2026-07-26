@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;label&gt; element.
 /// </summary>
-public sealed class LabelElement : Element
+public sealed class LabelElement : Element<LabelElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="LabelElement"/> class with child nodes.
@@ -25,11 +25,6 @@ public sealed class LabelElement : Element
     /// <param name="forId">The ID of the element this label describes.</param>
     /// <returns>The current element for method chaining.</returns>
     public LabelElement For(string forId) { Attributes.Set("for", forId); return this; }
-
-    /// <inheritdoc/>
-    public new LabelElement Id(string id) { base.Id(id); return this; }
-    /// <inheritdoc/>
-    public new LabelElement Class(string className) { base.Class(className); return this; }
 }
 
 /// <summary>

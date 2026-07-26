@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;menu&gt; element.
 /// </summary>
-public sealed class MenuElement : Element
+public sealed class MenuElement : Element<MenuElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="MenuElement"/> class with child nodes.

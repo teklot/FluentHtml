@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;small&gt; element.
 /// </summary>
-public sealed class SmallElement : Element
+public sealed class SmallElement : Element<SmallElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="SmallElement"/> class with child nodes.

@@ -5,7 +5,7 @@ namespace FluentHtml.Bootstrap.Components;
 /// <summary>
 /// A Bootstrap accordion container component for grouping collapsible content.
 /// </summary>
-public sealed class AccordionComponent : Element
+public sealed class AccordionComponent : Element<AccordionComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="AccordionComponent"/> class with child nodes.
@@ -22,13 +22,13 @@ public sealed class AccordionComponent : Element
     /// Applies the flush style, removing borders and rounded corners for edge-to-edge accordion items.
     /// </summary>
     /// <returns>The current <see cref="AccordionComponent"/> instance.</returns>
-    public AccordionComponent Flush() => (AccordionComponent)Class("accordion-flush");
+    public AccordionComponent Flush() => Class("accordion-flush");
 }
 
 /// <summary>
 /// A Bootstrap accordion item component representing a single collapsible section.
 /// </summary>
-public sealed class AccordionItemComponent : Element
+public sealed class AccordionItemComponent : Element<AccordionItemComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="AccordionItemComponent"/> class with child nodes.
@@ -45,7 +45,7 @@ public sealed class AccordionItemComponent : Element
 /// <summary>
 /// A Bootstrap accordion header component that wraps the accordion button.
 /// </summary>
-public sealed class AccordionHeaderComponent : Element
+public sealed class AccordionHeaderComponent : Element<AccordionHeaderComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="AccordionHeaderComponent"/> class with child nodes.
@@ -62,7 +62,7 @@ public sealed class AccordionHeaderComponent : Element
 /// <summary>
 /// A Bootstrap accordion button component used as the clickable toggle for expanding and collapsing accordion items.
 /// </summary>
-public sealed class AccordionButtonComponent : Element
+public sealed class AccordionButtonComponent : Element<AccordionButtonComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="AccordionButtonComponent"/> class with child nodes.
@@ -95,19 +95,19 @@ public sealed class AccordionButtonComponent : Element
     /// Sets the button to its collapsed state.
     /// </summary>
     /// <returns>The current <see cref="AccordionButtonComponent"/> instance.</returns>
-    public AccordionButtonComponent Collapsed() => (AccordionButtonComponent)Class("collapsed");
+    public AccordionButtonComponent Collapsed() => Class("collapsed");
 
     /// <summary>
     /// Sets the button to its expanded state.
     /// </summary>
     /// <returns>The current <see cref="AccordionButtonComponent"/> instance.</returns>
-    public AccordionButtonComponent Expanded() => (AccordionButtonComponent)Class("accordion-button");
+    public AccordionButtonComponent Expanded() => Class("accordion-button");
 }
 
 /// <summary>
 /// A Bootstrap accordion collapse component that contains the collapsible body content.
 /// </summary>
-public sealed class AccordionCollapseComponent : Element
+public sealed class AccordionCollapseComponent : Element<AccordionCollapseComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="AccordionCollapseComponent"/> class with child nodes.
@@ -128,20 +128,20 @@ public sealed class AccordionCollapseComponent : Element
     /// Makes the collapse section visible.
     /// </summary>
     /// <returns>The current <see cref="AccordionCollapseComponent"/> instance.</returns>
-    public AccordionCollapseComponent Show() => (AccordionCollapseComponent)Class("show");
+    public AccordionCollapseComponent Show() => Class("show");
 
     /// <summary>
     /// Sets the parent accordion container ID for exclusive collapse behavior.
     /// </summary>
     /// <param name="parentId">The ID of the parent accordion container.</param>
     /// <returns>The current <see cref="AccordionCollapseComponent"/> instance.</returns>
-    public AccordionCollapseComponent DataParent(string parentId) => (AccordionCollapseComponent)Data("bs-parent", parentId);
+    public AccordionCollapseComponent DataParent(string parentId) => Data("bs-parent", parentId);
 }
 
 /// <summary>
 /// A Bootstrap accordion body component containing the collapsible content.
 /// </summary>
-public sealed class AccordionBodyComponent : Element
+public sealed class AccordionBodyComponent : Element<AccordionBodyComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="AccordionBodyComponent"/> class with child nodes.

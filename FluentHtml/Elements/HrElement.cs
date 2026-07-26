@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;hr&gt; element.
 /// </summary>
-public sealed class HrElement : Element
+public sealed class HrElement : Element<HrElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="HrElement"/> class. The element is self-closing.

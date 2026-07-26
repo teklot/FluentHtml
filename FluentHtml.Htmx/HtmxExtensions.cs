@@ -15,7 +15,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="url">The URL to request.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxGet<T>(this T element, string url) where T : Element
+    public static T HxGet<T>(this T element, string url) where T : Element<T>
     {
         element.Attributes.Set("hx-get", url);
         return element;
@@ -28,7 +28,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="url">The URL to request.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxPost<T>(this T element, string url) where T : Element
+    public static T HxPost<T>(this T element, string url) where T : Element<T>
     {
         element.Attributes.Set("hx-post", url);
         return element;
@@ -41,7 +41,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="url">The URL to request.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxPut<T>(this T element, string url) where T : Element
+    public static T HxPut<T>(this T element, string url) where T : Element<T>
     {
         element.Attributes.Set("hx-put", url);
         return element;
@@ -54,7 +54,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="url">The URL to request.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxDelete<T>(this T element, string url) where T : Element
+    public static T HxDelete<T>(this T element, string url) where T : Element<T>
     {
         element.Attributes.Set("hx-delete", url);
         return element;
@@ -67,7 +67,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="url">The URL to request.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxPatch<T>(this T element, string url) where T : Element
+    public static T HxPatch<T>(this T element, string url) where T : Element<T>
     {
         element.Attributes.Set("hx-patch", url);
         return element;
@@ -80,7 +80,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="swapStyle">The swap strategy (e.g., "innerHTML", "outerHTML", "beforeend").</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxSwap<T>(this T element, string swapStyle) where T : Element
+    public static T HxSwap<T>(this T element, string swapStyle) where T : Element<T>
     {
         element.Attributes.Set("hx-swap", swapStyle);
         return element;
@@ -93,7 +93,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="target">The CSS selector for the target element.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxTarget<T>(this T element, string target) where T : Element
+    public static T HxTarget<T>(this T element, string target) where T : Element<T>
     {
         element.Attributes.Set("hx-target", target);
         return element;
@@ -106,7 +106,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="trigger">The trigger event (e.g., "click", "submit", "every 5s").</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxTrigger<T>(this T element, string trigger) where T : Element
+    public static T HxTrigger<T>(this T element, string trigger) where T : Element<T>
     {
         element.Attributes.Set("hx-trigger", trigger);
         return element;
@@ -120,7 +120,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="boost">If true, enables boost; if false, disables it.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxBoost<T>(this T element, bool boost = true) where T : Element
+    public static T HxBoost<T>(this T element, bool boost = true) where T : Element<T>
     {
         if (boost)
             element.Attributes.SetBool("hx-boost");
@@ -136,7 +136,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="indicator">The CSS class to apply during loading.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxIndicator<T>(this T element, string indicator) where T : Element
+    public static T HxIndicator<T>(this T element, string indicator) where T : Element<T>
     {
         element.Attributes.Set("hx-indicator", indicator);
         return element;
@@ -149,7 +149,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="message">The confirmation message to display.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxConfirm<T>(this T element, string message) where T : Element
+    public static T HxConfirm<T>(this T element, string message) where T : Element<T>
     {
         element.Attributes.Set("hx-confirm", message);
         return element;
@@ -162,7 +162,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="url">The URL to push to the history.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxPushUrl<T>(this T element, string url) where T : Element
+    public static T HxPushUrl<T>(this T element, string url) where T : Element<T>
     {
         element.Attributes.Set("hx-push-url", url);
         return element;
@@ -175,7 +175,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="selector">The CSS selector to select from the response.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxSelect<T>(this T element, string selector) where T : Element
+    public static T HxSelect<T>(this T element, string selector) where T : Element<T>
     {
         element.Attributes.Set("hx-select", selector);
         return element;
@@ -188,7 +188,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="selector">The CSS selector for out-of-band selection.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxSelectOob<T>(this T element, string selector) where T : Element
+    public static T HxSelectOob<T>(this T element, string selector) where T : Element<T>
     {
         element.Attributes.Set("hx-select-oob", selector);
         return element;
@@ -201,7 +201,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="swapStyle">The out-of-band swap strategy.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxSwapOob<T>(this T element, string swapStyle) where T : Element
+    public static T HxSwapOob<T>(this T element, string swapStyle) where T : Element<T>
     {
         element.Attributes.Set("hx-swap-oob", swapStyle);
         return element;
@@ -214,7 +214,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="vals">The additional values as JSON or a JavaScript expression.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxVals<T>(this T element, string vals) where T : Element
+    public static T HxVals<T>(this T element, string vals) where T : Element<T>
     {
         element.Attributes.Set("hx-vals", vals);
         return element;
@@ -227,7 +227,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="headers">The additional headers as JSON.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxHeaders<T>(this T element, string headers) where T : Element
+    public static T HxHeaders<T>(this T element, string headers) where T : Element<T>
     {
         element.Attributes.Set("hx-headers", headers);
         return element;
@@ -240,7 +240,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="include">The CSS selector of elements to include.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxInclude<T>(this T element, string include) where T : Element
+    public static T HxInclude<T>(this T element, string include) where T : Element<T>
     {
         element.Attributes.Set("hx-include", include);
         return element;
@@ -253,7 +253,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="params">The parameter filter (e.g., "none", "*, except foo").</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxParams<T>(this T element, string @params) where T : Element
+    public static T HxParams<T>(this T element, string @params) where T : Element<T>
     {
         element.Attributes.Set("hx-params", @params);
         return element;
@@ -266,7 +266,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="disabled">The CSS selector of elements to disable during requests.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxDisabled<T>(this T element, string disabled) where T : Element
+    public static T HxDisabled<T>(this T element, string disabled) where T : Element<T>
     {
         element.Attributes.Set("hx-disabled", disabled);
         return element;
@@ -279,7 +279,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="inherit">The attributes to disinherit (space-separated).</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxDisinherit<T>(this T element, string inherit) where T : Element
+    public static T HxDisinherit<T>(this T element, string inherit) where T : Element<T>
     {
         element.Attributes.Set("hx-disinherit", inherit);
         return element;
@@ -292,7 +292,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="encoding">The encoding type (e.g., "multipart/form-data").</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxEncoding<T>(this T element, string encoding) where T : Element
+    public static T HxEncoding<T>(this T element, string encoding) where T : Element<T>
     {
         element.Attributes.Set("hx-encoding", encoding);
         return element;
@@ -305,7 +305,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="validate">If true, enables validation; if false, disables it.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxValidate<T>(this T element, bool validate = true) where T : Element
+    public static T HxValidate<T>(this T element, bool validate = true) where T : Element<T>
     {
         if (validate)
             element.Attributes.SetBool("hx-validate");
@@ -321,7 +321,7 @@ public static class HtmxExtensions
     /// <param name="element">The element to configure.</param>
     /// <param name="sync">The synchronization strategy (e.g., "drop", "replace", "queue first").</param>
     /// <returns>The element for method chaining.</returns>
-    public static T HxSync<T>(this T element, string sync) where T : Element
+    public static T HxSync<T>(this T element, string sync) where T : Element<T>
     {
         element.Attributes.Set("hx-sync", sync);
         return element;

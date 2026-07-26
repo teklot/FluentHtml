@@ -5,7 +5,7 @@ namespace FluentHtml.Bootstrap.Components;
 /// <summary>
 /// Represents a Bootstrap button component with built-in styling and HTMX support.
 /// </summary>
-public sealed class ButtonComponent : Element
+public sealed class ButtonComponent : Element<ButtonComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ButtonComponent"/> class with child nodes.
@@ -28,115 +28,115 @@ public sealed class ButtonComponent : Element
     /// Applies the Bootstrap primary button style.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent Primary() => (ButtonComponent)Class("btn-primary");
+    public ButtonComponent Primary() => Class("btn-primary");
 
     /// <summary>
     /// Applies the Bootstrap secondary button style.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent Secondary() => (ButtonComponent)Class("btn-secondary");
+    public ButtonComponent Secondary() => Class("btn-secondary");
 
     /// <summary>
     /// Applies the Bootstrap success button style.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent Success() => (ButtonComponent)Class("btn-success");
+    public ButtonComponent Success() => Class("btn-success");
 
     /// <summary>
     /// Applies the Bootstrap danger button style.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent Danger() => (ButtonComponent)Class("btn-danger");
+    public ButtonComponent Danger() => Class("btn-danger");
 
     /// <summary>
     /// Applies the Bootstrap warning button style.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent Warning() => (ButtonComponent)Class("btn-warning");
+    public ButtonComponent Warning() => Class("btn-warning");
 
     /// <summary>
     /// Applies the Bootstrap info button style.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent Info() => (ButtonComponent)Class("btn-info");
+    public ButtonComponent Info() => Class("btn-info");
 
     /// <summary>
     /// Applies the Bootstrap light button style.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent Light() => (ButtonComponent)Class("btn-light");
+    public ButtonComponent Light() => Class("btn-light");
 
     /// <summary>
     /// Applies the Bootstrap dark button style.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent Dark() => (ButtonComponent)Class("btn-dark");
+    public ButtonComponent Dark() => Class("btn-dark");
 
     /// <summary>
     /// Applies the Bootstrap link button style.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent Link() => (ButtonComponent)Class("btn-link");
+    public ButtonComponent Link() => Class("btn-link");
 
     /// <summary>
     /// Applies the Bootstrap outline primary button style.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent OutlinePrimary() => (ButtonComponent)Class("btn-outline-primary");
+    public ButtonComponent OutlinePrimary() => Class("btn-outline-primary");
 
     /// <summary>
     /// Applies the Bootstrap outline secondary button style.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent OutlineSecondary() => (ButtonComponent)Class("btn-outline-secondary");
+    public ButtonComponent OutlineSecondary() => Class("btn-outline-secondary");
 
     /// <summary>
     /// Applies the Bootstrap outline success button style.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent OutlineSuccess() => (ButtonComponent)Class("btn-outline-success");
+    public ButtonComponent OutlineSuccess() => Class("btn-outline-success");
 
     /// <summary>
     /// Applies the Bootstrap outline danger button style.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent OutlineDanger() => (ButtonComponent)Class("btn-outline-danger");
+    public ButtonComponent OutlineDanger() => Class("btn-outline-danger");
 
     /// <summary>
     /// Applies the Bootstrap outline warning button style.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent OutlineWarning() => (ButtonComponent)Class("btn-outline-warning");
+    public ButtonComponent OutlineWarning() => Class("btn-outline-warning");
 
     /// <summary>
     /// Applies the Bootstrap outline info button style.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent OutlineInfo() => (ButtonComponent)Class("btn-outline-info");
+    public ButtonComponent OutlineInfo() => Class("btn-outline-info");
 
     /// <summary>
     /// Applies the Bootstrap outline light button style.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent OutlineLight() => (ButtonComponent)Class("btn-outline-light");
+    public ButtonComponent OutlineLight() => Class("btn-outline-light");
 
     /// <summary>
     /// Applies the Bootstrap outline dark button style.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent OutlineDark() => (ButtonComponent)Class("btn-outline-dark");
+    public ButtonComponent OutlineDark() => Class("btn-outline-dark");
 
     /// <summary>
     /// Applies the Bootstrap small button size.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent Small() => (ButtonComponent)Class("btn-sm");
+    public ButtonComponent Small() => Class("btn-sm");
 
     /// <summary>
     /// Applies the Bootstrap large button size.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent Large() => (ButtonComponent)Class("btn-lg");
+    public ButtonComponent Large() => Class("btn-lg");
 
     /// <summary>
     /// Sets the type attribute for this button.
@@ -152,13 +152,13 @@ public sealed class ButtonComponent : Element
     /// Applies the Bootstrap active state to this button.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent Active() => (ButtonComponent)Class("active");
+    public ButtonComponent Active() => Class("active");
 
     /// <summary>
     /// Makes this button full-width within its parent container.
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent Block() => (ButtonComponent)Class("d-grid");
+    public ButtonComponent Block() => Class("d-grid");
 
     /// <summary>
     /// Sets the hx-get attribute to issue an HTMX GET request.

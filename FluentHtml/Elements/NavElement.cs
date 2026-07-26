@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;nav&gt; element.
 /// </summary>
-public sealed class NavElement : Element
+public sealed class NavElement : Element<NavElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="NavElement"/> class with child nodes.

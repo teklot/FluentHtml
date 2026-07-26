@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;source&gt; element.
 /// </summary>
-public sealed class SourceElement : Element
+public sealed class SourceElement : Element<SourceElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="SourceElement"/> class. The element is self-closing.

@@ -5,7 +5,7 @@ namespace FluentHtml.Elements;
 /// <summary>
 /// Represents an HTML &lt;img&gt; element. Use the <see cref="ImgExtensions.Img"/> factory method to create instances.
 /// </summary>
-public sealed class ImgElement : Element
+public sealed class ImgElement : Element<ImgElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ImgElement"/> class. The element is self-closing.

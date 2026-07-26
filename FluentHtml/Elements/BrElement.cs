@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;br&gt; element.
 /// </summary>
-public sealed class BrElement : Element
+public sealed class BrElement : Element<BrElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="BrElement"/> class. The element is self-closing.

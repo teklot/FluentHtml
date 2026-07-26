@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;link&gt; element.
 /// </summary>
-public sealed class LinkElement : Element
+public sealed class LinkElement : Element<LinkElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="LinkElement"/> class. The element is self-closing.

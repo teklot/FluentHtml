@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;dialog&gt; element.
 /// </summary>
-public sealed class DialogElement : Element
+public sealed class DialogElement : Element<DialogElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="DialogElement"/> class with child nodes.

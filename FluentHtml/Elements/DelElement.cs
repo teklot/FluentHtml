@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;del&gt; element.
 /// </summary>
-public sealed class DelElement : Element
+public sealed class DelElement : Element<DelElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="DelElement"/> class with child nodes.

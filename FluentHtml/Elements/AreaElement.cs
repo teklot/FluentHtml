@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;area&gt; element.
 /// </summary>
-public sealed class AreaElement : Element
+public sealed class AreaElement : Element<AreaElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="AreaElement"/> class. The element is self-closing.

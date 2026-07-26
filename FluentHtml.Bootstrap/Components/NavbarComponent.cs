@@ -6,7 +6,7 @@ namespace FluentHtml.Bootstrap.Components;
 /// <summary>
 /// A Bootstrap navbar component for creating responsive navigation headers.
 /// </summary>
-public sealed class NavbarComponent : Element
+public sealed class NavbarComponent : Element<NavbarComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="NavbarComponent"/> class with child nodes.
@@ -29,79 +29,79 @@ public sealed class NavbarComponent : Element
     /// Expands the navbar at the small breakpoint.
     /// </summary>
     /// <returns>The current <see cref="NavbarComponent"/> instance.</returns>
-    public NavbarComponent ExpandSm() => (NavbarComponent)Class("navbar-expand-sm");
+    public NavbarComponent ExpandSm() => Class("navbar-expand-sm");
 
     /// <summary>
     /// Expands the navbar at the medium breakpoint.
     /// </summary>
     /// <returns>The current <see cref="NavbarComponent"/> instance.</returns>
-    public NavbarComponent ExpandMd() => (NavbarComponent)Class("navbar-expand-md");
+    public NavbarComponent ExpandMd() => Class("navbar-expand-md");
 
     /// <summary>
     /// Expands the navbar at the large breakpoint.
     /// </summary>
     /// <returns>The current <see cref="NavbarComponent"/> instance.</returns>
-    public NavbarComponent ExpandLg() => (NavbarComponent)Class("navbar-expand-lg");
+    public NavbarComponent ExpandLg() => Class("navbar-expand-lg");
 
     /// <summary>
     /// Expands the navbar at the extra-large breakpoint.
     /// </summary>
     /// <returns>The current <see cref="NavbarComponent"/> instance.</returns>
-    public NavbarComponent ExpandXl() => (NavbarComponent)Class("navbar-expand-xl");
+    public NavbarComponent ExpandXl() => Class("navbar-expand-xl");
 
     /// <summary>
     /// Expands the navbar at the double extra-large breakpoint.
     /// </summary>
     /// <returns>The current <see cref="NavbarComponent"/> instance.</returns>
-    public NavbarComponent ExpandXxl() => (NavbarComponent)Class("navbar-expand-xxl");
+    public NavbarComponent ExpandXxl() => Class("navbar-expand-xxl");
 
     /// <summary>
     /// Applies the light navbar color scheme.
     /// </summary>
     /// <returns>The current <see cref="NavbarComponent"/> instance.</returns>
-    public NavbarComponent Light() => (NavbarComponent)Class("navbar-light");
+    public NavbarComponent Light() => Class("navbar-light");
 
     /// <summary>
     /// Applies the dark navbar color scheme.
     /// </summary>
     /// <returns>The current <see cref="NavbarComponent"/> instance.</returns>
-    public NavbarComponent Dark() => (NavbarComponent)Class("navbar-dark");
+    public NavbarComponent Dark() => Class("navbar-dark");
 
     /// <summary>
     /// Fixes the navbar to the top of the viewport.
     /// </summary>
     /// <returns>The current <see cref="NavbarComponent"/> instance.</returns>
-    public NavbarComponent FixedTop() => (NavbarComponent)Class("fixed-top");
+    public NavbarComponent FixedTop() => Class("fixed-top");
 
     /// <summary>
     /// Fixes the navbar to the bottom of the viewport.
     /// </summary>
     /// <returns>The current <see cref="NavbarComponent"/> instance.</returns>
-    public NavbarComponent FixedBottom() => (NavbarComponent)Class("fixed-bottom");
+    public NavbarComponent FixedBottom() => Class("fixed-bottom");
 
     /// <summary>
     /// Makes the navbar stick to the top of its containing element when scrolling.
     /// </summary>
     /// <returns>The current <see cref="NavbarComponent"/> instance.</returns>
-    public NavbarComponent StickyTop() => (NavbarComponent)Class("sticky-top");
+    public NavbarComponent StickyTop() => Class("sticky-top");
 
     /// <summary>
     /// Wraps navbar content in a fixed-width container.
     /// </summary>
     /// <returns>The current <see cref="NavbarComponent"/> instance.</returns>
-    public NavbarComponent Container() => (NavbarComponent)Class("container");
+    public NavbarComponent Container() => Class("container");
 
     /// <summary>
     /// Wraps navbar content in a full-width container.
     /// </summary>
     /// <returns>The current <see cref="NavbarComponent"/> instance.</returns>
-    public NavbarComponent ContainerFluid() => (NavbarComponent)Class("container-fluid");
+    public NavbarComponent ContainerFluid() => Class("container-fluid");
 }
 
 /// <summary>
 /// A Bootstrap navbar brand component for displaying the site logo or name.
 /// </summary>
-public sealed class NavbarBrandComponent : Element
+public sealed class NavbarBrandComponent : Element<NavbarBrandComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="NavbarBrandComponent"/> class with child nodes.
@@ -131,7 +131,7 @@ public sealed class NavbarBrandComponent : Element
 /// <summary>
 /// A Bootstrap navbar navigation list component.
 /// </summary>
-public sealed class NavbarNavComponent : Element
+public sealed class NavbarNavComponent : Element<NavbarNavComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="NavbarNavComponent"/> class with child nodes.
@@ -148,7 +148,7 @@ public sealed class NavbarNavComponent : Element
 /// <summary>
 /// A Bootstrap navbar nav item component representing a single navigation entry.
 /// </summary>
-public sealed class NavbarNavItemComponent : Element
+public sealed class NavbarNavItemComponent : Element<NavbarNavItemComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="NavbarNavItemComponent"/> class with child nodes.
@@ -165,7 +165,7 @@ public sealed class NavbarNavItemComponent : Element
 /// <summary>
 /// A Bootstrap navbar collapse component that contains collapsible content toggled by the navbar toggler.
 /// </summary>
-public sealed class NavbarCollapseComponent : Element
+public sealed class NavbarCollapseComponent : Element<NavbarCollapseComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="NavbarCollapseComponent"/> class with child nodes.
@@ -182,7 +182,7 @@ public sealed class NavbarCollapseComponent : Element
 /// <summary>
 /// A Bootstrap navbar text component for displaying non-interactive text in the navbar.
 /// </summary>
-public sealed class NavbarTextComponent : Element
+public sealed class NavbarTextComponent : Element<NavbarTextComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="NavbarTextComponent"/> class with child nodes.
@@ -200,7 +200,7 @@ public sealed class NavbarTextComponent : Element
 /// <summary>
 /// A Bootstrap navbar toggler component that controls the collapse of the navbar on small viewports.
 /// </summary>
-public sealed class NavbarTogglerComponent : Element
+public sealed class NavbarTogglerComponent : Element<NavbarTogglerComponent>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="NavbarTogglerComponent"/> class with a toggler icon.
@@ -212,7 +212,7 @@ public sealed class NavbarTogglerComponent : Element
     /// </summary>
     /// <param name="target">The target selector (typically a CSS ID).</param>
     /// <returns>The current <see cref="NavbarTogglerComponent"/> instance.</returns>
-    public NavbarTogglerComponent DataTarget(string target) => (NavbarTogglerComponent)Data("bs-target", target);
+    public NavbarTogglerComponent DataTarget(string target) => Data("bs-target", target);
 
     /// <summary>
     /// Sets the aria-controls attribute to reference the collapsible element.

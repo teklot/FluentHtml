@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;svg&gt; element.
 /// </summary>
-public sealed class SvgElement : Element
+public sealed class SvgElement : Element<SvgElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="SvgElement"/> class with child nodes.

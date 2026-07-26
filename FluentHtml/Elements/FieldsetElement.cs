@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;fieldset&gt; element.
 /// </summary>
-public sealed class FieldsetElement : Element
+public sealed class FieldsetElement : Element<FieldsetElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="FieldsetElement"/> class with child nodes.

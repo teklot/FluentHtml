@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;video&gt; element.
 /// </summary>
-public sealed class VideoElement : Element
+public sealed class VideoElement : Element<VideoElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="VideoElement"/> class with child nodes.

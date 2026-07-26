@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;cite&gt; element.
 /// </summary>
-public sealed class CiteElement : Element
+public sealed class CiteElement : Element<CiteElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="CiteElement"/> class with child nodes.

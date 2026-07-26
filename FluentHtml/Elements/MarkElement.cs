@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;mark&gt; element.
 /// </summary>
-public sealed class MarkElement : Element
+public sealed class MarkElement : Element<MarkElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="MarkElement"/> class with child nodes.

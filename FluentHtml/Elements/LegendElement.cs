@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;legend&gt; element.
 /// </summary>
-public sealed class LegendElement : Element
+public sealed class LegendElement : Element<LegendElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="LegendElement"/> class with child nodes.

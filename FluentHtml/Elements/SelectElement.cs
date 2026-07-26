@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;select&gt; element. Use the Select() factory methods to create instances.
 /// </summary>
-public sealed class SelectElement : Element
+public sealed class SelectElement : Element<SelectElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="SelectElement"/> class with child nodes.
@@ -25,15 +25,6 @@ public sealed class SelectElement : Element
     /// <param name="name">The select name used for form submission.</param>
     /// <returns>The current select for method chaining.</returns>
     public SelectElement Name(string name) { Attributes.Set("name", name); return this; }
-
-    /// <inheritdoc/>
-    public new SelectElement Id(string id) { base.Id(id); return this; }
-    /// <inheritdoc/>
-    public new SelectElement Class(string className) { base.Class(className); return this; }
-    /// <inheritdoc/>
-    public new SelectElement Disabled() { base.Disabled(); return this; }
-    /// <inheritdoc/>
-    public new SelectElement Required() { base.Required(); return this; }
 }
 
 /// <summary>

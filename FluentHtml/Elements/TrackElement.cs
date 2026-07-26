@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;track&gt; element.
 /// </summary>
-public sealed class TrackElement : Element
+public sealed class TrackElement : Element<TrackElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="TrackElement"/> class. The element is self-closing.

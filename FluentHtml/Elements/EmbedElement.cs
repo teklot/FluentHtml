@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;embed&gt; element.
 /// </summary>
-public sealed class EmbedElement : Element
+public sealed class EmbedElement : Element<EmbedElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="EmbedElement"/> class. The element is self-closing.

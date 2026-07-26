@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;output&gt; element.
 /// </summary>
-public sealed class OutputElement : Element
+public sealed class OutputElement : Element<OutputElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="OutputElement"/> class with child nodes.

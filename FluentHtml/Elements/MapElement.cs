@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;map&gt; element.
 /// </summary>
-public sealed class MapElement : Element
+public sealed class MapElement : Element<MapElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="MapElement"/> class with child nodes.

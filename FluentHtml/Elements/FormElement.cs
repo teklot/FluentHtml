@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;form&gt; element. Use the Form() factory methods to create instances.
 /// </summary>
-public sealed class FormElement : Element
+public sealed class FormElement : Element<FormElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="FormElement"/> class with child nodes.
@@ -32,13 +32,6 @@ public sealed class FormElement : Element
     /// <param name="method">The HTTP method (e.g., "get", "post").</param>
     /// <returns>The current form for method chaining.</returns>
     public FormElement Method(string method) { Attributes.Set("method", method); return this; }
-
-    /// <inheritdoc/>
-    public new FormElement Id(string id) { base.Id(id); return this; }
-    /// <inheritdoc/>
-    public new FormElement Class(string className) { base.Class(className); return this; }
-    /// <inheritdoc/>
-    public new FormElement Disabled() { base.Disabled(); return this; }
 }
 
 /// <summary>

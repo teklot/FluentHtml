@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;datalist&gt; element.
 /// </summary>
-public sealed class DatalistElement : Element
+public sealed class DatalistElement : Element<DatalistElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="DatalistElement"/> class with child nodes.

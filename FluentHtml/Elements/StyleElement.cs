@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;style&gt; element.
 /// </summary>
-public sealed class StyleElement : Element
+public sealed class StyleElement : Element<StyleElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="StyleElement"/> class with child nodes.

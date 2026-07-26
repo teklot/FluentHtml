@@ -5,7 +5,7 @@ namespace FluentHtml.Elements;
 /// <summary>
 /// Represents an HTML &lt;textarea&gt; element. Use the Textarea() factory methods to create instances.
 /// </summary>
-public sealed class TextareaElement : Element
+public sealed class TextareaElement : Element<TextareaElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="TextareaElement"/> class with child nodes.

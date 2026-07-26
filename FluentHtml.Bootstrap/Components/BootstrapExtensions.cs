@@ -14,7 +14,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Primary<T>(this T element) where T : Element => (T)element.Class("primary");
+    public static T Primary<T>(this T element) where T : Element<T> => element.Class("primary");
 
     /// <summary>
     /// Applies the Bootstrap "secondary" color class.
@@ -22,7 +22,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Secondary<T>(this T element) where T : Element => (T)element.Class("secondary");
+    public static T Secondary<T>(this T element) where T : Element<T> => element.Class("secondary");
 
     /// <summary>
     /// Applies the Bootstrap "success" color class.
@@ -30,7 +30,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Success<T>(this T element) where T : Element => (T)element.Class("success");
+    public static T Success<T>(this T element) where T : Element<T> => element.Class("success");
 
     /// <summary>
     /// Applies the Bootstrap "warning" color class.
@@ -38,7 +38,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Warning<T>(this T element) where T : Element => (T)element.Class("warning");
+    public static T Warning<T>(this T element) where T : Element<T> => element.Class("warning");
 
     /// <summary>
     /// Applies the Bootstrap "danger" color class.
@@ -46,7 +46,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Danger<T>(this T element) where T : Element => (T)element.Class("danger");
+    public static T Danger<T>(this T element) where T : Element<T> => element.Class("danger");
 
     /// <summary>
     /// Applies the Bootstrap "info" color class.
@@ -54,7 +54,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Info<T>(this T element) where T : Element => (T)element.Class("info");
+    public static T Info<T>(this T element) where T : Element<T> => element.Class("info");
 
     /// <summary>
     /// Applies the Bootstrap "light" color class.
@@ -62,7 +62,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Light<T>(this T element) where T : Element => (T)element.Class("light");
+    public static T Light<T>(this T element) where T : Element<T> => element.Class("light");
 
     /// <summary>
     /// Applies the Bootstrap "dark" color class.
@@ -70,7 +70,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Dark<T>(this T element) where T : Element => (T)element.Class("dark");
+    public static T Dark<T>(this T element) where T : Element<T> => element.Class("dark");
 
     /// <summary>
     /// Applies Bootstrap text-center alignment.
@@ -78,7 +78,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T TextCenter<T>(this T element) where T : Element => (T)element.Class("text-center");
+    public static T TextCenter<T>(this T element) where T : Element<T> => element.Class("text-center");
 
     /// <summary>
     /// Applies Bootstrap text-start alignment.
@@ -86,7 +86,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T TextStart<T>(this T element) where T : Element => (T)element.Class("text-start");
+    public static T TextStart<T>(this T element) where T : Element<T> => element.Class("text-start");
 
     /// <summary>
     /// Applies Bootstrap text-end alignment.
@@ -94,7 +94,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T TextEnd<T>(this T element) where T : Element => (T)element.Class("text-end");
+    public static T TextEnd<T>(this T element) where T : Element<T> => element.Class("text-end");
 
     /// <summary>
     /// Applies Bootstrap display-none utility.
@@ -102,7 +102,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T DNone<T>(this T element) where T : Element => (T)element.Class("d-none");
+    public static T DNone<T>(this T element) where T : Element<T> => element.Class("d-none");
 
     /// <summary>
     /// Applies Bootstrap display-inline utility.
@@ -110,7 +110,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T DInline<T>(this T element) where T : Element => (T)element.Class("d-inline");
+    public static T DInline<T>(this T element) where T : Element<T> => element.Class("d-inline");
 
     /// <summary>
     /// Applies Bootstrap display-block utility.
@@ -118,7 +118,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T DBlock<T>(this T element) where T : Element => (T)element.Class("d-block");
+    public static T DBlock<T>(this T element) where T : Element<T> => element.Class("d-block");
 
     /// <summary>
     /// Applies Bootstrap display-inline-block utility.
@@ -126,7 +126,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T DInlineBlock<T>(this T element) where T : Element => (T)element.Class("d-inline-block");
+    public static T DInlineBlock<T>(this T element) where T : Element<T> => element.Class("d-inline-block");
 
     /// <summary>
     /// Applies Bootstrap display-flex utility.
@@ -134,7 +134,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T DFlex<T>(this T element) where T : Element => (T)element.Class("d-flex");
+    public static T DFlex<T>(this T element) where T : Element<T> => element.Class("d-flex");
 
     /// <summary>
     /// Applies Bootstrap margin-top with the specified spacing value.
@@ -143,7 +143,7 @@ public static class BootstrapExtensions
     /// <param name="element">The element to style.</param>
     /// <param name="value">The spacing value (0-5).</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Mt<T>(this T element, int value) where T : Element => (T)element.Class($"mt-{value}");
+    public static T Mt<T>(this T element, int value) where T : Element<T> => element.Class($"mt-{value}");
 
     /// <summary>
     /// Applies Bootstrap margin-bottom with the specified spacing value.
@@ -152,7 +152,7 @@ public static class BootstrapExtensions
     /// <param name="element">The element to style.</param>
     /// <param name="value">The spacing value (0-5).</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Mb<T>(this T element, int value) where T : Element => (T)element.Class($"mb-{value}");
+    public static T Mb<T>(this T element, int value) where T : Element<T> => element.Class($"mb-{value}");
 
     /// <summary>
     /// Applies Bootstrap margin-start with the specified spacing value.
@@ -161,7 +161,7 @@ public static class BootstrapExtensions
     /// <param name="element">The element to style.</param>
     /// <param name="value">The spacing value (0-5).</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Ms<T>(this T element, int value) where T : Element => (T)element.Class($"ms-{value}");
+    public static T Ms<T>(this T element, int value) where T : Element<T> => element.Class($"ms-{value}");
 
     /// <summary>
     /// Applies Bootstrap margin-end with the specified spacing value.
@@ -170,7 +170,7 @@ public static class BootstrapExtensions
     /// <param name="element">The element to style.</param>
     /// <param name="value">The spacing value (0-5).</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Me<T>(this T element, int value) where T : Element => (T)element.Class($"me-{value}");
+    public static T Me<T>(this T element, int value) where T : Element<T> => element.Class($"me-{value}");
 
     /// <summary>
     /// Applies Bootstrap margin on all sides with the specified spacing value.
@@ -179,7 +179,7 @@ public static class BootstrapExtensions
     /// <param name="element">The element to style.</param>
     /// <param name="value">The spacing value (0-5).</param>
     /// <returns>The element for method chaining.</returns>
-    public static T M<T>(this T element, int value) where T : Element => (T)element.Class($"m-{value}");
+    public static T M<T>(this T element, int value) where T : Element<T> => element.Class($"m-{value}");
 
     /// <summary>
     /// Applies Bootstrap padding-top with the specified spacing value.
@@ -188,7 +188,7 @@ public static class BootstrapExtensions
     /// <param name="element">The element to style.</param>
     /// <param name="value">The spacing value (0-5).</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Pt<T>(this T element, int value) where T : Element => (T)element.Class($"pt-{value}");
+    public static T Pt<T>(this T element, int value) where T : Element<T> => element.Class($"pt-{value}");
 
     /// <summary>
     /// Applies Bootstrap padding-bottom with the specified spacing value.
@@ -197,7 +197,7 @@ public static class BootstrapExtensions
     /// <param name="element">The element to style.</param>
     /// <param name="value">The spacing value (0-5).</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Pb<T>(this T element, int value) where T : Element => (T)element.Class($"pb-{value}");
+    public static T Pb<T>(this T element, int value) where T : Element<T> => element.Class($"pb-{value}");
 
     /// <summary>
     /// Applies Bootstrap padding-start with the specified spacing value.
@@ -206,7 +206,7 @@ public static class BootstrapExtensions
     /// <param name="element">The element to style.</param>
     /// <param name="value">The spacing value (0-5).</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Ps<T>(this T element, int value) where T : Element => (T)element.Class($"ps-{value}");
+    public static T Ps<T>(this T element, int value) where T : Element<T> => element.Class($"ps-{value}");
 
     /// <summary>
     /// Applies Bootstrap padding-end with the specified spacing value.
@@ -215,7 +215,7 @@ public static class BootstrapExtensions
     /// <param name="element">The element to style.</param>
     /// <param name="value">The spacing value (0-5).</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Pe<T>(this T element, int value) where T : Element => (T)element.Class($"pe-{value}");
+    public static T Pe<T>(this T element, int value) where T : Element<T> => element.Class($"pe-{value}");
 
     /// <summary>
     /// Applies Bootstrap padding on all sides with the specified spacing value.
@@ -224,7 +224,7 @@ public static class BootstrapExtensions
     /// <param name="element">The element to style.</param>
     /// <param name="value">The spacing value (0-5).</param>
     /// <returns>The element for method chaining.</returns>
-    public static T P<T>(this T element, int value) where T : Element => (T)element.Class($"p-{value}");
+    public static T P<T>(this T element, int value) where T : Element<T> => element.Class($"p-{value}");
 
     /// <summary>
     /// Applies Bootstrap flex display utility.
@@ -232,7 +232,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Flex<T>(this T element) where T : Element => (T)element.Class("flex");
+    public static T Flex<T>(this T element) where T : Element<T> => element.Class("flex");
 
     /// <summary>
     /// Applies Bootstrap flex-row direction.
@@ -240,7 +240,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T FlexRow<T>(this T element) where T : Element => (T)element.Class("flex-row");
+    public static T FlexRow<T>(this T element) where T : Element<T> => element.Class("flex-row");
 
     /// <summary>
     /// Applies Bootstrap flex-column direction.
@@ -248,7 +248,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T FlexColumn<T>(this T element) where T : Element => (T)element.Class("flex-column");
+    public static T FlexColumn<T>(this T element) where T : Element<T> => element.Class("flex-column");
 
     /// <summary>
     /// Applies Bootstrap flex-wrap utility.
@@ -256,7 +256,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T FlexWrap<T>(this T element) where T : Element => (T)element.Class("flex-wrap");
+    public static T FlexWrap<T>(this T element) where T : Element<T> => element.Class("flex-wrap");
 
     /// <summary>
     /// Applies Bootstrap justify-content-center alignment.
@@ -264,7 +264,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T JustifyCenter<T>(this T element) where T : Element => (T)element.Class("justify-content-center");
+    public static T JustifyCenter<T>(this T element) where T : Element<T> => element.Class("justify-content-center");
 
     /// <summary>
     /// Applies Bootstrap justify-content-between alignment.
@@ -272,7 +272,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T JustifyBetween<T>(this T element) where T : Element => (T)element.Class("justify-content-between");
+    public static T JustifyBetween<T>(this T element) where T : Element<T> => element.Class("justify-content-between");
 
     /// <summary>
     /// Applies Bootstrap align-items-center alignment.
@@ -280,7 +280,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T AlignCenter<T>(this T element) where T : Element => (T)element.Class("align-items-center");
+    public static T AlignCenter<T>(this T element) where T : Element<T> => element.Class("align-items-center");
 
     /// <summary>
     /// Applies Bootstrap align-items-start alignment.
@@ -288,7 +288,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T AlignStart<T>(this T element) where T : Element => (T)element.Class("align-items-start");
+    public static T AlignStart<T>(this T element) where T : Element<T> => element.Class("align-items-start");
 
     /// <summary>
     /// Applies Bootstrap align-items-end alignment.
@@ -296,7 +296,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T AlignEnd<T>(this T element) where T : Element => (T)element.Class("align-items-end");
+    public static T AlignEnd<T>(this T element) where T : Element<T> => element.Class("align-items-end");
 
     /// <summary>
     /// Applies Bootstrap width-auto utility.
@@ -304,7 +304,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T WAuto<T>(this T element) where T : Element => (T)element.Class("w-auto");
+    public static T WAuto<T>(this T element) where T : Element<T> => element.Class("w-auto");
 
     /// <summary>
     /// Applies Bootstrap width-100% utility.
@@ -312,7 +312,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T W100<T>(this T element) where T : Element => (T)element.Class("w-100");
+    public static T W100<T>(this T element) where T : Element<T> => element.Class("w-100");
 
     /// <summary>
     /// Applies Bootstrap position-relative utility.
@@ -320,7 +320,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T PositionRelative<T>(this T element) where T : Element => (T)element.Class("position-relative");
+    public static T PositionRelative<T>(this T element) where T : Element<T> => element.Class("position-relative");
 
     /// <summary>
     /// Applies Bootstrap position-absolute utility.
@@ -328,7 +328,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T PositionAbsolute<T>(this T element) where T : Element => (T)element.Class("position-absolute");
+    public static T PositionAbsolute<T>(this T element) where T : Element<T> => element.Class("position-absolute");
 
     /// <summary>
     /// Applies Bootstrap position-fixed utility.
@@ -336,7 +336,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T PositionFixed<T>(this T element) where T : Element => (T)element.Class("position-fixed");
+    public static T PositionFixed<T>(this T element) where T : Element<T> => element.Class("position-fixed");
 
     /// <summary>
     /// Applies Bootstrap position-sticky utility.
@@ -344,7 +344,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T PositionSticky<T>(this T element) where T : Element => (T)element.Class("position-sticky");
+    public static T PositionSticky<T>(this T element) where T : Element<T> => element.Class("position-sticky");
 
     /// <summary>
     /// Applies Bootstrap overflow-auto utility.
@@ -352,7 +352,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T OverflowAuto<T>(this T element) where T : Element => (T)element.Class("overflow-auto");
+    public static T OverflowAuto<T>(this T element) where T : Element<T> => element.Class("overflow-auto");
 
     /// <summary>
     /// Applies Bootstrap overflow-hidden utility.
@@ -360,7 +360,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T OverflowHidden<T>(this T element) where T : Element => (T)element.Class("overflow-hidden");
+    public static T OverflowHidden<T>(this T element) where T : Element<T> => element.Class("overflow-hidden");
 
     /// <summary>
     /// Applies Bootstrap shadow utility.
@@ -368,7 +368,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Shadow<T>(this T element) where T : Element => (T)element.Class("shadow");
+    public static T Shadow<T>(this T element) where T : Element<T> => element.Class("shadow");
 
     /// <summary>
     /// Applies Bootstrap shadow-sm (small shadow) utility.
@@ -376,7 +376,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T ShadowSm<T>(this T element) where T : Element => (T)element.Class("shadow-sm");
+    public static T ShadowSm<T>(this T element) where T : Element<T> => element.Class("shadow-sm");
 
     /// <summary>
     /// Applies Bootstrap shadow-lg (large shadow) utility.
@@ -384,7 +384,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T ShadowLg<T>(this T element) where T : Element => (T)element.Class("shadow-lg");
+    public static T ShadowLg<T>(this T element) where T : Element<T> => element.Class("shadow-lg");
 
     /// <summary>
     /// Applies Bootstrap border utility.
@@ -392,7 +392,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Border<T>(this T element) where T : Element => (T)element.Class("border");
+    public static T Border<T>(this T element) where T : Element<T> => element.Class("border");
 
     /// <summary>
     /// Applies Bootstrap border-top utility.
@@ -400,7 +400,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T BorderTop<T>(this T element) where T : Element => (T)element.Class("border-top");
+    public static T BorderTop<T>(this T element) where T : Element<T> => element.Class("border-top");
 
     /// <summary>
     /// Applies Bootstrap border-bottom utility.
@@ -408,7 +408,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T BorderBottom<T>(this T element) where T : Element => (T)element.Class("border-bottom");
+    public static T BorderBottom<T>(this T element) where T : Element<T> => element.Class("border-bottom");
 
     /// <summary>
     /// Applies Bootstrap border-start utility.
@@ -416,7 +416,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T BorderStart<T>(this T element) where T : Element => (T)element.Class("border-start");
+    public static T BorderStart<T>(this T element) where T : Element<T> => element.Class("border-start");
 
     /// <summary>
     /// Applies Bootstrap border-end utility.
@@ -424,7 +424,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T BorderEnd<T>(this T element) where T : Element => (T)element.Class("border-end");
+    public static T BorderEnd<T>(this T element) where T : Element<T> => element.Class("border-end");
 
     /// <summary>
     /// Applies Bootstrap rounded utility.
@@ -432,7 +432,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Rounded<T>(this T element) where T : Element => (T)element.Class("rounded");
+    public static T Rounded<T>(this T element) where T : Element<T> => element.Class("rounded");
 
     /// <summary>
     /// Applies Bootstrap rounded-sm (small border-radius) utility.
@@ -440,7 +440,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T RoundedSm<T>(this T element) where T : Element => (T)element.Class("rounded-sm");
+    public static T RoundedSm<T>(this T element) where T : Element<T> => element.Class("rounded-sm");
 
     /// <summary>
     /// Applies Bootstrap rounded-lg (large border-radius) utility.
@@ -448,7 +448,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T RoundedLg<T>(this T element) where T : Element => (T)element.Class("rounded-lg");
+    public static T RoundedLg<T>(this T element) where T : Element<T> => element.Class("rounded-lg");
 
     /// <summary>
     /// Applies Bootstrap rounded-circle (pill shape) utility.
@@ -456,7 +456,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T RoundedCircle<T>(this T element) where T : Element => (T)element.Class("rounded-circle");
+    public static T RoundedCircle<T>(this T element) where T : Element<T> => element.Class("rounded-circle");
 
     /// <summary>
     /// Applies Bootstrap rounded-pill utility.
@@ -464,7 +464,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T RoundedPill<T>(this T element) where T : Element => (T)element.Class("rounded-pill");
+    public static T RoundedPill<T>(this T element) where T : Element<T> => element.Class("rounded-pill");
 
     /// <summary>
     /// Applies Bootstrap opacity-25 utility.
@@ -472,7 +472,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Opacity25<T>(this T element) where T : Element => (T)element.Class("opacity-25");
+    public static T Opacity25<T>(this T element) where T : Element<T> => element.Class("opacity-25");
 
     /// <summary>
     /// Applies Bootstrap opacity-50 utility.
@@ -480,7 +480,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Opacity50<T>(this T element) where T : Element => (T)element.Class("opacity-50");
+    public static T Opacity50<T>(this T element) where T : Element<T> => element.Class("opacity-50");
 
     /// <summary>
     /// Applies Bootstrap opacity-75 utility.
@@ -488,7 +488,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Opacity75<T>(this T element) where T : Element => (T)element.Class("opacity-75");
+    public static T Opacity75<T>(this T element) where T : Element<T> => element.Class("opacity-75");
 
     /// <summary>
     /// Applies Bootstrap opacity-100 utility.
@@ -496,7 +496,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Opacity100<T>(this T element) where T : Element => (T)element.Class("opacity-100");
+    public static T Opacity100<T>(this T element) where T : Element<T> => element.Class("opacity-100");
 
     /// <summary>
     /// Applies Bootstrap clearfix utility.
@@ -504,7 +504,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Clearfix<T>(this T element) where T : Element => (T)element.Class("clearfix");
+    public static T Clearfix<T>(this T element) where T : Element<T> => element.Class("clearfix");
 
     /// <summary>
     /// Applies Bootstrap stretched-link utility to make the entire card clickable.
@@ -512,7 +512,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T StretchedLink<T>(this T element) where T : Element => (T)element.Class("stretched-link");
+    public static T StretchedLink<T>(this T element) where T : Element<T> => element.Class("stretched-link");
 
     /// <summary>
     /// Applies Bootstrap visible utility.
@@ -520,7 +520,7 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Visible<T>(this T element) where T : Element => (T)element.Class("visible");
+    public static T Visible<T>(this T element) where T : Element<T> => element.Class("visible");
 
     /// <summary>
     /// Applies Bootstrap invisible utility.
@@ -528,5 +528,5 @@ public static class BootstrapExtensions
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="element">The element to style.</param>
     /// <returns>The element for method chaining.</returns>
-    public static T Invisible<T>(this T element) where T : Element => (T)element.Class("invisible");
+    public static T Invisible<T>(this T element) where T : Element<T> => element.Class("invisible");
 }

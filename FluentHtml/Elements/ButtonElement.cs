@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;button&gt; element. Use the Button() factory methods to create instances.
 /// </summary>
-public sealed class ButtonElement : Element
+public sealed class ButtonElement : Element<ButtonElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ButtonElement"/> class with child nodes.
@@ -25,15 +25,6 @@ public sealed class ButtonElement : Element
     /// <param name="type">The button type (e.g., "submit", "button", "reset").</param>
     /// <returns>The current button for method chaining.</returns>
     public ButtonElement Type(string type) { Attributes.Set("type", type); return this; }
-    
-    /// <inheritdoc/>
-    public new ButtonElement Id(string id) { base.Id(id); return this; }
-    /// <inheritdoc/>
-    public new ButtonElement Class(string className) { base.Class(className); return this; }
-    /// <inheritdoc/>
-    public new ButtonElement Disabled() { base.Disabled(); return this; }
-    /// <inheritdoc/>
-    public new ButtonElement Required() { base.Required(); return this; }
 }
 
 /// <summary>

@@ -1,11 +1,11 @@
-﻿using FluentHtml.Nodes;
+using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
 
 /// <summary>
 /// Represents an HTML &lt;code&gt; element.
 /// </summary>
-public sealed class CodeElement : Element
+public sealed class CodeElement : Element<CodeElement>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="CodeElement"/> class with child nodes.
