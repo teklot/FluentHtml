@@ -36,10 +36,9 @@ public static class TodoPage
 
         var item = new TodoItem(_nextId++, title.Trim(), false);
         _todos.Add(item);
-        return new Fragment(
-            TodoItemRow(item),
-            AddForm().HxSwapOob("outerHTML:#todo-form")
-        );
+        return TodoItemRow(item)
+            .Htmx()
+            .Oob(AddForm().HxSwapOob("outerHTML:#todo-form"));
     }
 
     public static Node ToggleTodo(int id)

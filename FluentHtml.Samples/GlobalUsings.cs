@@ -9,6 +9,7 @@ global using FluentHtml.Forms;
 global using FluentHtml.Validation;
 global using Microsoft.AspNetCore.Mvc;
 global using FluentHtml.Samples.Pages;
+global using FluentHtml.Samples.Models;
 
 global using static FluentHtml.Elements.DivExtensions;
 global using static FluentHtml.Elements.Heading1Extensions;

@@ -1,7 +1,19 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Title>FluentHtml.Validation</Title>
+    <Authors>TekLot,$(AssemblyName)</Authors>
+    <Description>DataAnnotations validation integration for FluentHtml. Provides model validation with fluent ValidationMessage and ValidationSummary components for inline form error display.</Description>
+    <Copyright>Copyright © 2026 TekLot</Copyright>
+    <PackageId>FluentHtml.Validation</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageTags>FluentHtml;Validation;DataAnnotations;Forms;ServerRendered;dotnet-library</PackageTags>
+    <PackageReleaseNotes>Provides ValidateExtensions for System.ComponentModel.DataAnnotations validation, ValidationMessage component for inline error display, ValidationSummary component, and ValidationResult type.</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/teklot/FluentHtml</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/teklot/FluentHtml.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>

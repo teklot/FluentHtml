@@ -1,7 +1,19 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Title>FluentHtml.Htmx</Title>
+    <Authors>TekLot,$(AssemblyName)</Authors>
+    <Description>HTMX attribute extensions for FluentHtml. Provides fluent methods for all hx-* attributes including hx-get, hx-post, hx-target, hx-swap, hx-trigger, hx-boost, hx-headers, hx-include, and more.</Description>
+    <Copyright>Copyright © 2026 TekLot</Copyright>
+    <PackageId>FluentHtml.Htmx</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageTags>FluentHtml;HTMX;Interactive;SPA;ServerRendered;dotnet-library</PackageTags>
+    <PackageReleaseNotes>Provides comprehensive HTMX attribute extensions with fluent C# methods for hx-get, hx-post, hx-put, hx-patch, hx-delete, hx-target, hx-swap, hx-trigger, hx-boost, hx-headers, hx-include, and hx-swap-oob.</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/teklot/FluentHtml</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/teklot/FluentHtml.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>

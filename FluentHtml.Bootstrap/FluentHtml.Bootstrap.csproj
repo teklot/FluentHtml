@@ -1,7 +1,19 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Title>FluentHtml.Bootstrap</Title>
+    <Authors>TekLot,$(AssemblyName)</Authors>
+    <Description>Bootstrap 5 component library for FluentHtml. Provides fluent builders for Accordion, Alert, Badge, Breadcrumb, Button, Card, Dropdown, Modal, Navbar, Pagination, Spinner, Toast, and Tabs components.</Description>
+    <Copyright>Copyright © 2026 TekLot</Copyright>
+    <PackageId>FluentHtml.Bootstrap</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageTags>FluentHtml;Bootstrap;UI;Components;CSS;ServerRendered;dotnet-library</PackageTags>
+    <PackageReleaseNotes>Provides fluent Bootstrap 5 components: Accordion, Alert, Badge, Breadcrumb, Button, Card, Dropdown, Modal, Navbar, Pagination, Spinner, Toast, and Tabs with full C# IntelliSense support.</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/teklot/FluentHtml</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/teklot/FluentHtml.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>

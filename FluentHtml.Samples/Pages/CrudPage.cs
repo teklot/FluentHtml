@@ -66,13 +66,13 @@ public static class CrudPage
         ).Class("table table-striped table-hover");
     }
 
-    public static Node CreateCustomer(string name, string email, string phone)
+    public static Node CreateCustomer(CustomerCreateModel model)
     {
-        if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email))
-            return CreateForm("Name and Email are required.")
-                .HxSwapOob("outerHTML:#create-form");
+        var validation = model.Validate();
+        if (!validation.IsValid)
+            return CreateForm(validation.Errors[0]).HxSwapOob("outerHTML:#create-form");
 
-        var customer = new Customer(_nextId++, name, email, phone ?? "");
+        var customer = new Customer(_nextId++, model.Name, model.Email, model.Phone ?? "");
         _customers.Add(customer);
         return RenderCustomerRow(customer);
     }
@@ -111,13 +111,13 @@ public static class CrudPage
         return RenderCustomerRow(customer);
     }
 
-    public static Node UpdateCustomer(int id, string name, string email, string phone)
+    public static Node UpdateCustomer(int id, CustomerEditModel model)
     {
         var index = _customers.FindIndex(c => c.Id == id);
         if (index < 0)
             return new RawHtml("");
 
-        var updated = _customers[index] with { Name = name, Email = email, Phone = phone ?? "" };
+        var updated = _customers[index] with { Name = model.Name, Email = model.Email, Phone = model.Phone ?? "" };
         _customers[index] = updated;
         return RenderCustomerRow(updated);
     }

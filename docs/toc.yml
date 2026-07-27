@@ -9,20 +9,20 @@
       href: getting-started.md
     - name: Architecture
       href: architecture.md
-    - name: Packages
-      href: packages/index.md
+    - name: Concepts
+      href: concepts/index.md
       items:
         - name: Core (FluentHtml)
-          href: packages/core.md
+          href: concepts/core.md
         - name: Rendering
-          href: packages/rendering.md
+          href: concepts/rendering.md
         - name: ASP.NET Core
-          href: packages/aspnetcore.md
+          href: concepts/aspnetcore.md
         - name: HTMX
-          href: packages/htmx.md
+          href: concepts/htmx.md
         - name: Bootstrap
-          href: packages/bootstrap.md
+          href: concepts/bootstrap.md
         - name: Forms
-          href: packages/forms.md
+          href: concepts/forms.md
         - name: Validation
-          href: packages/validation.md
+          href: concepts/validation.md

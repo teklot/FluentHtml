@@ -1,7 +1,19 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Title>FluentHtml.Forms</Title>
+    <Authors>TekLot,$(AssemblyName)</Authors>
+    <Description>HTML form helpers for FluentHtml. Provides fluent form element builders with SelectListItem support and model expression binding for ASP.NET Core forms.</Description>
+    <Copyright>Copyright © 2026 TekLot</Copyright>
+    <PackageId>FluentHtml.Forms</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageTags>FluentHtml;Forms;HTML;SelectList;ModelBinding;ServerRendered;dotnet-library</PackageTags>
+    <PackageReleaseNotes>Provides FormExtensions, SelectListItem, and ModelExpression for building HTML forms with fluent C# API and ASP.NET Core model binding support.</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/teklot/FluentHtml</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/teklot/FluentHtml.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>

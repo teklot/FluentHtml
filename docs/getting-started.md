@@ -29,21 +29,29 @@ dotnet add package FluentHtml.Validation
 ```csharp
 using FluentHtml;
 using FluentHtml.Elements;
+using FluentHtml.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+builder.Services.AddAntiforgery();
 
-app.MapGet("/", () =>
-{
-    return Div()
-        .Class("container")
-        .Children(
-            H1("Hello, FluentHtml!"),
-            P("This is a server-rendered page.")
-        );
-});
+var app = builder.Build();
+app.UseAntiforgery();
+
+var routes = app.FluentRouting();
+routes.MapGet("/", () => H1("Hello, FluentHtml!"));
 
 app.Run();
+```
+
+## Routing
+
+Use `FluentRouting()` for automatic `Node`-to-`HtmlResult` conversion:
+
+```csharp
+var routes = app.FluentRouting();
+routes.MapGet("/", HomePage.Render);
+routes.MapPost("/create", MyPage.Create);
+routes.MapDelete("/{id}", MyPage.Delete);
 ```
 
 ## Creating Components

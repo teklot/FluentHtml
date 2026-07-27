@@ -14,13 +14,13 @@ FluentHtml is a FastHTML-inspired microframework for ASP.NET Core that enables d
 
 | Package | Description |
 |---------|-------------|
-| [FluentHtml](packages/core.md) | Core HTML elements, Node hierarchy, Components |
-| [FluentHtml.Rendering](packages/rendering.md) | HTML renderer and encoding |
-| [FluentHtml.AspNetCore](packages/aspnetcore.md) | ASP.NET Core integration |
-| [FluentHtml.Htmx](packages/htmx.md) | HTMX attribute extensions |
-| [FluentHtml.Bootstrap](packages/bootstrap.md) | Bootstrap components and CSS helpers |
-| [FluentHtml.Forms](packages/forms.md) | Strongly-typed form helpers |
-| [FluentHtml.Validation](packages/validation.md) | Validation components |
+| [FluentHtml](concepts/core.md) | Core HTML elements, Node hierarchy, Components |
+| [FluentHtml.Rendering](concepts/rendering.md) | HTML renderer and encoding |
+| [FluentHtml.AspNetCore](concepts/aspnetcore.md) | ASP.NET Core integration |
+| [FluentHtml.Htmx](concepts/htmx.md) | HTMX attribute extensions |
+| [FluentHtml.Bootstrap](concepts/bootstrap.md) | Bootstrap components and CSS helpers |
+| [FluentHtml.Forms](concepts/forms.md) | Strongly-typed form helpers |
+| [FluentHtml.Validation](concepts/validation.md) | Validation components |
 
 ## Example
 
@@ -39,6 +39,6 @@ var page = Div()
             .Primary()
             .Large()
             .HxPost("/api/click")
-            .Target("#result")
+            .HxTarget("#result")
     );
 ```

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace FluentHtml.Samples.Pages;
+namespace FluentHtml.Samples.Models;
 
 public class CreateUserModel
 {

@@ -1,7 +1,19 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Title>FluentHtml.Rendering</Title>
+    <Authors>TekLot,$(AssemblyName)</Authors>
+    <Description>HTML rendering pipeline for FluentHtml. Converts Node trees into HTML strings with configurable encoding, indentation, and output formatting via HtmlWriter and Renderer.</Description>
+    <Copyright>Copyright © 2026 TekLot</Copyright>
+    <PackageId>FluentHtml.Rendering</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageTags>FluentHtml;HTML;Rendering;HtmlWriter;ServerRendered;dotnet-library</PackageTags>
+    <PackageReleaseNotes>Provides HtmlWriter, HtmlEncoder, and Renderer for converting FluentHtml Node trees into well-formatted HTML output with configurable encoding and indentation.</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/teklot/FluentHtml</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/teklot/FluentHtml.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>

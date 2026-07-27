@@ -1,5 +1,3 @@
-using FluentHtml.Samples.Pages;
-
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAntiforgery();
 
