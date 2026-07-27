@@ -4,9 +4,9 @@ namespace FluentHtml.Samples.Pages;
 
 public static class HtmxPage
 {
-    public static IResult Render()
+    public static IResult Render(HttpContext http)
     {
-        return Layout.Page(
+        return Layout.Page(http,
             BreadcrumbHelper.MakeBreadcrumb(("Home", "/"), ("HTMX", null)),
             H1("FluentHtml.Htmx"),
 

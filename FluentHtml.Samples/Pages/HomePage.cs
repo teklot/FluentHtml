@@ -4,9 +4,9 @@ namespace FluentHtml.Samples.Pages;
 
 public static class HomePage
 {
-    public static IResult Render()
+    public static IResult Render(HttpContext http)
     {
-        return Layout.Page(
+        return Layout.Page(http,
             H1("FluentHtml Showcase"),
             P("Every package, every component, every method - live and working.")
                 .Class("lead text-muted"),

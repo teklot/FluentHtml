@@ -144,4 +144,23 @@ public class ElementTests
         var html = _renderer.Render(card);
         Assert.Equal("<div class=\"card\"><h2>Card Title</h2><p>Card content</p></div>", html);
     }
+
+    [Fact]
+    public void Form_With_HiddenInput_Added_Via_AddChild_Renders_Correctly()
+    {
+        var form = new FormElement(
+            new InputElement().Type("text").Name("title")
+        ).Method("post").Action("/test");
+
+        var hidden = new InputElement()
+            .Type("hidden")
+            .Name("__RequestVerificationToken")
+            .Value("test-token-123");
+        form.AddChild(hidden);
+
+        var html = _renderer.Render(form);
+        Assert.Contains("name=\"__RequestVerificationToken\"", html);
+        Assert.Contains("value=\"test-token-123\"", html);
+        Assert.Contains("<input type=\"hidden\"", html);
+    }
 }

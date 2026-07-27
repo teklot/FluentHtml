@@ -1,3 +1,4 @@
+using FluentHtml.Enums;
 using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
@@ -24,14 +25,31 @@ public sealed class FormElement : Element<FormElement>
     /// </summary>
     /// <param name="action">The URL to submit the form to.</param>
     /// <returns>The current form for method chaining.</returns>
-    public FormElement Action(string action) { Attributes.Set("action", action); return this; }
+    public FormElement Action(string action)
+    {
+        Ensure.NotEmpty(action, nameof(action));
+        Attributes.Set("action", action);
+        return this;
+    }
 
     /// <summary>
     /// Sets the method attribute for this form element.
     /// </summary>
     /// <param name="method">The HTTP method (e.g., "get", "post").</param>
     /// <returns>The current form for method chaining.</returns>
-    public FormElement Method(string method) { Attributes.Set("method", method); return this; }
+    public FormElement Method(string method)
+    {
+        Ensure.NotEmpty(method, nameof(method));
+        Attributes.Set("method", method);
+        return this;
+    }
+
+    /// <summary>
+    /// Sets the method attribute for this form element using a strongly-typed enum.
+    /// </summary>
+    /// <param name="method">The HTTP method.</param>
+    /// <returns>The current form for method chaining.</returns>
+    public FormElement Method(MethodType method) => Method(method.ToString().ToLower());
 }
 
 /// <summary>

@@ -24,7 +24,12 @@ public sealed class OptionElement : Element<OptionElement>
     /// </summary>
     /// <param name="value">The value value.</param>
     /// <returns>The current element for method chaining.</returns>
-    public OptionElement Value(string value) { Attributes.Set("value", value); return this; }
+    public OptionElement Value(string value)
+    {
+        Ensure.NotNull(value, nameof(value));
+        Attributes.Set("value", value);
+        return this;
+    }
 
     /// <summary>
     /// Sets the selected attribute on this element.

@@ -24,7 +24,12 @@ public sealed class ScriptElement : Element<ScriptElement>
     /// </summary>
     /// <param name="value">The src value.</param>
     /// <returns>The current element for method chaining.</returns>
-    public ScriptElement Src(string value) { Attributes.Set("src", value); return this; }
+    public ScriptElement Src(string value)
+    {
+        Ensure.NotEmpty(value, nameof(value));
+        Attributes.Set("src", value);
+        return this;
+    }
 
     /// <summary>
     /// Sets the defer attribute on this element.

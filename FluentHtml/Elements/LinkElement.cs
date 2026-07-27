@@ -17,21 +17,36 @@ public sealed class LinkElement : Element<LinkElement>
     /// </summary>
     /// <param name="value">The rel value.</param>
     /// <returns>The current element for method chaining.</returns>
-    public LinkElement Rel(string value) { Attributes.Set("rel", value); return this; }
+    public LinkElement Rel(string value)
+    {
+        Ensure.NotEmpty(value, nameof(value));
+        Attributes.Set("rel", value);
+        return this;
+    }
 
     /// <summary>
     /// Sets the href attribute for this element.
     /// </summary>
     /// <param name="value">The href value.</param>
     /// <returns>The current element for method chaining.</returns>
-    public LinkElement Href(string value) { Attributes.Set("href", value); return this; }
+    public LinkElement Href(string value)
+    {
+        Ensure.NotEmpty(value, nameof(value));
+        Attributes.Set("href", value);
+        return this;
+    }
 
     /// <summary>
     /// Sets the type attribute for this element.
     /// </summary>
     /// <param name="value">The type value.</param>
     /// <returns>The current element for method chaining.</returns>
-    public LinkElement Type(string value) { Attributes.Set("type", value); return this; }
+    public LinkElement Type(string value)
+    {
+        Ensure.NotEmpty(value, nameof(value));
+        Attributes.Set("type", value);
+        return this;
+    }
 }
 
 /// <summary>

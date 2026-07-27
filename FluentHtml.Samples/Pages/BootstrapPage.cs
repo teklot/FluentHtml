@@ -4,9 +4,9 @@ namespace FluentHtml.Samples.Pages;
 
 public static class BootstrapPage
 {
-    public static IResult Render()
+    public static IResult Render(HttpContext http)
     {
-        return Layout.Page(
+        return Layout.Page(http,
             BreadcrumbHelper.MakeBreadcrumb(("Home", "/"), ("Bootstrap", null)),
             H1("FluentHtml.Bootstrap"),
 

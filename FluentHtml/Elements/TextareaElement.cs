@@ -38,7 +38,12 @@ public sealed class TextareaElement : Element<TextareaElement>
     /// </summary>
     /// <param name="name">The textarea name used for form submission.</param>
     /// <returns>The current textarea for method chaining.</returns>
-    public TextareaElement Name(string name) { Attributes.Set("name", name); return this; }
+    public TextareaElement Name(string name)
+    {
+        Ensure.NotEmpty(name, nameof(name));
+        Attributes.Set("name", name);
+        return this;
+    }
 }
 
 /// <summary>
@@ -56,7 +61,7 @@ public static class TextareaExtensions
     /// <summary>
     /// Creates a new &lt;textarea&gt; element with the specified text content.
     /// </summary>
-    /// <param name="textContent">The textarea text content.</param>
+    /// <param name="textContent">The text content.</param>
     /// <returns>A new <see cref="TextareaElement"/>.</returns>
     public static TextareaElement Textarea(string textContent) => new(textContent);
 }

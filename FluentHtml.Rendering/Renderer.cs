@@ -1,3 +1,4 @@
+using FluentHtml.Elements;
 using FluentHtml.Nodes;
 
 namespace FluentHtml.Rendering;
@@ -59,6 +60,9 @@ public sealed class Renderer
 
     private void RenderElement(Element element)
     {
+        if (element is HtmlElement or Elements.PageElement)
+            _writer.WriteRaw("<!DOCTYPE html>\n");
+
         _writer.WriteOpenTag(element.TagName);
         WriteAttributes(element);
 

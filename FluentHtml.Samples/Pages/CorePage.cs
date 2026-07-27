@@ -4,9 +4,9 @@ namespace FluentHtml.Samples.Pages;
 
 public static class CorePage
 {
-    public static IResult Render()
+    public static IResult Render(HttpContext http)
     {
-        return Layout.Page(
+        return Layout.Page(http,
             BreadcrumbHelper.MakeBreadcrumb(("Home", "/"), ("Core Elements", null)),
             H1("FluentHtml Core"),
 

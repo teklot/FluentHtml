@@ -4,7 +4,7 @@ namespace FluentHtml.Samples.Pages;
 
 public static class RenderingPage
 {
-    public static IResult Render()
+    public static IResult Render(HttpContext http)
     {
         var renderer = new Renderer();
 
@@ -17,7 +17,7 @@ public static class RenderingPage
 
         var encoded = HtmlEncoder.Encode("<script>alert('xss')</script>");
 
-        return Layout.Page(
+        return Layout.Page(http,
             BreadcrumbHelper.MakeBreadcrumb(("Home", "/"), ("Rendering", null)),
             H1("FluentHtml.Rendering"),
 

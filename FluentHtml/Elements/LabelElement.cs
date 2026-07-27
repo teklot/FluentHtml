@@ -24,7 +24,12 @@ public sealed class LabelElement : Element<LabelElement>
     /// </summary>
     /// <param name="forId">The ID of the element this label describes.</param>
     /// <returns>The current element for method chaining.</returns>
-    public LabelElement For(string forId) { Attributes.Set("for", forId); return this; }
+    public LabelElement For(string forId)
+    {
+        Ensure.NotEmpty(forId, nameof(forId));
+        Attributes.Set("for", forId);
+        return this;
+    }
 }
 
 /// <summary>

@@ -39,6 +39,7 @@ public abstract class Element<TSelf> : Element where TSelf : Element<TSelf>
     /// <returns>The current element for method chaining.</returns>
     public TSelf Id(string id)
     {
+        Ensure.NotEmpty(id, nameof(id));
         Attributes.Set("id", id);
         return (TSelf)this;
     }
@@ -85,6 +86,8 @@ public abstract class Element<TSelf> : Element where TSelf : Element<TSelf>
     /// <returns>The current element for method chaining.</returns>
     public TSelf Data(string key, string value)
     {
+        Ensure.NotNull(key, nameof(key));
+        Ensure.NotNull(value, nameof(value));
         Attributes.Set($"data-{key}", value);
         return (TSelf)this;
     }
@@ -97,6 +100,8 @@ public abstract class Element<TSelf> : Element where TSelf : Element<TSelf>
     /// <returns>The current element for method chaining.</returns>
     public TSelf Aria(string key, string value)
     {
+        Ensure.NotNull(key, nameof(key));
+        Ensure.NotNull(value, nameof(value));
         Attributes.Set($"aria-{key}", value);
         return (TSelf)this;
     }
@@ -108,6 +113,7 @@ public abstract class Element<TSelf> : Element where TSelf : Element<TSelf>
     /// <returns>The current element for method chaining.</returns>
     public TSelf Role(string role)
     {
+        Ensure.NotEmpty(role, nameof(role));
         Attributes.Set("role", role);
         return (TSelf)this;
     }
@@ -181,6 +187,8 @@ public abstract class Element<TSelf> : Element where TSelf : Element<TSelf>
     /// <returns>The current element for method chaining.</returns>
     public TSelf Custom(string name, string value)
     {
+        Ensure.NotNull(name, nameof(name));
+        Ensure.NotNull(value, nameof(value));
         Attributes.Set(name, value);
         return (TSelf)this;
     }
@@ -193,6 +201,8 @@ public abstract class Element<TSelf> : Element where TSelf : Element<TSelf>
     /// <returns>The current element for method chaining.</returns>
     public TSelf On(string eventName, string handler)
     {
+        Ensure.NotNull(eventName, nameof(eventName));
+        Ensure.NotNull(handler, nameof(handler));
         Attributes.Set($"on{eventName}", handler);
         return (TSelf)this;
     }

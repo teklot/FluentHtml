@@ -2,9 +2,9 @@ namespace FluentHtml.Samples.Components;
 
 public static class Layout
 {
-    public static HtmlElement Page(params Node[] content)
+    public static PageElement Page(HttpContext http, params Node[] content)
     {
-        return new HtmlElement(
+        return new PageElement(
             new HeadElement(
                 new TitleElement("FluentHtml Showcase"),
                 Meta().Charset("utf-8"),
@@ -17,7 +17,7 @@ public static class Layout
                 RenderNavbar(),
                 new MainElement(content).Class("container py-4")
             )
-        );
+        ).Lang("en");
     }
 
     private static Element RenderNavbar()
@@ -33,7 +33,10 @@ public static class Layout
                         NavbarNavItem(A("HTMX").Href("/htmx").Class("nav-link")),
                         NavbarNavItem(A("Bootstrap").Href("/bootstrap").Class("nav-link")),
                         NavbarNavItem(A("Rendering").Href("/rendering").Class("nav-link")),
-                        NavbarNavItem(A("Forms").Href("/forms").Class("nav-link"))
+                        NavbarNavItem(A("Forms").Href("/forms").Class("nav-link")),
+                        NavbarNavItem(A("Todo").Href("/todo").Class("nav-link")),
+                        NavbarNavItem(A("Dashboard").Href("/dashboard").Class("nav-link")),
+                        NavbarNavItem(A("Customers").Href("/customers").Class("nav-link"))
                     )
                 ).Id("mainNavCollapse")
             ).Class("container")

@@ -1,3 +1,4 @@
+using FluentHtml.Enums;
 using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
@@ -24,7 +25,19 @@ public sealed class ButtonElement : Element<ButtonElement>
     /// </summary>
     /// <param name="type">The button type (e.g., "submit", "button", "reset").</param>
     /// <returns>The current button for method chaining.</returns>
-    public ButtonElement Type(string type) { Attributes.Set("type", type); return this; }
+    public ButtonElement Type(string type)
+    {
+        Ensure.NotEmpty(type, nameof(type));
+        Attributes.Set("type", type);
+        return this;
+    }
+
+    /// <summary>
+    /// Sets the type attribute for this button using a strongly-typed enum.
+    /// </summary>
+    /// <param name="type">The button type.</param>
+    /// <returns>The current button for method chaining.</returns>
+    public ButtonElement Type(ButtonType type) => Type(type.ToString().ToLower());
 }
 
 /// <summary>

@@ -1,3 +1,4 @@
+using FluentHtml.Enums;
 using FluentHtml.Nodes;
 
 namespace FluentHtml.Elements;
@@ -24,7 +25,65 @@ public sealed class AnchorElement : Element<AnchorElement>
     /// </summary>
     /// <param name="href">The URL to link to.</param>
     /// <returns>The current anchor for method chaining.</returns>
-    public AnchorElement Href(string href) { Attributes.Set("href", href); return this; }
+    public AnchorElement Href(string href)
+    {
+        Ensure.NotEmpty(href, nameof(href));
+        Attributes.Set("href", href);
+        return this;
+    }
+
+    /// <summary>
+    /// Sets the target attribute for this anchor element.
+    /// </summary>
+    /// <param name="target">The target frame (e.g., "_blank", "_self").</param>
+    /// <returns>The current anchor for method chaining.</returns>
+    public AnchorElement Target(string target)
+    {
+        Ensure.NotEmpty(target, nameof(target));
+        Attributes.Set("target", target);
+        return this;
+    }
+
+    /// <summary>
+    /// Sets the rel attribute for this anchor element.
+    /// </summary>
+    /// <param name="rel">The relationship value (e.g., "noopener", "noreferrer").</param>
+    /// <returns>The current anchor for method chaining.</returns>
+    public AnchorElement Rel(string rel)
+    {
+        Ensure.NotEmpty(rel, nameof(rel));
+        Attributes.Set("rel", rel);
+        return this;
+    }
+
+    /// <summary>
+    /// Sets the download attribute on this anchor element.
+    /// </summary>
+    /// <returns>The current anchor for method chaining.</returns>
+    public AnchorElement Download()
+    {
+        Attributes.SetBool("download");
+        return this;
+    }
+
+    /// <summary>
+    /// Sets the referrerpolicy attribute for this anchor element.
+    /// </summary>
+    /// <param name="policy">The referrer policy.</param>
+    /// <returns>The current anchor for method chaining.</returns>
+    public AnchorElement ReferrerPolicy(ReferrerPolicy policy) => ReferrerPolicy(policy.ToString());
+
+    /// <summary>
+    /// Sets the referrerpolicy attribute for this anchor element.
+    /// </summary>
+    /// <param name="policy">The referrer policy value.</param>
+    /// <returns>The current anchor for method chaining.</returns>
+    public AnchorElement ReferrerPolicy(string policy)
+    {
+        Ensure.NotEmpty(policy, nameof(policy));
+        Attributes.Set("referrerpolicy", policy);
+        return this;
+    }
 }
 
 /// <summary>

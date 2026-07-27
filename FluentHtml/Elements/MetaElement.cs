@@ -17,21 +17,36 @@ public sealed class MetaElement : Element<MetaElement>
     /// </summary>
     /// <param name="value">The name value.</param>
     /// <returns>The current element for method chaining.</returns>
-    public MetaElement Name(string value) { Attributes.Set("name", value); return this; }
+    public MetaElement Name(string value)
+    {
+        Ensure.NotEmpty(value, nameof(value));
+        Attributes.Set("name", value);
+        return this;
+    }
 
     /// <summary>
     /// Sets the content attribute for this element.
     /// </summary>
     /// <param name="value">The content value.</param>
     /// <returns>The current element for method chaining.</returns>
-    public MetaElement Content(string value) { Attributes.Set("content", value); return this; }
+    public MetaElement Content(string value)
+    {
+        Ensure.NotNull(value, nameof(value));
+        Attributes.Set("content", value);
+        return this;
+    }
 
     /// <summary>
     /// Sets the charset attribute for this element.
     /// </summary>
     /// <param name="value">The charset value.</param>
     /// <returns>The current element for method chaining.</returns>
-    public MetaElement Charset(string value) { Attributes.Set("charset", value); return this; }
+    public MetaElement Charset(string value)
+    {
+        Ensure.NotEmpty(value, nameof(value));
+        Attributes.Set("charset", value);
+        return this;
+    }
 }
 
 /// <summary>

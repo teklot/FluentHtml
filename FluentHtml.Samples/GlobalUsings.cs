@@ -1,5 +1,6 @@
 global using FluentHtml.Bootstrap.Components;
 global using FluentHtml.Elements;
+global using FluentHtml.Enums;
 global using FluentHtml.AspNetCore;
 global using FluentHtml.Htmx;
 global using FluentHtml.Nodes;
@@ -52,3 +53,5 @@ global using static FluentHtml.Bootstrap.Components.DropdownExtensions;
 global using static FluentHtml.Bootstrap.Components.PaginationExtensions;
 global using static FluentHtml.Bootstrap.Components.BreadcrumbExtensions;
 global using static FluentHtml.Bootstrap.Components.SpinnerExtensions;
+global using static FluentHtml.Bootstrap.Components.TabExtensions;
+global using static FluentHtml.Elements.PageExtensions;
