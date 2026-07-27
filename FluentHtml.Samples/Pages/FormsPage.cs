@@ -1,7 +1,4 @@
 using FluentHtml.Samples.Components;
-using FluentHtml.Forms;
-using FluentHtml.Validation;
-using Microsoft.AspNetCore.Mvc;
 
 namespace FluentHtml.Samples.Pages;
 
@@ -60,11 +57,11 @@ public static class FormsPage
                 ).Class("form-check mb-3"),
 
                 FluentFormExtensions.SubmitButton("Create User").HxPost("/forms/create").HxTarget("#user-form").HxSwap("outerHTML")
-            ).Action("/forms/create").Method("post").Id("user-form").Antiforgery(http))
+            ).Action("/forms/create").Method("post").Id("user-form"))
         ).ToHtmlResult();
     }
 
-    public static IResult CreateUser(HttpContext http, [FromForm] CreateUserModel model)
+    public static Node CreateUser(CreateUserModel model)
     {
         var modelState = new Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary();
 
@@ -125,9 +122,9 @@ public static class FormsPage
                     model.CheckboxLabelFor(m => m.Terms)
                 ).Class("form-check mb-3"),
                 FluentFormExtensions.SubmitButton("Create User").HxPost("/forms/create").HxTarget("#user-form").HxSwap("outerHTML")
-            ).Action("/forms/create").Method("post").Id("user-form").Class("mt-3").Antiforgery(http).ToHtmlResult();
+            ).Action("/forms/create").Method("post").Id("user-form").Class("mt-3");
         }
 
-        return Alert($"User '{model.Name}' created successfully! (POST received by server)").Success().ToHtmlResult();
+        return Alert($"User '{model.Name}' created successfully! (POST received by server)").Success();
     }
 }

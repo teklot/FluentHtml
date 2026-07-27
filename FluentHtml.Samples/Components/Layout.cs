@@ -1,9 +1,18 @@
+using System.Text.Json;
+using Microsoft.AspNetCore.Antiforgery;
+
 namespace FluentHtml.Samples.Components;
 
 public static class Layout
 {
+    private const string TokenCacheKey = "FluentHtml.AntiforgeryToken";
+
     public static PageElement Page(HttpContext http, params Node[] content)
     {
+        var tokens = GetAntiforgeryTokens(http);
+        var headersJson = JsonSerializer.Serialize(
+            new Dictionary<string, string> { [tokens.HeaderName!] = tokens.RequestToken! });
+
         return new PageElement(
             new HeadElement(
                 new TitleElement("FluentHtml Showcase"),
@@ -16,8 +25,19 @@ public static class Layout
             new BodyElement(
                 RenderNavbar(),
                 new MainElement(content).Class("container py-4")
-            )
+            ).HxHeaders(headersJson)
         ).Lang("en");
+    }
+
+    private static AntiforgeryTokenSet GetAntiforgeryTokens(HttpContext http)
+    {
+        if (http.Items.TryGetValue(TokenCacheKey, out var cached) && cached is AntiforgeryTokenSet tokens)
+            return tokens;
+
+        var antiforgery = http.RequestServices.GetRequiredService<IAntiforgery>();
+        tokens = antiforgery.GetAndStoreTokens(http);
+        http.Items[TokenCacheKey] = tokens;
+        return tokens;
     }
 
     private static Element RenderNavbar()

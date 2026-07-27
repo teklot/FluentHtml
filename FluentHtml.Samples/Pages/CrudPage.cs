@@ -22,7 +22,7 @@ public static class CrudPage
                 Div(
                     Card(
                         CardHeader(H4("Add New Customer")),
-                        CardBody(CreateForm(http))
+                        CardBody(CreateForm())
                     )
                 ).Class("col-lg-4 mb-4"),
                 Div(
@@ -35,19 +35,25 @@ public static class CrudPage
         ).ToHtmlResult();
     }
 
-    public static Node CreateForm(HttpContext http)
+    public static FormElement CreateForm(string? validationMessage = null)
     {
-        return Form(
+        var children = new List<Node>
+        {
             Div(Label("Name").Class("form-label"), Input().Type("text").Name("name").Placeholder("Full name").Class("form-control")).Class("mb-3"),
             Div(Label("Email").Class("form-label"), Input().Type("email").Name("email").Placeholder("email@example.com").Class("form-control")).Class("mb-3"),
-            Div(Label("Phone").Class("form-label"), Input().Type("tel").Name("phone").Placeholder("555-0100").Class("form-control")).Class("mb-3"),
-            Btn("Create Customer").Primary().Type("submit")
-        ).Method("post")
+            Div(Label("Phone").Class("form-label"), Input().Type("tel").Name("phone").Placeholder("555-0100").Class("form-control")).Class("mb-3")
+        };
+
+        if (validationMessage != null)
+            children.Add(Alert(validationMessage).Danger());
+
+        children.Add(Btn("Create Customer").Primary().Type("submit"));
+
+        return Form(children.ToArray()).Method("post")
             .HxPost("/customers/create")
             .HxTarget("#customer-table")
             .HxSwap("beforeend")
-            .Id("create-form")
-            .Antiforgery(http);
+            .Id("create-form");
     }
 
     public static Node RenderCustomerTable()
@@ -60,21 +66,22 @@ public static class CrudPage
         ).Class("table table-striped table-hover");
     }
 
-    public static IResult CreateCustomer(string name, string email, string phone)
+    public static Node CreateCustomer(string name, string email, string phone)
     {
         if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email))
-            return new RawHtml("").ToHtmlResult();
+            return CreateForm("Name and Email are required.")
+                .HxSwapOob("outerHTML:#create-form");
 
         var customer = new Customer(_nextId++, name, email, phone ?? "");
         _customers.Add(customer);
-        return RenderCustomerRow(customer).ToHtmlResult();
+        return RenderCustomerRow(customer);
     }
 
-    public static IResult EditCustomer(int id)
+    public static Node EditCustomer(int id)
     {
         var customer = _customers.FirstOrDefault(c => c.Id == id);
         if (customer is null)
-            return new RawHtml("").ToHtmlResult();
+            return new RawHtml("");
 
         return new TrElement(
             new TdElement(customer.Id.ToString()),
@@ -86,42 +93,42 @@ public static class CrudPage
                     .HxPost($"/customers/update/{customer.Id}")
                     .HxTarget("closest tr")
                     .HxSwap("outerHTML")
-                    .HxInclude("#create-form input[type='hidden'], .table-active input"),
+                    .HxInclude("closest tr"),
                 new SpanElement(" "),
                 Btn("Cancel").Secondary().Small()
                     .HxGet($"/customers/cancel/{customer.Id}")
                     .HxTarget("closest tr")
                     .HxSwap("outerHTML")
             )
-        ).Class("table-active").Id($"row-{id}").ToHtmlResult();
+        ).Class("table-active");
     }
 
-    public static IResult CancelEdit(int id)
+    public static Node CancelEdit(int id)
     {
         var customer = _customers.FirstOrDefault(c => c.Id == id);
         if (customer is null)
-            return new RawHtml("").ToHtmlResult();
-        return RenderCustomerRow(customer).ToHtmlResult();
+            return new RawHtml("");
+        return RenderCustomerRow(customer);
     }
 
-    public static IResult UpdateCustomer(int id, string name, string email, string phone)
+    public static Node UpdateCustomer(int id, string name, string email, string phone)
     {
         var index = _customers.FindIndex(c => c.Id == id);
         if (index < 0)
-            return new RawHtml("").ToHtmlResult();
+            return new RawHtml("");
 
         var updated = _customers[index] with { Name = name, Email = email, Phone = phone ?? "" };
         _customers[index] = updated;
-        return RenderCustomerRow(updated).ToHtmlResult();
+        return RenderCustomerRow(updated);
     }
 
-    public static IResult DeleteCustomer(int id)
+    public static Node DeleteCustomer(int id)
     {
         var customer = _customers.FirstOrDefault(c => c.Id == id);
         if (customer is not null)
             _customers.Remove(customer);
 
-        return new RawHtml("").ToHtmlResult();
+        return new RawHtml("");
     }
 
     private static Node RenderCustomerRow(Customer c)

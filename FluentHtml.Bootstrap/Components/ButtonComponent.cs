@@ -145,9 +145,6 @@ public sealed class ButtonComponent : Element<ButtonComponent>
     /// <returns>The current button for method chaining.</returns>
     public ButtonComponent Type(string type) { Attributes.Set("type", type); return this; }
 
-    /// <inheritdoc/>
-    public new ButtonComponent Disabled() => (ButtonComponent)base.Disabled();
-
     /// <summary>
     /// Applies the Bootstrap active state to this button.
     /// </summary>
@@ -159,97 +156,6 @@ public sealed class ButtonComponent : Element<ButtonComponent>
     /// </summary>
     /// <returns>The current button for method chaining.</returns>
     public ButtonComponent Block() => Class("d-grid");
-
-    /// <summary>
-    /// Sets the hx-get attribute to issue an HTMX GET request.
-    /// </summary>
-    /// <param name="url">The URL to request.</param>
-    /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent HxGet(string url) { Attributes.Set("hx-get", url); return this; }
-
-    /// <summary>
-    /// Sets the hx-post attribute to issue an HTMX POST request.
-    /// </summary>
-    /// <param name="url">The URL to request.</param>
-    /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent HxPost(string url) { Attributes.Set("hx-post", url); return this; }
-
-    /// <summary>
-    /// Sets the hx-put attribute to issue an HTMX PUT request.
-    /// </summary>
-    /// <param name="url">The URL to request.</param>
-    /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent HxPut(string url) { Attributes.Set("hx-put", url); return this; }
-
-    /// <summary>
-    /// Sets the hx-delete attribute to issue an HTMX DELETE request.
-    /// </summary>
-    /// <param name="url">The URL to request.</param>
-    /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent HxDelete(string url) { Attributes.Set("hx-delete", url); return this; }
-
-    /// <summary>
-    /// Sets the hx-patch attribute to issue an HTMX PATCH request.
-    /// </summary>
-    /// <param name="url">The URL to request.</param>
-    /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent HxPatch(string url) { Attributes.Set("hx-patch", url); return this; }
-
-    /// <summary>
-    /// Sets the hx-swap attribute to control how the response HTML is swapped into the DOM.
-    /// </summary>
-    /// <param name="swapStyle">The swap strategy (e.g., "innerHTML", "outerHTML").</param>
-    /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent HxSwap(string swapStyle) { Attributes.Set("hx-swap", swapStyle); return this; }
-
-    /// <summary>
-    /// Sets the hx-target attribute to specify which element should receive the response HTML.
-    /// </summary>
-    /// <param name="target">The CSS selector for the target element.</param>
-    /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent HxTarget(string target) { Attributes.Set("hx-target", target); return this; }
-
-    /// <summary>
-    /// Sets the hx-trigger attribute to specify when an HTMX request should be triggered.
-    /// </summary>
-    /// <param name="trigger">The trigger event (e.g., "click", "submit").</param>
-    /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent HxTrigger(string trigger) { Attributes.Set("hx-trigger", trigger); return this; }
-
-    /// <summary>
-    /// Sets the hx-confirm attribute to display a confirmation dialog before making a request.
-    /// </summary>
-    /// <param name="message">The confirmation message to display.</param>
-    /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent HxConfirm(string message) { Attributes.Set("hx-confirm", message); return this; }
-
-    /// <summary>
-    /// Sets the hx-indicator attribute to specify a CSS class for the loading state.
-    /// </summary>
-    /// <param name="indicator">The CSS class to apply during loading.</param>
-    /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent HxIndicator(string indicator) { Attributes.Set("hx-indicator", indicator); return this; }
-
-    /// <summary>
-    /// Sets the hx-boost attribute to enable or disable HTMX boost.
-    /// </summary>
-    /// <param name="boost">If true, enables boost; if false, disables it.</param>
-    /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent HxBoost(bool boost = true) { if (boost) Attributes.SetBool("hx-boost"); else Attributes.Remove("hx-boost"); return this; }
-
-    /// <summary>
-    /// Sets the hx-push-url attribute to push a new URL into the browser history.
-    /// </summary>
-    /// <param name="url">The URL to push to the history.</param>
-    /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent HxPushUrl(string url) { Attributes.Set("hx-push-url", url); return this; }
-
-    /// <summary>
-    /// Sets the hx-select attribute to select content from the response to swap.
-    /// </summary>
-    /// <param name="selector">The CSS selector to select from the response.</param>
-    /// <returns>The current button for method chaining.</returns>
-    public ButtonComponent HxSelect(string selector) { Attributes.Set("hx-select", selector); return this; }
 }
 
 /// <summary>

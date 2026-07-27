@@ -30,10 +30,10 @@ public static class DashboardPage
             BreadcrumbHelper.MakeBreadcrumb(("Home", "/"), ("Dashboard", null)),
             H1("Dashboard").Class("mb-4"),
             Div(
-                StatCard("Total Revenue", "$13,321.50", "bg-primary"),
-                StatCard("Orders", "7", "bg-success"),
-                StatCard("Customers", "5", "bg-info"),
-                StatCard("Pending", "2", "bg-warning")
+                StatCard("Total Revenue", "$13,321.50", "border-primary"),
+                StatCard("Orders", "7", "border-success"),
+                StatCard("Customers", "5", "border-info"),
+                StatCard("Pending", "2", "border-warning")
             ).Class("row mb-4"),
             Div(
                 Div(
@@ -52,7 +52,7 @@ public static class DashboardPage
         ).ToHtmlResult();
     }
 
-    private static Node StatCard(string title, string value, string bgClass)
+    private static Node StatCard(string title, string value, string borderClass)
     {
         return Div(
             Card(
@@ -60,7 +60,7 @@ public static class DashboardPage
                     Div(Small(title).Class("text-muted")).Class("mb-1"),
                     Div(H2(value)).Class("card-title")
                 )
-            ).Class($"border-start border-4 {bgClass}")
+            ).Class($"border-start border-4 shadow-sm {borderClass}")
         ).Class("col-xl-3 col-md-6 mb-4");
     }
 

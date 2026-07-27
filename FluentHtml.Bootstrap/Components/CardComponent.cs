@@ -25,38 +25,6 @@ public sealed class CardComponent : Element<CardComponent>
     /// </summary>
     public CardComponent() => SetTag("div");
 
-    /// <summary>
-    /// Adds a card body section to this card.
-    /// </summary>
-    /// <param name="children">The child nodes for the card body.</param>
-    /// <returns>The current card for method chaining.</returns>
-    public CardComponent CardBody(params Node[] children)
-    {
-        AddChild(new CardBodyComponent(children));
-        return this;
-    }
-
-    /// <summary>
-    /// Adds a card header section to this card.
-    /// </summary>
-    /// <param name="children">The child nodes for the card header.</param>
-    /// <returns>The current card for method chaining.</returns>
-    public CardComponent CardHeader(params Node[] children)
-    {
-        AddChild(new CardHeaderComponent(children));
-        return this;
-    }
-
-    /// <summary>
-    /// Adds a card footer section to this card.
-    /// </summary>
-    /// <param name="children">The child nodes for the card footer.</param>
-    /// <returns>The current card for method chaining.</returns>
-    public CardComponent CardFooter(params Node[] children)
-    {
-        AddChild(new CardFooterComponent(children));
-        return this;
-    }
 }
 
 /// <summary>
