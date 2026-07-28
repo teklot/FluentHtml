@@ -10,7 +10,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageTags>FluentHtml;HTMX;Interactive;SPA;ServerRendered;dotnet-library</PackageTags>
-    <PackageReleaseNotes>Provides comprehensive HTMX attribute extensions with fluent C# methods for hx-get, hx-post, hx-put, hx-patch, hx-delete, hx-target, hx-swap, hx-trigger, hx-boost, hx-headers, hx-include, and hx-swap-oob.</PackageReleaseNotes>
+    <PackageReleaseNotes>Provides comprehensive HTMX attribute extensions with fluent C# methods for hx-get, hx-post, hx-put, hx-patch, hx-delete, hx-target, hx-swap, hx-trigger, hx-boost, hx-headers, hx-include, hx-swap-oob, and HtmxResponse for OOB response building.</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/teklot/FluentHtml</PackageProjectUrl>
     <RepositoryUrl>https://github.com/teklot/FluentHtml.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

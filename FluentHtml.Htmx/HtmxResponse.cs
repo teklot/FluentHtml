@@ -1,6 +1,6 @@
 using FluentHtml.Nodes;
 
-namespace FluentHtml.Http;
+namespace FluentHtml.Htmx;
 
 /// <summary>
 /// Builds an HTMX response combining a main swap element with optional out-of-band swap elements.

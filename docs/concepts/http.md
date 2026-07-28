@@ -44,18 +44,6 @@ routes.MapDelete("/delete/{id}", TodoPage.DeleteTodo);
 
 **Auto-Node wrapping:** Handlers returning `Node` are automatically wrapped in `HtmlResult`. `IResult` values pass through as-is.
 
-### HtmxResponse
-
-Combine main swap content with out-of-band OOB elements:
-
-```csharp
-return TodoItemRow(item)
-    .Htmx()
-    .Oob(CreateForm().HxSwapOob("outerHTML:#create-form"));
-```
-
-When no OOB elements are added, renders the main content directly. When OOB elements are present, renders all elements as siblings. Avoid using table row elements (`<tr>`, `<td>`) as main content when OOB is present — browser HTML parsing wraps them in an implicit `<table>`.
-
 ## Setup
 
 ```csharp

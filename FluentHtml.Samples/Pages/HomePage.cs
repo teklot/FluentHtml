@@ -13,8 +13,8 @@ public static class HomePage
 
             Div(
                 CardHelpers.PackageCard("FluentHtml", "Core", "Node, Element, Fragment, RawHtml, TextNode, Renderer, HtmlWriter, HtmlEncoder, ~100 HTML elements, fluent attributes"),
-                CardHelpers.PackageCard("FluentHtml.Http", "Http", "FluentRouter, HtmlResult (IResult), ToHtmlResult(), HtmxResponse, Minimal API integration"),
-                CardHelpers.PackageCard("FluentHtml.Htmx", "HTMX", "HxGet, HxPost, HxSwap, HxTarget, HxTrigger, HxConfirm, 20+ extensions"),
+                CardHelpers.PackageCard("FluentHtml.Http", "Http", "FluentRouter, HtmlResult (IResult), ToHtmlResult(), Minimal API integration"),
+                CardHelpers.PackageCard("FluentHtml.Htmx", "HTMX", "HxGet, HxPost, HxSwap, HxTarget, HxTrigger, HxConfirm, HtmxResponse, 20+ extensions"),
                 CardHelpers.PackageCard("FluentHtml.Bootstrap", "Bootstrap", "Card, Alert, Button, Navbar, Modal, Accordion, Toast, Dropdown, Pagination, Badge, Breadcrumb, Spinner"),
                 CardHelpers.PackageCard("FluentHtml.Forms", "Forms", "Form, InputFor, LabelFor, SelectFor, TextAreaFor, CheckboxFor (not yet implemented)"),
                 CardHelpers.PackageCard("FluentHtml.Validation", "Validation", "ValidationMessage, ValidationSummary (not yet implemented)")

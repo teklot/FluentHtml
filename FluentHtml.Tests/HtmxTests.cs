@@ -87,4 +87,23 @@ public class HtmxTests
         var html = _renderer.Render(btn);
         Assert.Contains("hx-boost", html);
     }
+
+    [Fact]
+    public void HtmxResponse_SingleNode_RendersMainContent()
+    {
+        var main = new DivElement("Main Content");
+        var response = main.Htmx();
+        var html = _renderer.Render(response);
+        Assert.Equal("<div>Main Content</div>", html);
+    }
+
+    [Fact]
+    public void HtmxResponse_WithOob_RendersMainAndOobContent()
+    {
+        var main = new DivElement("Main Content");
+        var oob = new DivElement("OOB Content").Id("sidebar").HxSwapOob("true");
+        var response = main.Htmx().Oob(oob);
+        var html = _renderer.Render(response);
+        Assert.Equal("<div>Main Content</div><div id=\"sidebar\" hx-swap-oob=\"true\">OOB Content</div>", html);
+    }
 }
