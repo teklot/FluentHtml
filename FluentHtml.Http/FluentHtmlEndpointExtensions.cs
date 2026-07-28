@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 
-namespace FluentHtml.AspNetCore;
+namespace FluentHtml.Http;
 
 /// <summary>
 /// Provides the <see cref="FluentRouting"/> extension method on <see cref="IEndpointRouteBuilder"/>

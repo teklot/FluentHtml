@@ -1,6 +1,6 @@
 using FluentHtml.Nodes;
 
-namespace FluentHtml.AspNetCore;
+namespace FluentHtml.Http;
 
 /// <summary>
 /// Provides extension methods for converting FluentHtml <see cref="Node"/> instances to <see cref="HtmlResult"/> objects.

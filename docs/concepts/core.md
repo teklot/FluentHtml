@@ -68,3 +68,38 @@ Button("Click")    // Creates <button>Click</button>
 Input()            // Creates <input />
 Form(children)     // Creates <form>...</form>
 ```
+
+## Rendering
+
+Convert a node tree to HTML using the `Renderer` (`using FluentHtml.Rendering;`):
+
+```csharp
+var renderer = new Renderer();
+string html = renderer.Render(node);
+// or write to a TextWriter:
+renderer.Render(node, textWriter);
+```
+
+### HtmlWriter
+
+Low-level HTML output builder.
+
+| Method | Description |
+|--------|-------------|
+| `WriteRaw(string)` | Write raw HTML |
+| `WriteOpenTag(string)` | Write opening tag |
+| `WriteCloseTag(string)` | Write closing tag |
+| `WriteSelfClosingTag(string)` | Write self-closing tag |
+| `WriteAttribute(string, string)` | Write attribute with value |
+| `WriteBooleanAttribute(string)` | Write boolean attribute |
+| `WriteText(string)` | Write encoded text |
+| `ToStringAndClear()` | Get output and clear buffer |
+
+### HtmlEncoder
+
+HTML encoding utilities.
+
+| Method | Description |
+|--------|-------------|
+| `Encode(string)` | Encode string for safe HTML output |
+| `Encode(string, StringBuilder)` | Encode and append to builder |

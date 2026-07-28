@@ -46,7 +46,7 @@ dotnet add package FluentHtml.Htmx
 
 ## Response Builder
 
-Combine main swap and out-of-band swaps using `HtmxResponse` from `FluentHtml.AspNetCore`:
+Combine main swap and out-of-band swaps using `HtmxResponse` from `FluentHtml.Http`:
 
 ```csharp
 return TodoItemRow(item)

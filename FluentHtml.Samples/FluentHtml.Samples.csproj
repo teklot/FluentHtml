@@ -6,8 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FluentHtml\FluentHtml.csproj" />
-    <ProjectReference Include="..\FluentHtml.Rendering\FluentHtml.Rendering.csproj" />
-    <ProjectReference Include="..\FluentHtml.AspNetCore\FluentHtml.AspNetCore.csproj" />
+    <ProjectReference Include="..\FluentHtml.Http\FluentHtml.Http.csproj" />
     <ProjectReference Include="..\FluentHtml.Htmx\FluentHtml.Htmx.csproj" />
     <ProjectReference Include="..\FluentHtml.Bootstrap\FluentHtml.Bootstrap.csproj" />
     <ProjectReference Include="..\FluentHtml.Forms\FluentHtml.Forms.csproj" />

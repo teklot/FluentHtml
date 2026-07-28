@@ -74,15 +74,19 @@ public static class BootstrapPage
             ).Class("row g-3")),
 
             SectionHelper.ShowSection("Navbar", Navbar(
-                NavbarBrand("Brand").Href("#"),
-                NavbarToggler().Controls("navCollapse").DataTarget("#navCollapse"),
-                NavbarNav(
-                    NavbarNavItem(A("Home").Href("#").Class("nav-link active")),
-                    NavbarNavItem(A("Features").Href("#").Class("nav-link")),
-                    NavbarNavItem(A("Pricing").Href("#").Class("nav-link")),
-                    NavbarText("Signed in as Admin")
-                )
-            ).Dark().ExpandLg().Class("rounded mb-3")),
+                Div(
+                    NavbarBrand("Brand").Href("#"),
+                    NavbarToggler().Controls("navCollapse").DataTarget("#navCollapse"),
+                    NavbarCollapse(
+                        NavbarNav(
+                            NavbarNavItem(A("Home").Href("#").Class("nav-link active")),
+                            NavbarNavItem(A("Features").Href("#").Class("nav-link")),
+                            NavbarNavItem(A("Pricing").Href("#").Class("nav-link"))
+                        ),
+                        NavbarText("Signed in as Admin")
+                    ).Id("navCollapse")
+                ).Class("container")
+            ).Dark().ExpandLg().Class("bg-dark rounded mb-3")),
 
             SectionHelper.ShowSection("Modal", Div(
                 Btn("Open Modal").Primary().Data("bs-toggle", "modal").Data("bs-target", "#demoModal"),

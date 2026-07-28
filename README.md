@@ -4,6 +4,7 @@
 [![NuGet Version](https://img.shields.io/nuget/v/FluentHtml)](https://www.nuget.org/packages/FluentHtml)
 [![.NET](https://img.shields.io/badge/.NET-net10.0-blue)](https://dotnet.microsoft.com/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue)](https://github.com/anomalyco/FluentHtml/blob/main/LICENSE)
+[![Docs](https://img.shields.io/badge/docs-teklot.github.io%2FFluentHtml-blue)](https://teklot.github.io/FluentHtml/)
 
 Every ASP.NET team eventually faces the same choice: Razor mixes HTML and C# into a template language that resists refactoring. Blazor introduces a runtime, a component lifecycle, and hydration overhead that most line-of-business apps don't need. React/Vue/Angular require a separate language, a build pipeline, and a deployment story that doubles operational complexity. None of these are bad tools — they're just solving a bigger problem than most internal applications actually have.
 
@@ -62,8 +63,7 @@ The entire component model lives in `FluentHtml` — **pure C# with no third-par
 │  │     Fluent attributes: .Id() .Class() .HxPost()        │  │
 │  └────────────────────────────────────────────────────────┘  │
 │  ┌────────────────────────────────────────────────────────┐  │
-│  │  FluentHtml.Rendering  — Renderer, HtmlWriter, Encode  │  │
-│  │  FluentHtml.AspNetCore — IResult, Minimal API helpers  │  │
+│  │  FluentHtml.Http — IResult, Minimal API helpers        │  │
 │  │  FluentHtml.Htmx       — hx-get, hx-post, hx-swap      │  │
 │  │  FluentHtml.Bootstrap  — Card, Alert, Button, Modal    │  │
 │  └────────────────────────────────────────────────────────┘  │
@@ -191,9 +191,8 @@ Clean, semantic HTML without the weight of a JavaScript framework. Server-side r
 
 | Package | Description |
 |---|---|
-| **FluentHtml** | Core: `Node`, `Element`, `Component<T>`, `Fragment`, `TextNode`, `RawHtml`, ~120 HTML elements, fluent attributes, CSS helpers |
-| **FluentHtml.Rendering** | `Renderer`, `HtmlWriter`, `HtmlEncoder` — converts component trees to clean HTML |
-| **FluentHtml.AspNetCore** | `HtmlResult` (`IResult`), Minimal API endpoint extensions, `Node.ToHtmlResult()` |
+| **FluentHtml** | Core: `Node`, `Element`, `Component<T>`, `Fragment`, `TextNode`, `RawHtml`, `Renderer`, `HtmlWriter`, `HtmlEncoder`, ~120 HTML elements, fluent attributes, CSS helpers |
+| **FluentHtml.Http** | `HtmlResult` (`IResult`), Minimal API endpoint extensions, `Node.ToHtmlResult()` |
 | **FluentHtml.Htmx** | `HxGet()`, `HxPost()`, `HxSwap()`, `HxTarget()`, `HxTrigger()`, `HxConfirm()` and 20+ HTMX attribute extensions |
 | **FluentHtml.Bootstrap** | `Card`, `Alert`, `Button`, `Navbar`, `Modal`, `Accordion`, `Toast`, `Dropdown`, `Pagination`, `Badge`, `Breadcrumb`, `Spinner` + CSS helper extensions |
 | **FluentHtml.Forms** | `Form`, `InputFor()`, `LabelFor()`, `SelectFor()`, `TextAreaFor()`, `CheckboxFor()`, `ValidationSummary()` |
@@ -203,8 +202,7 @@ Clean, semantic HTML without the weight of a JavaScript framework. Server-side r
 
 ```shell
 dotnet add package FluentHtml
-dotnet add package FluentHtml.Rendering
-dotnet add package FluentHtml.AspNetCore
+dotnet add package FluentHtml.Http
 dotnet add package FluentHtml.Htmx
 dotnet add package FluentHtml.Bootstrap
 dotnet add package FluentHtml.Forms
@@ -215,8 +213,7 @@ dotnet add package FluentHtml.Validation
 
 ```csharp
 using FluentHtml.Elements;
-using FluentHtml.Rendering;
-using FluentHtml.AspNetCore;
+using FluentHtml.Http;
 using FluentHtml.Bootstrap.Components;
 
 var builder = WebApplication.CreateBuilder(args);

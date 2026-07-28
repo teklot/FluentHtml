@@ -5,8 +5,7 @@
         {
           "files": [
             "FluentHtml/FluentHtml.csproj",
-            "FluentHtml.Rendering/FluentHtml.Rendering.csproj",
-            "FluentHtml.AspNetCore/FluentHtml.AspNetCore.csproj",
+            "FluentHtml.Http/FluentHtml.Http.csproj",
             "FluentHtml.Htmx/FluentHtml.Htmx.csproj",
             "FluentHtml.Bootstrap/FluentHtml.Bootstrap.csproj",
             "FluentHtml.Forms/FluentHtml.Forms.csproj",

@@ -1,7 +1,7 @@
 global using FluentHtml.Bootstrap.Components;
 global using FluentHtml.Elements;
 global using FluentHtml.Enums;
-global using FluentHtml.AspNetCore;
+global using FluentHtml.Http;
 global using FluentHtml.Htmx;
 global using FluentHtml.Nodes;
 global using FluentHtml.Rendering;

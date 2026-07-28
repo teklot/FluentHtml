@@ -14,10 +14,8 @@
       items:
         - name: Core (FluentHtml)
           href: concepts/core.md
-        - name: Rendering
-          href: concepts/rendering.md
-        - name: ASP.NET Core
-          href: concepts/aspnetcore.md
+        - name: HTTP
+          href: concepts/http.md
         - name: HTMX
           href: concepts/htmx.md
         - name: Bootstrap

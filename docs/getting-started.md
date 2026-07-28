@@ -5,7 +5,7 @@
 Install the FluentHtml packages via NuGet:
 
 ```bash
-dotnet add package FluentHtml.AspNetCore
+dotnet add package FluentHtml.Http
 ```
 
 This will install the core packages. For additional features:
@@ -29,7 +29,7 @@ dotnet add package FluentHtml.Validation
 ```csharp
 using FluentHtml;
 using FluentHtml.Elements;
-using FluentHtml.AspNetCore;
+using FluentHtml.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAntiforgery();

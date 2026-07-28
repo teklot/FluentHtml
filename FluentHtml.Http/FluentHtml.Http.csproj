@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateLaunchSettingsJson>false</GenerateLaunchSettingsJson>
+    <Title>FluentHtml.Http</Title>
+    <Authors>TekLot,$(AssemblyName)</Authors>
+    <Description>HTTP layer integration for FluentHtml. Provides endpoint routing with fluent Node-based handlers, automatic HTMX response building with OOB support, form antiforgery extensions, and IResult implementations for Minimal APIs.</Description>
+    <Copyright>Copyright © 2026 TekLot</Copyright>
+    <PackageId>FluentHtml.Http</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageTags>FluentHtml;Http;HTMX;MinimalApi;EndpointRouting;ServerRendered;dotnet-library</PackageTags>
+    <PackageReleaseNotes>Provides FluentRouter (MapGet/MapPost/MapPut/MapPatch/MapDelete), FormAntiforgery, HtmxResponse with OOB support, HtmlResult, and NodeResultExtensions for seamless HTTP integration.</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/teklot/FluentHtml</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/teklot/FluentHtml.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FluentHtml\FluentHtml.csproj" />
+  </ItemGroup>
+
+</Project>

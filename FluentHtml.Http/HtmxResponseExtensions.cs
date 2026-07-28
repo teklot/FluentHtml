@@ -1,6 +1,6 @@
 using FluentHtml.Nodes;
 
-namespace FluentHtml.AspNetCore;
+namespace FluentHtml.Http;
 
 /// <summary>
 /// Provides the <see cref="Htmx"/> extension method for creating <see cref="HtmxResponse"/> instances.

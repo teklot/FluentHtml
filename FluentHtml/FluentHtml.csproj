@@ -4,13 +4,13 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Title>FluentHtml</Title>
     <Authors>TekLot,$(AssemblyName)</Authors>
-    <Description>Core HTML node model for FluentHtml. Provides Node, Element, Fragment, RawHtml, TextNode, and AttributeCollection — the foundational types for building, composing, and rendering HTML elements with a fluent C# API.</Description>
+    <Description>Core HTML node model and rendering pipeline for FluentHtml. Provides Node, Element, Fragment, RawHtml, TextNode, AttributeCollection, and the Renderer/HtmlWriter/HtmlEncoder types for building, composing, and rendering HTML elements with a fluent C# API.</Description>
     <Copyright>Copyright © 2026 TekLot</Copyright>
     <PackageId>FluentHtml</PackageId>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageTags>FluentHtml;HTML;DOM;FluentApi;ServerRendered;dotnet-library</PackageTags>
-    <PackageReleaseNotes>Provides the core HTML node model including Node, Element, Fragment, RawHtml, TextNode, AttributeCollection, Tag, and ElementType, with pure C# and no third-party dependencies.</PackageReleaseNotes>
+    <PackageTags>FluentHtml;HTML;DOM;FluentApi;Rendering;ServerRendered;dotnet-library</PackageTags>
+    <PackageReleaseNotes>Provides the core HTML node model (Node, Element, Fragment, RawHtml, TextNode, AttributeCollection, Tag, ElementType) and the rendering pipeline (Renderer, HtmlWriter, HtmlEncoder), with pure C# and no third-party dependencies.</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/teklot/FluentHtml</PackageProjectUrl>
     <RepositoryUrl>https://github.com/teklot/FluentHtml.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

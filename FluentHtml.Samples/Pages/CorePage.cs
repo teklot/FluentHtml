@@ -6,6 +6,7 @@ public static class CorePage
 {
     public static IResult Render(HttpContext http)
     {
+        var renderer = new Renderer();
         return Layout.Page(http,
             BreadcrumbHelper.MakeBreadcrumb(("Home", "/"), ("Core Elements", null)),
             H1("FluentHtml Core"),
@@ -74,6 +75,30 @@ public static class CorePage
                 P("Fragment: renders children without a wrapper element."),
                 P(new RawHtml("<strong>RawHtml</strong> content - <em>not</em> HTML-encoded")),
                 P("TextNode: always HTML-encoded. <script> tags become &lt;script&gt;.")
+            )),
+
+            SectionHelper.ShowSection("Renderer & HtmlWriter", Div(
+                P("The Renderer converts component trees to clean HTML strings."),
+                P(new StrongElement("Renderer.Render(Node)")),
+                new PreElement(
+                    renderer.Render(Div(H3("Demo"), P("Rendered inline")).Class("p-3"))
+                ).Class("bg-dark text-light p-3 rounded small")
+            )),
+
+            SectionHelper.ShowSection("HtmlEncoder", Div(
+                P(new StrongElement("HtmlEncoder.Encode()")),
+                P(new TextNode("Input: "), new CodeElement("<script>alert('xss')</script>")),
+                P(new TextNode("Output: "), new CodeElement(HtmlEncoder.Encode("<script>alert('xss')</script>"))),
+                P("All user text is automatically encoded. RawHtml bypasses encoding for trusted content.")
+            )),
+
+            SectionHelper.ShowSection("HtmlResult", Div(
+                P("HtmlResult implements "),
+                new CodeElement("IResult"),
+                P(" - returns HTML directly from Minimal API endpoints."),
+                new PreElement(
+                    "app.MapGet(\"/api\", () =>\n{\n    return Alert(\"OK\").Success().ToHtmlResult();\n});"
+                ).Class("bg-dark text-light p-3 rounded small font-monospace")
             ))
         ).ToHtmlResult();
     }

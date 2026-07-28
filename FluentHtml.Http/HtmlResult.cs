@@ -2,7 +2,7 @@ using FluentHtml.Nodes;
 using FluentHtml.Rendering;
 using Microsoft.AspNetCore.Http;
 
-namespace FluentHtml.AspNetCore;
+namespace FluentHtml.Http;
 
 /// <summary>
 /// Represents an ASP.NET Core <see cref="IResult"/> that renders a FluentHtml <see cref="Node"/> to HTML.

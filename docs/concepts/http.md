@@ -1,11 +1,11 @@
-# FluentHtml.AspNetCore
+# FluentHtml.Http
 
-ASP.NET Core integration for FluentHtml.
+HTTP layer integration for FluentHtml.
 
 ## Installation
 
 ```bash
-dotnet add package FluentHtml.AspNetCore
+dotnet add package FluentHtml.Http
 ```
 
 ## Key Features

@@ -12,9 +12,8 @@ public static class HomePage
                 .Class("lead text-muted"),
 
             Div(
-                CardHelpers.PackageCard("FluentHtml", "Core", "Node, Element, Fragment, RawHtml, TextNode, ~100 HTML elements, fluent attributes"),
-                CardHelpers.PackageCard("FluentHtml.Rendering", "Rendering", "Renderer, HtmlWriter, HtmlEncoder - component tree to HTML"),
-                CardHelpers.PackageCard("FluentHtml.AspNetCore", "AspNetCore", "HtmlResult (IResult), ToHtmlResult(), Minimal API integration"),
+                CardHelpers.PackageCard("FluentHtml", "Core", "Node, Element, Fragment, RawHtml, TextNode, Renderer, HtmlWriter, HtmlEncoder, ~100 HTML elements, fluent attributes"),
+                CardHelpers.PackageCard("FluentHtml.Http", "Http", "FluentRouter, HtmlResult (IResult), ToHtmlResult(), HtmxResponse, Minimal API integration"),
                 CardHelpers.PackageCard("FluentHtml.Htmx", "HTMX", "HxGet, HxPost, HxSwap, HxTarget, HxTrigger, HxConfirm, 20+ extensions"),
                 CardHelpers.PackageCard("FluentHtml.Bootstrap", "Bootstrap", "Card, Alert, Button, Navbar, Modal, Accordion, Toast, Dropdown, Pagination, Badge, Breadcrumb, Spinner"),
                 CardHelpers.PackageCard("FluentHtml.Forms", "Forms", "Form, InputFor, LabelFor, SelectFor, TextAreaFor, CheckboxFor (not yet implemented)"),

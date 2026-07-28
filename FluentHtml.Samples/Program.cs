@@ -13,7 +13,6 @@ routes.MapGet("/htmx/table", HtmxPage.RenderTable);
 routes.MapGet("/htmx/alert", HtmxPage.RenderAlert);
 routes.MapGet("/htmx/alert/dismiss", HtmxPage.DismissAlert);
 routes.MapGet("/bootstrap", BootstrapPage.Render);
-routes.MapGet("/rendering", RenderingPage.Render);
 routes.MapGet("/forms", FormsPage.Render);
 routes.MapPost("/forms/create", FormsPage.CreateUser);
 routes.MapGet("/todo", TodoPage.Render);

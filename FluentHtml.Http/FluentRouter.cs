@@ -4,7 +4,7 @@ using FluentHtml.Nodes;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 
-namespace FluentHtml.AspNetCore;
+namespace FluentHtml.Http;
 
 /// <summary>
 /// Provides FluentHtml HTTP endpoint mapping methods (<c>MapGet</c>, <c>MapPost</c>, etc.)

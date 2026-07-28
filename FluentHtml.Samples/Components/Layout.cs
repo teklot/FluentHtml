@@ -44,7 +44,7 @@ public static class Layout
     {
         return Navbar(
             Div(
-                NavbarBrand("FluentHtml").Href("/"),
+                NavbarBrand("FluentHtml.Samples").Href("/"),
                 NavbarToggler().Controls("mainNavCollapse").DataTarget("#mainNavCollapse"),
                 NavbarCollapse(
                     NavbarNav(
@@ -52,10 +52,9 @@ public static class Layout
                         NavbarNavItem(A("Core").Href("/core").Class("nav-link")),
                         NavbarNavItem(A("HTMX").Href("/htmx").Class("nav-link")),
                         NavbarNavItem(A("Bootstrap").Href("/bootstrap").Class("nav-link")),
-                        NavbarNavItem(A("Rendering").Href("/rendering").Class("nav-link")),
+                        NavbarNavItem(A("Dashboard").Href("/dashboard").Class("nav-link")),
                         NavbarNavItem(A("Forms").Href("/forms").Class("nav-link")),
                         NavbarNavItem(A("Todo").Href("/todo").Class("nav-link")),
-                        NavbarNavItem(A("Dashboard").Href("/dashboard").Class("nav-link")),
                         NavbarNavItem(A("Customers").Href("/customers").Class("nav-link"))
                     )
                 ).Id("mainNavCollapse")
