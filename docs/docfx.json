@@ -18,7 +18,7 @@
       "includePrivateMembers": false,
       "disableGitFeatures": false,
       "disableDefaultFilter": false,
-      "noRestore": true,
+      "noRestore": false,
       "namespaceLayout": "flattened",
       "memberLayout": "samePage",
       "properties": {
@@ -29,7 +29,7 @@
   "build": {
     "content": [
       {
-        "files": ["api/**.yml", "api/**.toc.yml", "api/index.md"]
+        "files": ["api/**.yml", "api/**.toc.yml"]
       },
       {
         "files": ["**.md", "**/toc.yml", "toc.yml"]
