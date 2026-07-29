@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Title>FluentHtml</Title>
+    <Title>FluentHtml.Core</Title>
     <Authors>TekLot,$(AssemblyName)</Authors>
     <Description>Core HTML node model and rendering pipeline for FluentHtml. Provides Node, Element, Fragment, RawHtml, TextNode, AttributeCollection, and the Renderer/HtmlWriter/HtmlEncoder types for building, composing, and rendering HTML elements with a fluent C# API.</Description>
     <Copyright>Copyright © 2026 TekLot</Copyright>
-    <PackageId>FluentHtml</PackageId>
+    <PackageId>FluentHtml.Core</PackageId>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageTags>FluentHtml;HTML;DOM;FluentApi;Rendering;ServerRendered;dotnet-library</PackageTags>

@@ -5,7 +5,7 @@ The core FluentHtml package provides the fundamental building blocks for HTML ge
 ## Installation
 
 ```bash
-dotnet add package FluentHtml
+dotnet add package FluentHtml.Core
 ```
 
 ## Key Types

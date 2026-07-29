@@ -1,7 +1,7 @@
 # FluentHtml — Server-Rendered HTML with Fluent C#
 
 [![CI](https://github.com/TekLot/FluentHtml/actions/workflows/ci.yml/badge.svg)](https://github.com/TekLot/FluentHtml/actions/workflows/ci.yml)
-[![NuGet Version](https://img.shields.io/nuget/v/FluentHtml)](https://www.nuget.org/packages/FluentHtml)
+[![NuGet Version](https://img.shields.io/nuget/v/FluentHtml.Core)](https://www.nuget.org/packages/FluentHtml.Core)
 [![.NET](https://img.shields.io/badge/.NET-net10.0-blue)](https://dotnet.microsoft.com/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue)](https://github.com/anomalyco/FluentHtml/blob/main/LICENSE)
 [![Docs](https://img.shields.io/badge/docs-teklot.github.io%2FFluentHtml-blue)](https://teklot.github.io/FluentHtml/)
@@ -191,7 +191,7 @@ Clean, semantic HTML without the weight of a JavaScript framework. Server-side r
 
 | Package | Description |
 |---|---|
-| **FluentHtml** | Core: `Node`, `Element`, `Component<T>`, `Fragment`, `TextNode`, `RawHtml`, `Renderer`, `HtmlWriter`, `HtmlEncoder`, ~120 HTML elements, fluent attributes, CSS helpers |
+| **FluentHtml.Core** | Core: `Node`, `Element`, `Component<T>`, `Fragment`, `TextNode`, `RawHtml`, `Renderer`, `HtmlWriter`, `HtmlEncoder`, ~120 HTML elements, fluent attributes, CSS helpers |
 | **FluentHtml.Http** | `HtmlResult` (`IResult`), Minimal API endpoint extensions, `Node.ToHtmlResult()` |
 | **FluentHtml.Htmx** | `HxGet()`, `HxPost()`, `HxSwap()`, `HxTarget()`, `HxTrigger()`, `HxConfirm()` and 20+ HTMX attribute extensions |
 | **FluentHtml.Bootstrap** | `Card`, `Alert`, `Button`, `Navbar`, `Modal`, `Accordion`, `Toast`, `Dropdown`, `Pagination`, `Badge`, `Breadcrumb`, `Spinner` + CSS helper extensions |
@@ -201,7 +201,7 @@ Clean, semantic HTML without the weight of a JavaScript framework. Server-side r
 ## Installation
 
 ```shell
-dotnet add package FluentHtml
+dotnet add package FluentHtml.Core
 dotnet add package FluentHtml.Http
 dotnet add package FluentHtml.Htmx
 dotnet add package FluentHtml.Bootstrap

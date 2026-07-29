@@ -14,7 +14,7 @@ FluentHtml is a FastHTML-inspired microframework for ASP.NET Core that enables d
 
 | Package | Description |
 |---------|-------------|
-| [FluentHtml](concepts/core.md) | Core HTML elements, Node hierarchy, Components, Rendering |
+| [FluentHtml.Core](concepts/core.md) | Core HTML elements, Node hierarchy, Components, Rendering |
 | [FluentHtml.Http](concepts/http.md) | HTTP layer integration |
 | [FluentHtml.Htmx](concepts/htmx.md) | HTMX attribute extensions |
 | [FluentHtml.Bootstrap](concepts/bootstrap.md) | Bootstrap components and CSS helpers |
