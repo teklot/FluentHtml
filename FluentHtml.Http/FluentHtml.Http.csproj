@@ -4,6 +4,8 @@
     <OutputType>Library</OutputType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GenerateLaunchSettingsJson>false</GenerateLaunchSettingsJson>
+    <!-- Web SDK disables packing by default; this is a library targeting Web SDK for ASP.NET Core framework references -->
+    <IsPackable>true</IsPackable>
     <Title>FluentHtml.Http</Title>
     <Authors>TekLot,$(AssemblyName)</Authors>
     <Description>HTTP layer integration for FluentHtml. Provides endpoint routing with fluent Node-based handlers, automatic HTMX response building with OOB support, form antiforgery extensions, and IResult implementations for Minimal APIs.</Description>
