@@ -1,8 +1,8 @@
 # FluentHtml
 
-**Build HTML with C#, not strings.**
+**Build HTML in .NET, not strings.**
 
-FluentHtml is a FastHTML-inspired microframework for ASP.NET Core that enables developers to build modern server-rendered web applications entirely in C# using a fluent API.
+FluentHtml is a FastHTML-inspired microframework for ASP.NET Core that enables developers to build modern server-rendered web applications using a fluent API — most natural from C#, but usable from any .NET language.
 
 ## Quick Links
 
@@ -33,7 +33,7 @@ var page = Div()
     .Class("container")
     .Children(
         H1("Welcome to FluentHtml"),
-        P("Build HTML with C#, not strings."),
+        P("Build HTML in .NET, not strings."),
         Btn("Click Me")
             .Primary()
             .Large()

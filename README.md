@@ -1,14 +1,14 @@
-# FluentHtml — Server-Rendered HTML with Fluent C#
+# FluentHtml — Server-Rendered HTML with a Fluent .NET API
 
 [![CI](https://github.com/TekLot/FluentHtml/actions/workflows/ci.yml/badge.svg)](https://github.com/TekLot/FluentHtml/actions/workflows/ci.yml)
 [![NuGet Version](https://img.shields.io/nuget/v/FluentHtml.Core)](https://www.nuget.org/packages/FluentHtml.Core)
-[![.NET](https://img.shields.io/badge/.NET-net10.0-blue)](https://dotnet.microsoft.com/)
+[![.NET](https://img.shields.io/badge/.NET-net8.0%20%7C%20net10.0-blue)](https://dotnet.microsoft.com/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue)](https://github.com/anomalyco/FluentHtml/blob/main/LICENSE)
-[![Docs](https://img.shields.io/badge/docs-teklot.github.io%2FFluentHtml-blue)](https://teklot.github.io/FluentHtml/)
+[![Docs](https://img.shields.io/badge/docs-FluentHtml-blue)](https://teklot.github.io/FluentHtml/)
 
 Every ASP.NET team eventually faces the same choice: Razor mixes HTML and C# into a template language that resists refactoring. Blazor introduces a runtime, a component lifecycle, and hydration overhead that most line-of-business apps don't need. React/Vue/Angular require a separate language, a build pipeline, and a deployment story that doubles operational complexity. None of these are bad tools — they're just solving a bigger problem than most internal applications actually have.
 
-FluentHtml takes a different approach. Instead of importing a foreign programming model into .NET, it makes HTML a native citizen of C# — strongly typed, composable, IntelliSense-discoverable — and keeps application logic on the server where ASP.NET Core excels. HTMX handles interactivity without a JavaScript framework. The result is a framework that feels like writing idiomatic .NET, not porting another language's ideas.
+FluentHtml takes a different approach. Instead of importing a foreign programming model, it makes HTML a native citizen of .NET — strongly typed, composable, IntelliSense-discoverable (in C#) — and keeps application logic on the server where ASP.NET Core excels. HTMX handles interactivity without a JavaScript framework. The result feels like writing idiomatic .NET, not porting another language's ideas.
 
 **Guiding principle:** Never replace ASP.NET Core. Extend it with strongly typed HTML generation.
 
@@ -36,13 +36,13 @@ html += "<h2>" + title + "</h2>";
 </div>
 ```
 
-Razor forces a template language that mixes two syntaxes in one file. String concatenation has no compile-time safety. Blazor adds a runtime, state management, and a rendering pipeline for pages that could be simple HTML. There is no lightweight, strongly typed, fluent way to generate HTML in C# that integrates naturally with Minimal APIs and produces clean output.
+Razor forces a template language that mixes two syntaxes in one file. String concatenation has no compile-time safety. Blazor adds a runtime, state management, and a rendering pipeline for pages that could be simple HTML. There is no lightweight, strongly typed, fluent way to generate HTML in .NET that integrates naturally with Minimal APIs and produces clean output.
 
-**FluentHtml eliminates the seam.** It provides the strongly typed building blocks that make HTML generation a first-class C# operation — not a template language, not a string, not a separate runtime.
+**FluentHtml eliminates the seam.** It provides the strongly typed building blocks that make HTML generation a first-class .NET operation — not a template language, not a string, not a separate runtime.
 
 ## How It Works
 
-The entire component model lives in `FluentHtml` — **pure C# with no third-party dependencies.** ASP.NET Core integration, HTMX support, and Bootstrap components are separate packages you opt into.
+The entire component model lives in `FluentHtml` — **pure .NET with no third-party dependencies.** Targets `net8.0` and `net10.0`. ASP.NET Core integration, HTMX support, and Bootstrap components are separate packages you opt into.
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -74,15 +74,15 @@ Every element is **immutable after construction** — fluent methods return the 
 
 ### Not a Clone — An Idiom
 
-FluentHtml is **inspired by** FastHTML's philosophy of composing HTML from function calls, but it is designed as an **idiomatic .NET framework** that follows C# conventions rather than porting another language's patterns:
+FluentHtml is **inspired by** FastHTML's philosophy of composing HTML from function calls, but it is designed as an **idiomatic .NET framework** that follows .NET conventions rather than porting another language's patterns:
 
-- **Extension methods** instead of static functions — `Button().Primary()` reads like fluent C#, not F# pipe operators
+- **Extension methods** instead of static functions — `Button().Primary()` reads like fluent .NET, not F# pipe operators
 - **Generics and type constraints** — `Component<T>` with compile-time safety, not duck typing
 - **Immutable element trees** — built via constructors, not mutable builder chains
 - **ASP.NET Core native** — `IResult` integration, Minimal API extensions, not a standalone renderer
 - **Strong typing everywhere** — `ButtonType.Submit` instead of `"submit"`, `InputType.Email` instead of `"email"`
 
-The result is a framework that feels like writing C#, not translating another language's idioms into .NET.
+The result is a framework that feels like writing .NET, not translating another language's idioms.
 
 ### Fluent API — Not a Template Language
 
@@ -219,7 +219,7 @@ using FluentHtml.Bootstrap.Components;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-// A complete page — all C#, no Razor, no templates
+// A complete page — all .NET, no Razor, no templates
 app.MapGet("/", () =>
 {
     return new HtmlElement(
@@ -231,7 +231,7 @@ app.MapGet("/", () =>
             new MainElement().Class("container mt-4").Children(
                 Card(
                     new Heading1Element("Welcome"),
-                    new ParagraphElement("Built with strongly typed C# components."),
+                    new ParagraphElement("Built with strongly typed .NET components."),
                     Button("Click Me")
                         .Primary()
                         .Large()
@@ -347,7 +347,7 @@ var html = renderer.Render(card);
 Assert.Equal("<div class=\"card\"><h2>Test</h2><p>Content</p></div>", html);
 ```
 
-No web server required. Components are plain C# objects — instantiate, render, assert.
+No web server required. Components are plain .NET objects — instantiate, render, assert.
 
 ## Node Hierarchy
 
