@@ -57,7 +57,20 @@ public static class FormsPage
                 ).Class("form-check mb-3"),
 
                 FluentFormExtensions.SubmitButton("Create User").HxPost("/forms/create").HxTarget("#user-form").HxSwap("outerHTML")
-            ).Action("/forms/create").Method("post").Id("user-form"))
+            ).Action("/forms/create").Method("post").Id("user-form")),
+
+            SectionHelper.ShowSection("AutoForm<T>", Div(
+                P("Auto-generates complete forms from model types with DataAnnotations. Supports field exclusion, custom labels, field type overrides, and HTMX integration."),
+                new PreElement(
+                    "AutoForm<CreateUserModel>()\n    .Exclude(m => m.Id)\n    .Label(m => m.Name, \"Full Name\")\n    .Field(m => m.Password, FieldType.Password)\n    .HtmxForm(config => config\n        .Post(\"/users/create\")\n        .Target(\"#result\")\n        .Swap(\"outerHTML\"))\n    .SubmitText(\"Create Account\")\n    .SubmitClass(\"btn btn-success\")"
+                ).Class("bg-dark text-light p-3 rounded small font-monospace mb-3"),
+                A("See full AutoForm demo").Href("/autoform").Class("btn btn-outline-primary btn-sm")
+            )),
+
+            SectionHelper.ShowSection("File Upload", Div(
+                P("File input components for single, multi-file, and drag-and-drop uploads with HTMX integration."),
+                A("See full Upload demo").Href("/upload").Class("btn btn-outline-primary btn-sm")
+            ))
         ).ToHtmlResult();
     }
 

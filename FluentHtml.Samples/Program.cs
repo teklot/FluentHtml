@@ -27,5 +27,12 @@ routes.MapGet("/customers/edit/{id}", CrudPage.EditCustomer);
 routes.MapGet("/customers/cancel/{id}", CrudPage.CancelEdit);
 routes.MapPost("/customers/update/{id}", CrudPage.UpdateCustomer);
 routes.MapDelete("/customers/delete/{id}", CrudPage.DeleteCustomer);
+routes.MapGet("/markdown", MarkdownPage.Render);
+routes.MapGet("/autoform", AutoFormPage.Render);
+routes.MapPost("/autoform/create", AutoFormPage.CreateUser);
+routes.MapGet("/datagrid", DataGridPage.Render);
+routes.MapGet("/api/customers", DataGridPage.HandleApiRequest);
+routes.MapGet("/charts", ChartsPage.Render);
+routes.MapGet("/upload", UploadPage.Render);
 
 app.Run();

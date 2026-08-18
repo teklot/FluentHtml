@@ -56,3 +56,8 @@ global using static FluentHtml.Bootstrap.Components.BreadcrumbExtensions;
 global using static FluentHtml.Bootstrap.Components.SpinnerExtensions;
 global using static FluentHtml.Bootstrap.Components.TabExtensions;
 global using static FluentHtml.Elements.PageExtensions;
+global using static FluentHtml.Elements.UlExtensions;
+global using static FluentHtml.Elements.LiExtensions;
+global using static FluentHtml.Forms.DragDropUploadExtensions;
+global using static FluentHtml.Bootstrap.Components.ChartExtensions;
+global using static FluentHtml.Bootstrap.Components.BootstrapIconExtensions;

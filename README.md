@@ -42,32 +42,39 @@ Razor forces a template language that mixes two syntaxes in one file. String con
 
 ## How It Works
 
-The entire component model lives in `FluentHtml` — **pure .NET with no third-party dependencies.** Targets `net8.0` and `net10.0`. ASP.NET Core integration, HTMX support, and Bootstrap components are separate packages you opt into.
+The entire component model lives in `FluentHtml` — **pure .NET with no third-party dependencies** (Markdig is used only for Markdown rendering). Targets `net8.0` and `net10.0`. ASP.NET Core integration, HTMX support, and Bootstrap components are separate packages you opt into.
 
 ```
-┌──────────────────────────────────────────────────────────────┐
-│                        FluentHtml                            │
-│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐  │
-│  │     Node       │  │    Element     │  │   Component    │  │
-│  │   .Children    │  │   .TagName     │  │   .Render()    │  │
-│  │   .AddChild()  │  │   .Attributes  │  │   .Build()     │  │
-│  │                │  │   .Classes     │  │                │  │
-│  └────────────────┘  └────────────────┘  └────────────────┘  │
-│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐  │
-│  │   TextNode     │  │    RawHtml     │  │   Fragment     │  │
-│  │   .Content     │  │   .Content     │  │   (no wrapper) │  │
-│  │   (encoded)    │  │   (raw)        │  │                │  │
-│  └────────────────┘  └────────────────┘  └────────────────┘  │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │        ~120 HTML Elements (Div, Span, Button, ...)     │  │
-│  │     Fluent attributes: .Id() .Class() .HxPost()        │  │
-│  └────────────────────────────────────────────────────────┘  │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │  FluentHtml.Http — IResult, Minimal API helpers        │  │
-│  │  FluentHtml.Htmx       — hx-get, hx-post, hx-swap      │  │
-│  │  FluentHtml.Bootstrap  — Card, Alert, Button, Modal    │  │
-│  └────────────────────────────────────────────────────────┘  │
-└──────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────┐
+│                          FluentHtml                              │
+│  ┌────────────────┐  ┌────────────────┐  ┌────────────────────┐  │
+│  │     Node       │  │    Element     │  │     Component      │  │
+│  │   .Children    │  │   .TagName     │  │     .Render()      │  │
+│  │   .AddChild()  │  │   .Attributes  │  │     .Build()       │  │
+│  │                │  │   .Classes     │  │                    │  │
+│  └────────────────┘  └────────────────┘  └────────────────────┘  │
+│  ┌────────────────┐  ┌────────────────┐  ┌────────────────────┐  │
+│  │   TextNode     │  │    RawHtml     │  │     Fragment       │  │
+│  │   .Content     │  │   .Content     │  │   (no wrapper)     │  │
+│  │   (encoded)    │  │     (raw)      │  │                    │  │
+│  └────────────────┘  └────────────────┘  └────────────────────┘  │
+│  ┌────────────────────────────────────────────────────────────┐  │
+│  │     ~120 HTML Elements (Div, Span, Button, Ul, Li...)      │  │
+│  │     Fluent attributes: .Id() .Class() .HxPost()            │  │
+│  └────────────────────────────────────────────────────────────┘  │
+│  ┌────────────────────────────────────────────────────────────┐  │
+│  │  Markdown (Markdig) — tables, code blocks, emphasis        │  │
+│  │  Icons — framework-agnostic icon abstraction               │  │
+│  │  Badge / Breadcrumb — standalone, non-Bootstrap variants   │  │
+│  └────────────────────────────────────────────────────────────┘  │
+│  ┌────────────────────────────────────────────────────────────┐  │
+│  │  FluentHtml.Http      — IResult, Minimal API helpers       │  │
+│  │  FluentHtml.Htmx      — hx-get, hx-post, hx-swap           │  │
+│  │  FluentHtml.Forms     — AutoForm<T>, File Upload, Drag     │  │
+│  │  FluentHtml.Bootstrap — Card, Alert, DataGrid, Charts,     │  │
+│  │                         Theme Toggle, Icons                │  │
+│  └────────────────────────────────────────────────────────────┘  │
+└──────────────────────────────────────────────────────────────────┘
 ```
 
 Every element is **immutable after construction** — fluent methods return the same instance. Thread-safe by design. No defensive copies needed.
@@ -135,7 +142,7 @@ FluentHtml owns only component creation and rendering. Everything before and aft
 
 ### Internal Business Applications
 
-```
+```csharp
 app.MapGet("/customers", (CustomerService svc) =>
 {
     return CustomersPage(service.GetAll());
@@ -170,11 +177,11 @@ app.MapGet("/dashboard", (DashboardService svc) =>
 });
 ```
 
-Reusable components compose into complex layouts. Bootstrap integration provides the visual foundation.
+Reusable components compose into complex layouts. Bootstrap integration provides the visual foundation. Charts render via Chart.js with no client-side framework.
 
 ### Documentation and Portals
 
-Clean, semantic HTML without the weight of a JavaScript framework. Server-side rendering provides excellent SEO and fast first-page load.
+Clean, semantic HTML without the weight of a JavaScript framework. Server-side rendering provides excellent SEO and fast first-page load. Markdown support renders content from `.md` files or inline strings.
 
 ## Technical Differentiators
 
@@ -191,11 +198,11 @@ Clean, semantic HTML without the weight of a JavaScript framework. Server-side r
 
 | Package | Description |
 |---|---|
-| **FluentHtml.Core** | Core: `Node`, `Element`, `Component<T>`, `Fragment`, `TextNode`, `RawHtml`, `Renderer`, `HtmlWriter`, `HtmlEncoder`, ~120 HTML elements, fluent attributes, CSS helpers |
+| **FluentHtml.Core** | Core: `Node`, `Element`, `Component<T>`, `Fragment`, `TextNode`, `RawHtml`, `Renderer`, `HtmlWriter`, `HtmlEncoder`, `MarkdownComponent` (Markdig), `IconComponent` (framework-agnostic), standalone `BadgeComponent` / `BreadcrumbComponent`, `InlineScriptComponent`, ~120 HTML elements, fluent attributes, CSS helpers |
 | **FluentHtml.Http** | `HtmlResult` (`IResult`), Minimal API endpoint extensions, `Node.ToHtmlResult()` |
 | **FluentHtml.Htmx** | `HxGet()`, `HxPost()`, `HxSwap()`, `HxTarget()`, `HxTrigger()`, `HxConfirm()` and 20+ HTMX attribute extensions |
-| **FluentHtml.Bootstrap** | `Card`, `Alert`, `Button`, `Navbar`, `Modal`, `Accordion`, `Toast`, `Dropdown`, `Pagination`, `Badge`, `Breadcrumb`, `Spinner` + CSS helper extensions |
-| **FluentHtml.Forms** | `Form`, `InputFor()`, `LabelFor()`, `SelectFor()`, `TextAreaFor()`, `CheckboxFor()`, `ValidationSummary()` |
+| **FluentHtml.Bootstrap** | `Card`, `Alert`, `Button`, `Navbar`, `Modal`, `Accordion`, `Toast`, `Dropdown`, `Pagination`, `Badge`, `Breadcrumb`, `Spinner`, `Tab`, `DataGrid<T>` (HTMX-powered), `ChartComponent` (Chart.js), `ThemeToggle`, Bootstrap Icons helper |
+| **FluentHtml.Forms** | `Form`, `InputFor()`, `LabelFor()`, `SelectFor()`, `TextAreaFor()`, `CheckboxFor()`, `ValidationSummary()`, `AutoForm<T>()`, `FileInputFor()`, `FileInputGroup()`, `DragDropUpload()` |
 | **FluentHtml.Validation** | `ValidationMessage`, `ValidationSummary`, validation CSS helpers |
 
 ## Installation
@@ -291,6 +298,21 @@ Button("Save")
     .HxConfirm("Save?")     // hx-confirm="Save?"
 ```
 
+### Markdown
+
+```csharp
+using FluentHtml.Components;
+using static FluentHtml.Components.MarkdownExtensions;
+
+// Render Markdown to HTML via Markdig
+CardBody(Markdown("# Hello\n\n**Bold** and *italic*.\n\n- Item 1\n- Item 2"))
+
+// With optional CSS class injection for tables
+CardBody(Markdown("| Name | Age |\n|------|-----|\n| Alice | 30 |", "table table-striped"))
+```
+
+Supports headings, bold/italic, links, code blocks, lists, and pipe tables. Tables accept an optional CSS class for Bootstrap styling.
+
 ### HTMX Integration
 
 ```csharp
@@ -310,6 +332,138 @@ Button("Delete")
     .HxTarget("closest tr")
     .HxSwap("outerHTML");
 ```
+
+### AutoForm\<T\>
+
+```csharp
+using FluentHtml.Forms;
+
+public class CreateUserModel
+{
+    [Required]
+    [Display(Name = "Full Name")]
+    public string Name { get; set; } = string.Empty;
+
+    [EmailAddress, Required]
+    public string Email { get; set; } = string.Empty;
+
+    public string? Phone { get; set; }
+
+    public int Age { get; set; }
+
+    public string Role { get; set; } = string.Empty;
+
+    public bool IsActive { get; set; }
+}
+
+// Generate a complete form from model type using reflection + DataAnnotations
+var form = model.AutoForm("/users/create", MethodType.Post, hx =>
+{
+    hx.Target = "#result";
+    hx.Swap = "innerHTML";
+});
+
+// With field configuration
+var form = model.AutoForm("/users/create", MethodType.Post, hx: null, cfg =>
+{
+    cfg.Exclude(m => m.Id);
+    cfg.Label(m => m.Name, "Customer Name");
+    cfg.SubmitText = "Create User";
+    cfg.SubmitClass = "btn btn-success";
+});
+```
+
+Maps CLR types to input types: `string` → text, `int` → number, `bool` → checkbox, `DateTime` → date, `enum` → select. Supports `[Required]`, `[EmailAddress]`, `[Phone]`, `[Range]`, `[StringLength]`, `[DataType]`, and `[ScaffoldColumn]`.
+
+### File Upload & Drag-and-Drop
+
+```csharp
+using FluentHtml.Forms;
+
+// Standard file input with label
+model.FileInputGroup(m => m.Document, label: "Choose a file", accept: ".pdf,.doc,.txt")
+
+// HTMX-powered drag-and-drop upload zone
+DragDropUpload("/upload", "files", "Drop files here")
+    .Accept(".pdf,.doc,.jpg,.png")
+    .Target("#upload-result")
+    .DropZoneClass("border border-2 border-dashed rounded p-5 text-center")
+```
+
+`FileInputFor` / `FileInputGroup` generate `<input type="file">` elements. `DragDropUpload` generates a drop zone with inline JavaScript that uses HTMX to POST files to the server.
+
+### DataGrid\<T\>
+
+```csharp
+using FluentHtml.Bootstrap.Components;
+
+var grid = DataGrid<Customer>("/api/customers")
+    .Column(c => c.Name, "Name").Sortable()
+    .Column(c => c.Email, "Email")
+    .Column(c => c.Status, "Status")
+        .Render(v => Badge(v?.ToString() ?? "").Success())
+    .Column(c => c.Orders, "Orders").Sortable()
+    .PageSize(10)
+    .CurrentPage(1)
+    .TotalItems(totalCount)
+    .Id("customer-grid");
+
+// Render with data (server-side paging/sorting)
+return grid.RenderWithData(pagedCustomers).ToHtmlResult();
+```
+
+HTMX-powered data grid with sortable column headers, pagination controls, custom cell rendering, and Bootstrap-styled striped rows. Sorting and paging send `hx-get` requests to the configured data source URL.
+
+### Charts
+
+```csharp
+using FluentHtml.Bootstrap.Components;
+
+// Single dataset
+Chart("revenue-chart", ChartType.Bar)
+    .Data(new[] { 12500.0, 19000.0, 15000.0, 22000.0 })
+    .Labels(new[] { "Jan", "Feb", "Mar", "Apr" })
+    .Title("Monthly Revenue")
+    .Height(300)
+
+// Multi-series line chart
+Chart("growth-chart", ChartType.Line)
+    .Dataset("Users", new[] { 100.0, 150.0, 230.0, 310.0 })
+    .Dataset("Revenue", new[] { 50.0, 80.0, 140.0, 200.0 })
+    .Labels(new[] { "Jan", "Feb", "Mar", "Apr" })
+    .DatasetColor("#0d6efd")
+    .DatasetColor("#198754")
+    .Height(300)
+```
+
+Renders Chart.js charts from C#. Supports Bar, Line, Pie, Doughnut, Radar, and PolarArea types. Single or multiple datasets with custom colors per dataset. Chart.js is loaded via CDN.
+
+### Dark Mode / Theme Toggle
+
+```csharp
+using FluentHtml.Bootstrap.Components;
+
+// Theme toggle button (switches Bootstrap data-bs-theme attribute)
+ThemeToggle().Id("theme-toggle")
+
+// Apply dark mode by default to an element
+Div("Content").Theme("dark")
+```
+
+Toggle button uses inline JavaScript to switch between light and dark themes via Bootstrap's `data-bs-theme` attribute.
+
+### Bootstrap Icons
+
+```csharp
+using FluentHtml.Bootstrap.Components;
+
+// Bootstrap Icons via factory methods
+BiIcon("house")              // <i class="bi bi-house"></i>
+BiIcon("pencil").Size(Lg)    // <i class="bi bi-pencil fs-5"></i>
+BiIcon("trash").Size(Xl)     // <i class="bi bi-trash fs-1"></i>
+```
+
+Framework-agnostic icon abstraction in Core; Bootstrap Icons implementation in the Bootstrap package. Additional icon sets (Font Awesome, Material Icons) can be added as community packages.
 
 ### Forms with Model Binding
 

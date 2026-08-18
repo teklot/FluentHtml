@@ -19,6 +19,7 @@ public static class Layout
                 Meta().Charset("utf-8"),
                 Meta().Name("viewport").Content("width=device-width, initial-scale=1"),
                 Link().Href("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css").Rel("stylesheet"),
+                Link().Href("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css").Rel("stylesheet"),
                 Script().Src("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"),
                 Script().Src("https://unpkg.com/htmx.org@2.0.4/dist/htmx.min.js")
             ),
@@ -55,7 +56,12 @@ public static class Layout
                         NavbarNavItem(A("Dashboard").Href("/dashboard").Class("nav-link")),
                         NavbarNavItem(A("Forms").Href("/forms").Class("nav-link")),
                         NavbarNavItem(A("Todo").Href("/todo").Class("nav-link")),
-                        NavbarNavItem(A("Customers").Href("/customers").Class("nav-link"))
+                        NavbarNavItem(A("Customers").Href("/customers").Class("nav-link")),
+                        NavbarNavItem(A("Markdown").Href("/markdown").Class("nav-link")),
+                        NavbarNavItem(A("AutoForm").Href("/autoform").Class("nav-link")),
+                        NavbarNavItem(A("DataGrid").Href("/datagrid").Class("nav-link")),
+                        NavbarNavItem(A("Charts").Href("/charts").Class("nav-link")),
+                        NavbarNavItem(A("Upload").Href("/upload").Class("nav-link"))
                     )
                 ).Id("mainNavCollapse")
             ).Class("container")

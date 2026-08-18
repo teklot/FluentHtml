@@ -10,7 +10,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageTags>FluentHtml;Bootstrap;UI;Components;CSS;ServerRendered;dotnet-library</PackageTags>
-    <PackageReleaseNotes>Provides fluent Bootstrap 5 components: Accordion, Alert, Badge, Breadcrumb, Button, Card, Dropdown, Modal, Navbar, Pagination, Spinner, Toast, and Tabs with full C# IntelliSense support.</PackageReleaseNotes>
+    <PackageReleaseNotes>Added BootstrapIconExtensions (BiIcon() factory for Bootstrap Icons), ThemeToggleComponent (dark/light mode toggle), DataGridComponent (HTMX-powered sortable/paginated data grid), ChartComponent (Chart.js wrapper with bar/line/pie/doughnut charts).</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/teklot/FluentHtml</PackageProjectUrl>
     <RepositoryUrl>https://github.com/teklot/FluentHtml.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

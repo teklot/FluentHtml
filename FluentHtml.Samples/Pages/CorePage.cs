@@ -36,12 +36,11 @@ public static class CorePage
                     P(new DelElement("strikethrough text"))
                 ).Class("mb-3"),
                 H4("Inline"),
-                Div(new SpanElement("Span"),
-                    new BrElement(),
-                    new HrElement(),
+                Div(
+                    new SpanElement("Span").Class("badge bg-secondary"),
                     new AnchorElement("Link").Href("#"),
-                    new ImgElement().Src("/placeholder.png").Alt("Image")
-                ).Class("mb-3"),
+                    BiIcon("info-circle")
+                ).Class("d-flex align-items-center gap-3 mb-3"),
                 H4("Block"),
                 Div(
                     new BlockquoteElement(new ParagraphElement("Blockquote text")),
@@ -99,6 +98,41 @@ public static class CorePage
                 new PreElement(
                     "app.MapGet(\"/api\", () =>\n{\n    return Alert(\"OK\").Success().ToHtmlResult();\n});"
                 ).Class("bg-dark text-light p-3 rounded small font-monospace")
+            )),
+
+            SectionHelper.ShowSection("Markdown (Markdig)", Div(
+                P("Render Markdown content directly in your pages using the MarkdownComponent."),
+                P(new StrongElement("Features:")),
+                Ul(
+                    Li("Tables with optional CSS class injection"),
+                    Li("Fenced code blocks with syntax highlighting"),
+                    Li("Emphasis, strong, links, images"),
+                    Li("Custom Markdig pipeline support")
+                ).Class("mb-3"),
+                new PreElement(
+                    "new MarkdownComponent(\"**Bold** and *italic*\\n\\n| Name | Age |\\n|------|-----|\\n| Alice | 30 |\")\n    .TableClass(\"table table-striped\")"
+                ).Class("bg-dark text-light p-3 rounded small font-monospace"),
+                A("See full Markdown demo").Href("/markdown").Class("btn btn-outline-primary btn-sm mt-2")
+            )),
+
+            SectionHelper.ShowSection("Badge & Breadcrumb (Core)", Div(
+                P("Standalone Badge and Breadcrumb components in Core, independent of Bootstrap."),
+                H4("Badge"),
+                Div(
+                    Badge("Default"),
+                    Badge("Primary").Primary(),
+                    Badge("Success").Success(),
+                    Badge("Danger").Danger(),
+                    Badge("Pill").Info().Pill()
+                ).Class("d-flex flex-wrap gap-2 mb-3"),
+                H4("Breadcrumb"),
+                Breadcrumb(
+                    BreadcrumbList(
+                        BreadcrumbItem(BreadcrumbLink("Home").Href("#")),
+                        BreadcrumbItem(BreadcrumbLink("Library").Href("#")),
+                        BreadcrumbItem("Data").Active().AriaCurrent("page")
+                    )
+                ).AriaLabel("breadcrumb")
             ))
         ).ToHtmlResult();
     }

@@ -165,10 +165,44 @@ public static class BootstrapPage
                 SpinnerGrow().Success().Small().Class("ms-2")
             ).Class("d-flex align-items-center")),
 
+            SectionHelper.ShowSection("Bootstrap Icons", Div(
+                P("Framework-agnostic icon abstraction with Bootstrap Icons implementation. Use "),
+                new CodeElement("BiIcon(\"icon-name\")"),
+                P(" to render any Bootstrap Icon."),
+                Div(
+                    BiIcon("house"),
+                    BiIcon("person"),
+                    BiIcon("gear"),
+                    BiIcon("star"),
+                    BiIcon("heart"),
+                    BiIcon("trash"),
+                    BiIcon("pencil"),
+                    BiIcon("search"),
+                    BiIcon("bell"),
+                    BiIcon("envelope")
+                ).Class("d-flex flex-wrap gap-3 fs-4 mb-3"),
+                new PreElement(
+                    "BiIcon(\"house\")    // <i class=\"bi bi-house\"></i>\nBiIcon(\"person\")   // <i class=\"bi bi-person\"></i>\nBiIcon(\"gear\")     // <i class=\"bi bi-gear\"></i>"
+                ).Class("bg-dark text-light p-3 rounded small font-monospace")
+            )),
+
+            SectionHelper.ShowSection("Theme Toggle", Div(
+                P("Dark/light mode toggle button with persistence via localStorage."),
+                Div(new ThemeToggleComponent()).Class("mb-3")
+            )),
+
+            SectionHelper.ShowSection("DataGrid & Charts", Div(
+                P("HTMX-powered sortable/paginated data grid and Chart.js wrappers."),
+                Div(
+                    A("See DataGrid demo").Href("/datagrid").Class("btn btn-outline-primary btn-sm me-2"),
+                    A("See Charts demo").Href("/charts").Class("btn btn-outline-primary btn-sm")
+                )
+            )),
+
             SectionHelper.ShowSection("Toast", ToastContainer(
                 Toast(
                     ToastHeader(
-                        new StrongElement("Toast Title"),
+                        new StrongElement("Toast Title").Class("me-auto"),
                         new SmallElement("just now").Class("text-muted"),
                         ToastCloseButton()
                     ),

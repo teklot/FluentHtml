@@ -10,7 +10,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageTags>FluentHtml;Forms;HTML;SelectList;ModelBinding;ServerRendered;dotnet-library</PackageTags>
-    <PackageReleaseNotes>Provides FormExtensions, SelectListItem, and ModelExpression for building HTML forms with fluent C# API and ASP.NET Core model binding support.</PackageReleaseNotes>
+    <PackageReleaseNotes>Added AutoForm&lt;T&gt; (auto-generates complete forms from model types with DataAnnotations, HTMX support, field exclusion, custom labels, field type overrides), FileUploadExtensions (file input, multi-file, drag-and-drop upload zone with HTMX integration).</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/teklot/FluentHtml</PackageProjectUrl>
     <RepositoryUrl>https://github.com/teklot/FluentHtml.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

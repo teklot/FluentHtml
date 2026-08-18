@@ -10,10 +10,14 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageTags>FluentHtml;HTML;DOM;FluentApi;Rendering;ServerRendered;dotnet-library</PackageTags>
-    <PackageReleaseNotes>Provides the core HTML node model (Node, Element, Fragment, RawHtml, TextNode, AttributeCollection, Tag, ElementType) and the rendering pipeline (Renderer, HtmlWriter, HtmlEncoder), with pure C# and no third-party dependencies.</PackageReleaseNotes>
+    <PackageReleaseNotes>Added MarkdownComponent (Markdig-based, tables, code blocks, emphasis, custom pipeline), IconComponent (framework-agnostic icon abstraction), BadgeComponent, BreadcrumbComponent, and InlineScriptComponent.</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/teklot/FluentHtml</PackageProjectUrl>
     <RepositoryUrl>https://github.com/teklot/FluentHtml.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Markdig" Version="0.39.1" />
+  </ItemGroup>
 
 </Project>
