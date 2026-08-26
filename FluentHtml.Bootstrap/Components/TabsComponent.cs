@@ -102,6 +102,13 @@ public sealed class TabLinkComponent : Element<TabLinkComponent>
     /// </summary>
     /// <returns>The current <see cref="TabLinkComponent"/> instance.</returns>
     public TabLinkComponent Active() => Class("active");
+
+    /// <summary>
+    /// Sets the href attribute for the tab link.
+    /// </summary>
+    /// <param name="href">The target selector (e.g., "#tab1").</param>
+    /// <returns>The current <see cref="TabLinkComponent"/> instance.</returns>
+    public TabLinkComponent Href(string href) { Attributes.Set("href", href); return this; }
 }
 
 /// <summary>

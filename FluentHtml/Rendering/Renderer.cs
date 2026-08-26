@@ -74,9 +74,23 @@ public sealed class Renderer
 
         _writer.WriteRaw(">");
 
-        RenderChildren(element);
+        if (element.TagName == "script")
+            RenderRawChildren(element);
+        else
+            RenderChildren(element);
 
         _writer.WriteCloseTag(element.TagName);
+    }
+
+    private void RenderRawChildren(Node node)
+    {
+        foreach (var child in node.Children)
+        {
+            if (child is TextNode textNode)
+                _writer.WriteRaw(textNode.Content);
+            else
+                RenderNode(child);
+        }
     }
 
     private void WriteAttributes(Element element)

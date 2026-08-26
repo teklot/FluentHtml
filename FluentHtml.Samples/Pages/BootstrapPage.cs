@@ -199,16 +199,35 @@ public static class BootstrapPage
                 )
             )),
 
-            SectionHelper.ShowSection("Toast", ToastContainer(
-                Toast(
-                    ToastHeader(
-                        new StrongElement("Toast Title").Class("me-auto"),
-                        new SmallElement("just now").Class("text-muted"),
-                        ToastCloseButton()
-                    ),
-                    ToastBody("This is a toast notification built with FluentHtml components.")
-                ).Show().Id("demoToast")
-            ).PositionTopEnd())
+            SectionHelper.ShowSection("Tabs", Div(
+                P("Bootstrap tabs for organizing content into switchable panels."),
+                Tabs(
+                    TabItem(TabLink("Tab 1").Href("#bsTab1").Active()),
+                    TabItem(TabLink("Tab 2").Href("#bsTab2")),
+                    TabItem(TabLink("Tab 3").Href("#bsTab3"))
+                ).Class("mb-2"),
+                TabContent(
+                    TabPane(new TextNode("Content for tab 1.")).Id("bsTab1").Active().Show(),
+                    TabPane(new TextNode("Content for tab 2.")).Id("bsTab2"),
+                    TabPane(new TextNode("Content for tab 3.")).Id("bsTab3")
+                ).Class("p-3 border border-top-0 rounded-bottom mb-3"),
+                Div(
+                    A("See full Tabs demo").Href("/tabs").Class("btn btn-outline-primary btn-sm")
+                )
+            )),
+
+            SectionHelper.ShowSection("Toast", Div(
+                ToastContainer(
+                    Toast(
+                        ToastHeader(
+                            new StrongElement("Toast Title").Class("me-auto"),
+                            new SmallElement("Just now...").Class("text-muted"),
+                            ToastCloseButton()
+                        ),
+                        ToastBody("This is a toast notification built with FluentHtml components.")
+                    ).Show().Id("demoToast")
+                ).PositionTopEnd()
+            ).Style("min-height:100px"))
         ).ToHtmlResult();
     }
 }

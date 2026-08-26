@@ -34,5 +34,11 @@ routes.MapGet("/datagrid", DataGridPage.Render);
 routes.MapGet("/api/customers", DataGridPage.HandleApiRequest);
 routes.MapGet("/charts", ChartsPage.Render);
 routes.MapGet("/upload", UploadPage.Render);
+routes.MapGet("/tabs", TabsPage.Render);
+routes.MapGet("/layouts", LayoutsPage.Render);
+routes.MapGet("/tree", TreePage.Render);
+routes.MapGet("/tree/users", TreePage.LoadUsers);
+routes.MapGet("/tree/products", TreePage.LoadProducts);
+routes.MapGet("/tree/orders", TreePage.LoadOrders);
 
 app.Run();

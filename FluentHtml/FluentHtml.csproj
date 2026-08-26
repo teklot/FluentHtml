@@ -10,7 +10,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageTags>FluentHtml;HTML;DOM;FluentApi;Rendering;ServerRendered;dotnet-library</PackageTags>
-    <PackageReleaseNotes>Added MarkdownComponent (Markdig-based, tables, code blocks, emphasis, custom pipeline), IconComponent (framework-agnostic icon abstraction), BadgeComponent, BreadcrumbComponent, and InlineScriptComponent.</PackageReleaseNotes>
+    <PackageReleaseNotes>Added TreeComponent, TreeNodeComponent, TreeToggleComponent, TreeLeafComponent (framework-agnostic tree navigation).</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/teklot/FluentHtml</PackageProjectUrl>
     <RepositoryUrl>https://github.com/teklot/FluentHtml.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

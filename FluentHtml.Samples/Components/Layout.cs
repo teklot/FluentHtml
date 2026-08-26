@@ -25,7 +25,10 @@ public static class Layout
             ),
             new BodyElement(
                 RenderNavbar(),
-                new MainElement(content).Class("container py-4")
+                new MainElement(content).Class("container py-4"),
+                new FooterElement(
+                    Div($"© {DateTime.Now.Year} TekLot — FluentHtml Showcase").Class("text-center text-muted py-3 border-top")
+                ).Class("container")
             ).HxHeaders(headersJson)
         ).Lang("en");
     }
@@ -47,21 +50,24 @@ public static class Layout
             Div(
                 NavbarBrand("FluentHtml.Samples").Href("/"),
                 NavbarToggler().Controls("mainNavCollapse").DataTarget("#mainNavCollapse"),
-                NavbarCollapse(
+                    NavbarCollapse(
                     NavbarNav(
                         NavbarNavItem(A("Home").Href("/").Class("nav-link")),
                         NavbarNavItem(A("Core").Href("/core").Class("nav-link")),
                         NavbarNavItem(A("HTMX").Href("/htmx").Class("nav-link")),
                         NavbarNavItem(A("Bootstrap").Href("/bootstrap").Class("nav-link")),
-                        NavbarNavItem(A("Dashboard").Href("/dashboard").Class("nav-link")),
+                        NavbarNavItem(A("Layouts").Href("/layouts").Class("nav-link")),
+                        NavbarNavItem(A("Tree").Href("/tree").Class("nav-link")),
+                        NavbarNavItem(A("Tabs").Href("/tabs").Class("nav-link")),
                         NavbarNavItem(A("Forms").Href("/forms").Class("nav-link")),
-                        NavbarNavItem(A("Todo").Href("/todo").Class("nav-link")),
-                        NavbarNavItem(A("Customers").Href("/customers").Class("nav-link")),
-                        NavbarNavItem(A("Markdown").Href("/markdown").Class("nav-link")),
                         NavbarNavItem(A("AutoForm").Href("/autoform").Class("nav-link")),
+                        NavbarNavItem(A("Upload").Href("/upload").Class("nav-link")),
                         NavbarNavItem(A("DataGrid").Href("/datagrid").Class("nav-link")),
                         NavbarNavItem(A("Charts").Href("/charts").Class("nav-link")),
-                        NavbarNavItem(A("Upload").Href("/upload").Class("nav-link"))
+                        NavbarNavItem(A("Todo").Href("/todo").Class("nav-link")),
+                        NavbarNavItem(A("Customers").Href("/customers").Class("nav-link")),
+                        NavbarNavItem(A("Dashboard").Href("/dashboard").Class("nav-link")),
+                        NavbarNavItem(A("Markdown").Href("/markdown").Class("nav-link"))
                     )
                 ).Id("mainNavCollapse")
             ).Class("container")

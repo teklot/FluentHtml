@@ -3,7 +3,7 @@
 [![CI](https://github.com/TekLot/FluentHtml/actions/workflows/ci.yml/badge.svg)](https://github.com/TekLot/FluentHtml/actions/workflows/ci.yml)
 [![NuGet Version](https://img.shields.io/nuget/v/FluentHtml.Core)](https://www.nuget.org/packages/FluentHtml.Core)
 [![.NET](https://img.shields.io/badge/.NET-net8.0%20%7C%20net10.0-blue)](https://dotnet.microsoft.com/)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue)](https://github.com/anomalyco/FluentHtml/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue)](https://github.com/TekLot/FluentHtml/blob/main/LICENSE)
 [![Docs](https://img.shields.io/badge/docs-FluentHtml-blue)](https://teklot.github.io/FluentHtml/)
 
 Every ASP.NET team eventually faces the same choice: Razor mixes HTML and C# into a template language that resists refactoring. Blazor introduces a runtime, a component lifecycle, and hydration overhead that most line-of-business apps don't need. React/Vue/Angular require a separate language, a build pipeline, and a deployment story that doubles operational complexity. None of these are bad tools — they're just solving a bigger problem than most internal applications actually have.
@@ -66,13 +66,16 @@ The entire component model lives in `FluentHtml` — **pure .NET with no third-p
 │  │  Markdown (Markdig) — tables, code blocks, emphasis        │  │
 │  │  Icons — framework-agnostic icon abstraction               │  │
 │  │  Badge / Breadcrumb — standalone, non-Bootstrap variants   │  │
+│  │  Tree Navigation — expandable/collapsible tree component   │  │
 │  └────────────────────────────────────────────────────────────┘  │
 │  ┌────────────────────────────────────────────────────────────┐  │
 │  │  FluentHtml.Http      — IResult, Minimal API helpers       │  │
 │  │  FluentHtml.Htmx      — hx-get, hx-post, hx-swap           │  │
 │  │  FluentHtml.Forms     — AutoForm<T>, File Upload, Drag     │  │
 │  │  FluentHtml.Bootstrap — Card, Alert, DataGrid, Charts,     │  │
-│  │                         Theme Toggle, Icons                │  │
+│  │                         Theme Toggle, Icons, ProgressBar,  │  │
+│  │                         Sidebar, Dashboard/Split Layout,   │  │
+│  │                         Responsive Layout, Tree Nav        │  │
 │  └────────────────────────────────────────────────────────────┘  │
 └──────────────────────────────────────────────────────────────────┘
 ```
@@ -198,10 +201,10 @@ Clean, semantic HTML without the weight of a JavaScript framework. Server-side r
 
 | Package | Description |
 |---|---|
-| **FluentHtml.Core** | Core: `Node`, `Element`, `Component<T>`, `Fragment`, `TextNode`, `RawHtml`, `Renderer`, `HtmlWriter`, `HtmlEncoder`, `MarkdownComponent` (Markdig), `IconComponent` (framework-agnostic), standalone `BadgeComponent` / `BreadcrumbComponent`, `InlineScriptComponent`, ~120 HTML elements, fluent attributes, CSS helpers |
+| **FluentHtml.Core** | Core: `Node`, `Element`, `Component<T>`, `Fragment`, `TextNode`, `RawHtml`, `Renderer`, `HtmlWriter`, `HtmlEncoder`, `MarkdownComponent` (Markdig), `IconComponent` (framework-agnostic), standalone `BadgeComponent` / `BreadcrumbComponent`, `InlineScriptComponent`, `TreeComponent` (tree navigation), ~120 HTML elements, fluent attributes, CSS helpers |
 | **FluentHtml.Http** | `HtmlResult` (`IResult`), Minimal API endpoint extensions, `Node.ToHtmlResult()` |
 | **FluentHtml.Htmx** | `HxGet()`, `HxPost()`, `HxSwap()`, `HxTarget()`, `HxTrigger()`, `HxConfirm()` and 20+ HTMX attribute extensions |
-| **FluentHtml.Bootstrap** | `Card`, `Alert`, `Button`, `Navbar`, `Modal`, `Accordion`, `Toast`, `Dropdown`, `Pagination`, `Badge`, `Breadcrumb`, `Spinner`, `Tab`, `DataGrid<T>` (HTMX-powered), `ChartComponent` (Chart.js), `ThemeToggle`, Bootstrap Icons helper |
+| **FluentHtml.Bootstrap** | `Card`, `Alert`, `Button`, `Navbar`, `Modal`, `Accordion`, `Toast`, `Dropdown`, `Pagination`, `Badge`, `Breadcrumb`, `Spinner`, `Tab`, `DataGrid<T>` (HTMX-powered), `ChartComponent` (Chart.js), `ThemeToggle`, Bootstrap Icons, `ProgressBar`, `Sidebar`, `DashboardLayout`, `SplitLayout`, `ResponsiveLayout`, `BootstrapTree` |
 | **FluentHtml.Forms** | `Form`, `InputFor()`, `LabelFor()`, `SelectFor()`, `TextAreaFor()`, `CheckboxFor()`, `ValidationSummary()`, `AutoForm<T>()`, `FileInputFor()`, `FileInputGroup()`, `DragDropUpload()` |
 | **FluentHtml.Validation** | `ValidationMessage`, `ValidationSummary`, validation CSS helpers |
 
@@ -465,6 +468,97 @@ BiIcon("trash").Size(Xl)     // <i class="bi bi-trash fs-1"></i>
 
 Framework-agnostic icon abstraction in Core; Bootstrap Icons implementation in the Bootstrap package. Additional icon sets (Font Awesome, Material Icons) can be added as community packages.
 
+### Progress Bar
+
+```csharp
+using FluentHtml.Bootstrap.Components;
+
+// Basic progress bar
+ProgressBar(
+    ProgressBarFill("75%").Width(75)
+)
+
+// Striped and animated with color
+ProgressBar(
+    ProgressBarFill("50%").Width(50).Success().Striped().Animated()
+).Height("25px")
+
+// Stacked progress bars
+ProgressBar(
+    ProgressBarFill().Width(35).Primary(),
+    ProgressBarFill().Width(25).Success(),
+    ProgressBarFill().Width(20).Info()
+)
+```
+
+Color variants: `Primary()`, `Secondary()`, `Success()`, `Danger()`, `Warning()`, `Info()`, `Light()`, `Dark()`. Add `Striped()` for stripes and `Animated()` for moving stripes.
+
+### Layouts
+
+```csharp
+using FluentHtml.Bootstrap.Components;
+
+// Sidebar with navigation
+Sidebar(
+    SidebarBrand("My App").Href("/"),
+    SidebarNav(
+        SidebarSection(
+            SidebarSectionHeading("Main"),
+            SidebarNavItem(SidebarNavLink("Dashboard").Href("/dashboard").Active()),
+            SidebarNavItem(SidebarNavLink("Users").Href("/users")),
+            SidebarNavItem(SidebarNavLink("Settings").Href("/settings"))
+        )
+    )
+).Width("280px").MinHeight("100vh")
+
+// Dashboard layout (header + sidebar + content + footer)
+DashboardLayout(
+    header: new[] { Navbar(...).Dark() },
+    sidebar: new[] { Sidebar(...) },
+    content: new[] { Div("Main content").Class("p-4") }
+)
+
+// Split layout (two panels, stacks on mobile)
+SplitLayout(
+    SplitPanel(Div("Left panel")).FlexGrow1().Border(),
+    SplitPanel(Div("Right panel")).FlexGrow1()
+)
+```
+
+`ResponsiveLayout` provides header/sidebar/content/footer regions. `DashboardLayout` wraps them into a pre-built pattern. `SplitLayout` creates two-panel layouts that stack vertically on mobile.
+
+### Tree Navigation
+
+```csharp
+using FluentHtml.Bootstrap.Components;
+
+// Static tree
+BootstrapTree(
+    BootstrapTreeNode(
+        BootstrapTreeToggle("Documents"),
+        BootstrapTreeChildren(
+            BootstrapTreeLeaf("report.pdf"),
+            BootstrapTreeLeaf("notes.txt")
+        )
+    ),
+    BootstrapTreeNode(
+        BootstrapTreeToggle("Images"),
+        BootstrapTreeChildren(
+            BootstrapTreeLeaf("photo.jpg")
+        )
+    )
+).TreeLines()
+
+// Lazy-loaded tree (fetches children via HTMX on expand)
+BootstrapTreeNode(
+    BootstrapTreeToggle("Users")
+        .HxLoad("/api/tree/users", "next .tree-children"),
+    BootstrapTreeChildren().Collapsed()
+)
+```
+
+Framework-agnostic `TreeComponent` in Core; `BootstrapTreeComponent` with Bootstrap styling and HTMX lazy-loading in the Bootstrap package.
+
 ### Forms with Model Binding
 
 ```csharp
@@ -515,7 +609,3 @@ Node
 ```
 
 Every renderable object derives from `Node`. Elements own a tag name, attributes, and children. Components render other nodes. Fragments produce no wrapper HTML.
-
-## License
-
-Apache License 2.0 — see [LICENSE](https://github.com/anomalyco/FluentHtml/blob/main/LICENSE) for details.
