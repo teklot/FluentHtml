@@ -70,3 +70,5 @@ global using static FluentHtml.Bootstrap.Components.SplitLayoutExtensions;
 global using static FluentHtml.Bootstrap.Components.BootstrapTreeExtensions;
 global using static FluentHtml.Components.CoreTreeExtensions;
 global using static FluentHtml.Bootstrap.Components.ProgressBarExtensions;
+global using static FluentHtml.Bootstrap.Components.ConfirmDialogExtensions;
+global using static FluentHtml.Bootstrap.Components.TimelineExtensions;

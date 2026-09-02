@@ -10,7 +10,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageTags>FluentHtml;Bootstrap;UI;Components;CSS;ServerRendered;dotnet-library</PackageTags>
-    <PackageReleaseNotes>Added ProgressBarComponent, ResponsiveLayoutComponent (header/sidebar/content/footer regions), SidebarComponent (vertical navigation with HTMX support), DashboardLayoutComponent (pre-built dashboard), SplitLayoutComponent (two-panel responsive layout), BootstrapTreeComponent (expandable/collapsible tree with lazy-loading).</PackageReleaseNotes>
+    <PackageReleaseNotes>Added ConfirmDialogComponent (modal-based confirmation dialog with HTMX wiring), ToastManager (server-side toast queue with HTMX out-of-band swap support), and TimelineComponent (vertical timeline with icons, dates, and descriptions).</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/teklot/FluentHtml</PackageProjectUrl>
     <RepositoryUrl>https://github.com/teklot/FluentHtml.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

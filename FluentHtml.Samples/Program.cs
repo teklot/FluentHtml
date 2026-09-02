@@ -40,5 +40,11 @@ routes.MapGet("/tree", TreePage.Render);
 routes.MapGet("/tree/users", TreePage.LoadUsers);
 routes.MapGet("/tree/products", TreePage.LoadProducts);
 routes.MapGet("/tree/orders", TreePage.LoadOrders);
+routes.MapGet("/feedback", FeedbackPage.Render);
+routes.MapDelete("/feedback/confirm-delete", FeedbackPage.ConfirmDelete);
+routes.MapGet("/feedback/toast/success", FeedbackPage.ToastSuccess);
+routes.MapGet("/feedback/toast/error", FeedbackPage.ToastError);
+routes.MapGet("/feedback/toast/warning", FeedbackPage.ToastWarning);
+routes.MapGet("/feedback/toast/info", FeedbackPage.ToastInfo);
 
 app.Run();

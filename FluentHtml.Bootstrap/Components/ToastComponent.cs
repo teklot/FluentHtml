@@ -28,13 +28,27 @@ public sealed class ToastComponent : Element<ToastComponent>
     /// Applies the fade animation transition.
     /// </summary>
     /// <returns>The current <see cref="ToastComponent"/> instance.</returns>
-    public ToastComponent Fade() => Class("fade");
+    public ToastComponent Fade() => Class("fade").Class("fluent-toast");
+
+    /// <summary>
+    /// Adds a prominent colored left border to visually tag the toast type.
+    /// </summary>
+    /// <param name="color">The Bootstrap accent color class, e.g., "success", "danger", "warning", or "info".</param>
+    /// <returns>The current <see cref="ToastComponent"/> instance.</returns>
+    public ToastComponent AccentColor(string color)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(color);
+        Class("border-start");
+        Class("border-4");
+        Class("border-" + color);
+        return this;
+    }
 
     /// <summary>
     /// Enables the toast to automatically hide after the specified delay.
     /// </summary>
     /// <returns>The current <see cref="ToastComponent"/> instance.</returns>
-    public ToastComponent Autohide() => Class("autohide");
+    public ToastComponent Autohide() => Data("bs-autohide", "true");
 
     /// <summary>
     /// Sets the delay in milliseconds before the toast automatically hides.
@@ -92,7 +106,7 @@ public sealed class ToastCloseButtonComponent : Element<ToastCloseButtonComponen
     /// <summary>
     /// Initializes a new instance of the <see cref="ToastCloseButtonComponent"/> class.
     /// </summary>
-    public ToastCloseButtonComponent() { SetTag("button"); Class("btn-close"); Attributes.Set("type", "button"); }
+    public ToastCloseButtonComponent() { SetTag("button"); Class("btn-close"); Attributes.Set("type", "button"); Attributes.Set("data-bs-dismiss", "toast"); }
 
     /// <summary>
     /// Sets the aria-label attribute for the close button to provide an accessible label.

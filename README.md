@@ -6,16 +6,50 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue)](https://github.com/TekLot/FluentHtml/blob/main/LICENSE)
 [![Docs](https://img.shields.io/badge/docs-FluentHtml-blue)](https://teklot.github.io/FluentHtml/)
 
-Every ASP.NET team eventually faces the same choice: Razor mixes HTML and C# into a template language that resists refactoring. Blazor introduces a runtime, a component lifecycle, and hydration overhead that most line-of-business apps don't need. React/Vue/Angular require a separate language, a build pipeline, and a deployment story that doubles operational complexity. None of these are bad tools — they're just solving a bigger problem than most internal applications actually have.
+Every ASP.NET team eventually faces the same choice: Razor mixes HTML and .NET into a template language that resists refactoring. Blazor introduces a runtime, a component lifecycle, and hydration overhead that most line-of-business apps don't need. React/Vue/Angular require a separate language, a build pipeline, and a deployment story that doubles operational complexity. None of these are bad tools — they're just solving a bigger problem than most internal applications actually have.
 
-FluentHtml takes a different approach. Instead of importing a foreign programming model, it makes HTML a native citizen of .NET — strongly typed, composable, IntelliSense-discoverable (in C#) — and keeps application logic on the server where ASP.NET Core excels. HTMX handles interactivity without a JavaScript framework. The result feels like writing idiomatic .NET, not porting another language's ideas.
+FluentHtml takes a different approach. Instead of importing a foreign programming model, it makes HTML a native citizen of .NET — strongly typed, composable, IntelliSense-discoverable (in .NET) — and keeps application logic on the server where ASP.NET Core excels. HTMX handles interactivity without a JavaScript framework. The result feels like writing idiomatic .NET, not porting another language's ideas.
 
 **Guiding principle:** Never replace ASP.NET Core. Extend it with strongly typed HTML generation.
+
+## Table of Contents
+
+- [The Problem](#the-problem)
+- [How It Works](#how-it-works)
+  - [Not a Clone — An Idiom](#not-a-clone--an-idiom)
+  - [Fluent API — Not a Template Language](#fluent-api--not-a-template-language)
+  - [Composition, Not Inheritance](#composition-not-inheritance)
+  - [Server-Side Rendering — No Runtime Required](#server-side-rendering--no-runtime-required)
+- [Use Cases](#use-cases)
+  - [Internal Business Applications](#internal-business-applications)
+  - [CRUD Systems](#crud-systems)
+  - [Dashboards and Reporting](#dashboards-and-reporting)
+  - [Documentation and Portals](#documentation-and-portals)
+- [Technical Differentiators](#technical-differentiators)
+- [Packages](#packages)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+  - [Component Model](#component-model)
+  - [Fluent Attributes](#fluent-attributes)
+  - [Markdown](#markdown)
+  - [HTMX Integration](#htmx-integration)
+  - [AutoForm\<T\>](#autoformt)
+  - [File Upload & Drag-and-Drop](#file-upload--drag-and-drop)
+  - [DataGrid\<T\>](#datagridt)
+  - [Charts](#charts)
+  - [Dark Mode / Theme Toggle](#dark-mode--theme-toggle)
+  - [Bootstrap Icons](#bootstrap-icons)
+  - [Progress Bar](#progress-bar)
+  - [Layouts](#layouts)
+  - [Tree Navigation](#tree-navigation)
+  - [Forms with Model Binding](#forms-with-model-binding)
+  - [Testing](#testing)
+- [Node Hierarchy](#node-hierarchy)
 
 ## The Problem
 
 ```csharp
-// Razor — mixes template syntax with C#
+// Razor — mixes template syntax with .NET
 <div class="card">
     <h2>@Model.Title</h2>
     @foreach (var item in Model.Items) {
@@ -75,7 +109,8 @@ The entire component model lives in `FluentHtml` — **pure .NET with no third-p
 │  │  FluentHtml.Bootstrap — Card, Alert, DataGrid, Charts,     │  │
 │  │                         Theme Toggle, Icons, ProgressBar,  │  │
 │  │                         Sidebar, Dashboard/Split Layout,   │  │
-│  │                         Responsive Layout, Tree Nav        │  │
+│  │                         Responsive Layout, Tree Nav,       │  │
+│  │                         Confirm, Toast, Timeline           │  │
 │  └────────────────────────────────────────────────────────────┘  │
 └──────────────────────────────────────────────────────────────────┘
 ```
@@ -190,7 +225,7 @@ Clean, semantic HTML without the weight of a JavaScript framework. Server-side r
 
 | vs. | FluentHtml |
 |---|---|
-| **Razor** | No template language — pure C# with compile-time safety, IntelliSense, and easy refactoring |
+| **Razor** | No template language — pure .NET with compile-time safety, IntelliSense, and easy refactoring |
 | **Blazor** | No runtime, no hydration, no component lifecycle — just HTML generation and server responses |
 | **React/Vue/Angular** | No JavaScript build pipeline, no client-side state management, no deployment complexity |
 | **String concatenation** | Strongly typed elements, automatic HTML encoding, attribute management, composition |
@@ -204,7 +239,7 @@ Clean, semantic HTML without the weight of a JavaScript framework. Server-side r
 | **FluentHtml.Core** | Core: `Node`, `Element`, `Component<T>`, `Fragment`, `TextNode`, `RawHtml`, `Renderer`, `HtmlWriter`, `HtmlEncoder`, `MarkdownComponent` (Markdig), `IconComponent` (framework-agnostic), standalone `BadgeComponent` / `BreadcrumbComponent`, `InlineScriptComponent`, `TreeComponent` (tree navigation), ~120 HTML elements, fluent attributes, CSS helpers |
 | **FluentHtml.Http** | `HtmlResult` (`IResult`), Minimal API endpoint extensions, `Node.ToHtmlResult()` |
 | **FluentHtml.Htmx** | `HxGet()`, `HxPost()`, `HxSwap()`, `HxTarget()`, `HxTrigger()`, `HxConfirm()` and 20+ HTMX attribute extensions |
-| **FluentHtml.Bootstrap** | `Card`, `Alert`, `Button`, `Navbar`, `Modal`, `Accordion`, `Toast`, `Dropdown`, `Pagination`, `Badge`, `Breadcrumb`, `Spinner`, `Tab`, `DataGrid<T>` (HTMX-powered), `ChartComponent` (Chart.js), `ThemeToggle`, Bootstrap Icons, `ProgressBar`, `Sidebar`, `DashboardLayout`, `SplitLayout`, `ResponsiveLayout`, `BootstrapTree` |
+| **FluentHtml.Bootstrap** | `Card`, `Alert`, `Button`, `Navbar`, `Modal`, `Accordion`, `Toast`, `ToastManager`, `Dropdown`, `Pagination`, `Badge`, `Breadcrumb`, `Spinner`, `Tab`, `DataGrid<T>` (HTMX-powered), `ChartComponent` (Chart.js), `ThemeToggle`, Bootstrap Icons, `ProgressBar`, `Sidebar`, `DashboardLayout`, `SplitLayout`, `ResponsiveLayout`, `BootstrapTree`, `ConfirmDialog`, `Timeline` |
 | **FluentHtml.Forms** | `Form`, `InputFor()`, `LabelFor()`, `SelectFor()`, `TextAreaFor()`, `CheckboxFor()`, `ValidationSummary()`, `AutoForm<T>()`, `FileInputFor()`, `FileInputGroup()`, `DragDropUpload()` |
 | **FluentHtml.Validation** | `ValidationMessage`, `ValidationSummary`, validation CSS helpers |
 
@@ -439,7 +474,7 @@ Chart("growth-chart", ChartType.Line)
     .Height(300)
 ```
 
-Renders Chart.js charts from C#. Supports Bar, Line, Pie, Doughnut, Radar, and PolarArea types. Single or multiple datasets with custom colors per dataset. Chart.js is loaded via CDN.
+Renders Chart.js charts from .NET. Supports Bar, Line, Pie, Doughnut, Radar, and PolarArea types. Single or multiple datasets with custom colors per dataset. Chart.js is loaded via CDN.
 
 ### Dark Mode / Theme Toggle
 
