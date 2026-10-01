@@ -148,13 +148,33 @@ public static class BootstrapPage
                 ).Small()
             ).AriaLabel("Demo pagination")),
 
-            SectionHelper.ShowSection("Breadcrumb", Breadcrumb(
-                BreadcrumbList(
-                    BreadcrumbItem(BreadcrumbLink("Home").Href("#")),
-                    BreadcrumbItem(BreadcrumbLink("Library").Href("#")),
-                    BreadcrumbItem("Data").Active().AriaCurrent("page")
-                )
-            ).AriaLabel("breadcrumb")),
+            SectionHelper.ShowSection("Breadcrumb", Div(
+                Breadcrumb(
+                    BreadcrumbList(
+                        BreadcrumbItem(BreadcrumbLink("Home").Href("#")),
+                        BreadcrumbItem(BreadcrumbLink("Library").Href("#")),
+                        BreadcrumbItem("Data").Active().AriaCurrent("page")
+                    )
+                ).AriaLabel("breadcrumb"),
+                new SmallElement("Custom separator").Class("d-block mt-3 mb-1 text-muted"),
+                Breadcrumb(
+                    BreadcrumbList(
+                        BreadcrumbItem(BreadcrumbLink("Home").Href("#")),
+                        BreadcrumbItem(BreadcrumbLink("Library").Href("#")),
+                        BreadcrumbItem("Data").Active().AriaCurrent("page")
+                    ).Separator(">")
+                ).AriaLabel("breadcrumb with custom separator"),
+                new SmallElement("Collapsible trailing items").Class("d-block mt-3 mb-1 text-muted"),
+                Breadcrumb(
+                    BreadcrumbCollapse(2,
+                        BreadcrumbItem(BreadcrumbLink("Home").Href("#")),
+                        BreadcrumbItem(BreadcrumbLink("Library").Href("#")),
+                        BreadcrumbItem(BreadcrumbLink("Reports").Href("#")),
+                        BreadcrumbItem(BreadcrumbLink("Archive").Href("#")),
+                        BreadcrumbItem(BreadcrumbLink("Detail").Href("#")).Active().AriaCurrent("page")
+                    )
+                ).AriaLabel("collapsible breadcrumb")
+            )),
 
             SectionHelper.ShowSection("Spinner", Div(
                 Spinner().Role("status"),

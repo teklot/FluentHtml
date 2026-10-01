@@ -4,13 +4,17 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Title>FluentHtml.Core</Title>
     <Authors>TekLot,$(AssemblyName)</Authors>
-    <Description>Core HTML node model and rendering pipeline for FluentHtml. Provides Node, Element, Fragment, RawHtml, TextNode, AttributeCollection, and the Renderer/HtmlWriter/HtmlEncoder types for building, composing, and rendering HTML elements with a fluent C# API.</Description>
+    <Description>Core HTML node model and rendering pipeline for FluentHtml. Provides Node, Element, Fragment, RawHtml, TextNode, AttributeCollection, and the Renderer/HtmlWriter/HtmlEncoder types for building, composing, and rendering HTML elements with a fluent .NET API.</Description>
     <Copyright>Copyright © 2026 TekLot</Copyright>
     <PackageId>FluentHtml.Core</PackageId>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageTags>FluentHtml;HTML;DOM;FluentApi;Rendering;ServerRendered;dotnet-library</PackageTags>
-    <PackageReleaseNotes>Added TreeComponent, TreeNodeComponent, TreeToggleComponent, TreeLeafComponent (framework-agnostic tree navigation).</PackageReleaseNotes>
+    <PackageReleaseNotes>
+      - Added a way to mark the current breadcrumb item for assistive technology
+      - Added breadcrumb separators rendered inside the item and hidden from screen readers
+      - Added a standalone breadcrumb list so callers can control the list element instead of relying on an implicit wrapper
+    </PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/teklot/FluentHtml</PackageProjectUrl>
     <RepositoryUrl>https://github.com/teklot/FluentHtml.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

@@ -4,13 +4,19 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Title>FluentHtml.Bootstrap</Title>
     <Authors>TekLot,$(AssemblyName)</Authors>
-    <Description>Bootstrap 5 component library for FluentHtml. Provides fluent builders for Accordion, Alert, Badge, Breadcrumb, Button, Card, DashboardLayout, Dropdown, Modal, Navbar, Pagination, ProgressBar, Sidebar, Spinner, SplitLayout, Tabs, Toast, and ResponsiveLayout components.</Description>
+    <Description>Bootstrap 5 component library for FluentHtml. Provides fluent builders for Accordion, Alert, Badge, Breadcrumb, Button, Card, ConfirmDialog, DashboardLayout, Dropdown, Modal, Navbar, Pagination, ProgressBar, Sidebar, Spinner, SplitLayout, Tabs, Timeline, Toast, Wizard, and ResponsiveLayout components.</Description>
     <Copyright>Copyright © 2026 TekLot</Copyright>
     <PackageId>FluentHtml.Bootstrap</PackageId>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageTags>FluentHtml;Bootstrap;UI;Components;CSS;ServerRendered;dotnet-library</PackageTags>
-    <PackageReleaseNotes>Added ConfirmDialogComponent (modal-based confirmation dialog with HTMX wiring), ToastManager (server-side toast queue with HTMX out-of-band swap support), and TimelineComponent (vertical timeline with icons, dates, and descriptions).</PackageReleaseNotes>
+    <PackageReleaseNotes>
+      - Added a wizard component for linear multi-step flows with HTMX step navigation, step indicators, and server-side validation
+      - Added a collapsible breadcrumb that hides trailing items behind a toggle
+      - Added custom breadcrumb separators
+      - Added HTMX navigation for breadcrumb links
+      - Fixed the small breadcrumb style applying the item class to the list instead of adjusting font size
+    </PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/teklot/FluentHtml</PackageProjectUrl>
     <RepositoryUrl>https://github.com/teklot/FluentHtml.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

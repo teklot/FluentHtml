@@ -57,6 +57,38 @@ public abstract class Component<T> : Component
 }
 ```
 
+## Standalone Breadcrumb
+
+`FluentHtml.Core` ships a framework-agnostic breadcrumb that renders semantic
+`nav > ol > li` with no CSS framework dependency. For Bootstrap-styled breadcrumbs, use the
+breadcrumb in `FluentHtml.Bootstrap`.
+
+```csharp
+Breadcrumb(
+    BreadcrumbItem("Home"),
+    BreadcrumbItem("Data").AriaCurrent("page")
+);
+```
+
+| Method | Description |
+|---|---|
+| `BreadcrumbItemComponent.AriaCurrent(value)` | Marks the current page for assistive technology. Framework-agnostic, unlike `Active()`, which adds Bootstrap's `active` class name. |
+| `BreadcrumbItemComponent.Separator(separator)` | Renders an `aria-hidden` separator inside the item. Accepts text or a `Node`. Nested because an `ol` may only contain `li`. |
+| `BreadcrumbListComponent` / `BreadcrumbList(items)` | Supplies your own list element instead of relying on the factory's implicit `ol` wrapper. |
+
+```csharp
+// Control the list element and add separators
+Breadcrumb(
+    BreadcrumbList(
+        BreadcrumbItem("Home").Separator("/"),
+        BreadcrumbItem("Data").AriaCurrent("page")
+    )
+);
+```
+
+Collapsible trailing items and HTMX navigation are Bootstrap-only, since they require
+JavaScript and a CSS runtime.
+
 ## Factory Methods
 
 All HTML elements have factory extension methods:

@@ -37,6 +37,59 @@ public class StandaloneBreadcrumbTests
         Assert.Contains("Home", html);
     }
 
+    [Fact]
+    public void BreadcrumbItem_AriaCurrent_RendersAccessibilityAttribute()
+    {
+        var item = BreadcrumbItem("Current").AriaCurrent("page");
+        var html = _renderer.Render(item);
+        Assert.Contains("aria-current=\"page\"", html);
+    }
+
+    [Fact]
+    public void BreadcrumbItem_Separator_RendersHiddenSpanInsideItem()
+    {
+        var item = BreadcrumbItem("Home").Separator("/");
+        var html = _renderer.Render(item);
+
+        Assert.Contains("breadcrumb-separator", html);
+        Assert.Contains("aria-hidden=\"true\"", html);
+        // The separator must live inside the <li>, since an <ol> may only contain <li>.
+        Assert.Contains("<li", html);
+        Assert.StartsWith("<li", html);
+    }
+
+    [Fact]
+    public void BreadcrumbItem_Separator_AcceptsNode()
+    {
+        var item = BreadcrumbItem("Home").Separator(new FluentHtml.Nodes.TextNode(">"));
+        var html = _renderer.Render(item);
+        Assert.Contains("breadcrumb-separator", html);
+        Assert.Contains(">", html);
+    }
+
+    [Fact]
+    public void BreadcrumbList_RendersOrderedList()
+    {
+        var list = CoreBreadcrumbExtensions.BreadcrumbList(
+            BreadcrumbItem("Home"),
+            BreadcrumbItem("About"));
+
+        var html = _renderer.Render(list);
+        Assert.Contains("<ol", html);
+        Assert.Contains("Home", html);
+        Assert.Contains("About", html);
+    }
+
+    [Fact]
+    public void Breadcrumb_WrapsExplicitList()
+    {
+        var list = CoreBreadcrumbExtensions.BreadcrumbList(BreadcrumbItem("Home"));
+        var html = _renderer.Render(CoreBreadcrumbExtensions.Breadcrumb(list));
+
+        Assert.Contains("<nav", html);
+        Assert.Contains("<ol", html);
+    }
+
     private static BreadcrumbComponent Breadcrumb(params BreadcrumbItemComponent[] items) =>
         CoreBreadcrumbExtensions.Breadcrumb(items);
 

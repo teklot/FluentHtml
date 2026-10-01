@@ -46,5 +46,10 @@ routes.MapGet("/feedback/toast/success", FeedbackPage.ToastSuccess);
 routes.MapGet("/feedback/toast/error", FeedbackPage.ToastError);
 routes.MapGet("/feedback/toast/warning", FeedbackPage.ToastWarning);
 routes.MapGet("/feedback/toast/info", FeedbackPage.ToastInfo);
+routes.MapGet("/wizard", WizardPage.Render);
+routes.MapGet("/wizard/step/account", WizardPage.StepAccount);
+routes.MapGet("/wizard/step/profile", WizardPage.StepProfile);
+routes.MapGet("/wizard/step/review", WizardPage.StepReview);
+routes.MapPost("/wizard/step/complete", WizardPage.StepComplete);
 
 app.Run();

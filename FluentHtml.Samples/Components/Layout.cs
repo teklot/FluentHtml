@@ -60,6 +60,7 @@ public static class Layout
                         NavbarNavItem(A("Tree").Href("/tree").Class("nav-link")),
                         NavbarNavItem(A("Feedback").Href("/feedback").Class("nav-link")),
                         NavbarNavItem(A("Tabs").Href("/tabs").Class("nav-link")),
+                        NavbarNavItem(A("Wizard").Href("/wizard").Class("nav-link")),
                         NavbarNavItem(A("Forms").Href("/forms").Class("nav-link")),
                         NavbarNavItem(A("AutoForm").Href("/autoform").Class("nav-link")),
                         NavbarNavItem(A("Upload").Href("/upload").Class("nav-link")),

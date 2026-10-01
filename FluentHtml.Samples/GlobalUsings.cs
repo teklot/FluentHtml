@@ -72,3 +72,4 @@ global using static FluentHtml.Components.CoreTreeExtensions;
 global using static FluentHtml.Bootstrap.Components.ProgressBarExtensions;
 global using static FluentHtml.Bootstrap.Components.ConfirmDialogExtensions;
 global using static FluentHtml.Bootstrap.Components.TimelineExtensions;
+global using static FluentHtml.Bootstrap.Components.WizardExtensions;

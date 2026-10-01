@@ -110,7 +110,7 @@ The entire component model lives in `FluentHtml` — **pure .NET with no third-p
 │  │                         Theme Toggle, Icons, ProgressBar,  │  │
 │  │                         Sidebar, Dashboard/Split Layout,   │  │
 │  │                         Responsive Layout, Tree Nav,       │  │
-│  │                         Confirm, Toast, Timeline           │  │
+│  │                         Confirm, Toast, Timeline, Wizards  │  │
 │  └────────────────────────────────────────────────────────────┘  │
 └──────────────────────────────────────────────────────────────────┘
 ```
@@ -239,7 +239,7 @@ Clean, semantic HTML without the weight of a JavaScript framework. Server-side r
 | **FluentHtml.Core** | Core: `Node`, `Element`, `Component<T>`, `Fragment`, `TextNode`, `RawHtml`, `Renderer`, `HtmlWriter`, `HtmlEncoder`, `MarkdownComponent` (Markdig), `IconComponent` (framework-agnostic), standalone `BadgeComponent` / `BreadcrumbComponent`, `InlineScriptComponent`, `TreeComponent` (tree navigation), ~120 HTML elements, fluent attributes, CSS helpers |
 | **FluentHtml.Http** | `HtmlResult` (`IResult`), Minimal API endpoint extensions, `Node.ToHtmlResult()` |
 | **FluentHtml.Htmx** | `HxGet()`, `HxPost()`, `HxSwap()`, `HxTarget()`, `HxTrigger()`, `HxConfirm()` and 20+ HTMX attribute extensions |
-| **FluentHtml.Bootstrap** | `Card`, `Alert`, `Button`, `Navbar`, `Modal`, `Accordion`, `Toast`, `ToastManager`, `Dropdown`, `Pagination`, `Badge`, `Breadcrumb`, `Spinner`, `Tab`, `DataGrid<T>` (HTMX-powered), `ChartComponent` (Chart.js), `ThemeToggle`, Bootstrap Icons, `ProgressBar`, `Sidebar`, `DashboardLayout`, `SplitLayout`, `ResponsiveLayout`, `BootstrapTree`, `ConfirmDialog`, `Timeline` |
+| **FluentHtml.Bootstrap** | `Card`, `Alert`, `Button`, `Navbar`, `Modal`, `Accordion`, `Toast`, `ToastManager`, `Dropdown`, `Pagination`, `Badge`, `Breadcrumb`, `BreadcrumbCollapse`, `Spinner`, `Tab`, `DataGrid<T>` (HTMX-powered), `ChartComponent` (Chart.js), `ThemeToggle`, Bootstrap Icons, `ProgressBar`, `Sidebar`, `DashboardLayout`, `SplitLayout`, `ResponsiveLayout`, `BootstrapTree`, `ConfirmDialog`, `Timeline`, `Wizard` |
 | **FluentHtml.Forms** | `Form`, `InputFor()`, `LabelFor()`, `SelectFor()`, `TextAreaFor()`, `CheckboxFor()`, `ValidationSummary()`, `AutoForm<T>()`, `FileInputFor()`, `FileInputGroup()`, `DragDropUpload()` |
 | **FluentHtml.Validation** | `ValidationMessage`, `ValidationSummary`, validation CSS helpers |
 
